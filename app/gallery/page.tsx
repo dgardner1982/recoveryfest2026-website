@@ -13,6 +13,16 @@ export default function GalleryPage() {
     { src: '/gallery/image8.jpg', alt: 'Busy resource fair with many community members', id: 8 },
     { src: '/gallery/image9.jpg', alt: 'Two attendees networking outside at Recovery Fest', id: 9 },
     { src: '/gallery/image10.jpg', alt: 'Family enjoying resources at Recovery Fest table', id: 10 },
+    { src: '/gallery/image11.jpg', alt: 'Volunteer speaking with passion at Recovery Fest', id: 11 },
+    { src: '/gallery/image12.jpg', alt: 'Two men networking outside venue', id: 12 },
+    { src: '/gallery/image13.jpg', alt: 'Person playing cornhole game at Recovery Fest', id: 13 },
+    { src: '/gallery/image14.jpg', alt: 'Recovery resources and beaded bracelets at table', id: 14 },
+    { src: '/gallery/image15.jpg', alt: 'Community member conversing with resource provider', id: 15 },
+    { src: '/gallery/image16.jpg', alt: 'Young attendee holding Recovery Fest 2024 t-shirt', id: 16 },
+    { src: '/gallery/image17.jpg', alt: 'Safe Harbor and Samaritas community resource tables', id: 17 },
+    { src: '/gallery/image18.jpg', alt: 'Tree of Remembrance interactive display at Recovery Fest', id: 18 },
+    { src: '/gallery/image19.jpg', alt: 'Community ACCESS Line 211 representative at table', id: 19 },
+    { src: '/gallery/image20.jpg', alt: 'Screen printing volunteer creating Recovery Fest merchandise', id: 20 },
   ]
 
   return (
