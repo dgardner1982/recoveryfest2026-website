@@ -25,9 +25,9 @@ export default function GalleryPage() {
     { src: '/gallery/image19.jpg', alt: '211 Community ACCESS Line resource table' },
   ]
 
-  // Create array of 40 images by repeating the base images
-  const allImages = Array.from({ length: 40 }, (_, i) => ({
-    ...galleryImages[i % 19],
+  // Use only unique images without duplicates
+  const allImages = galleryImages.map((image, i) => ({
+    ...image,
     id: i + 1,
   }))
 
