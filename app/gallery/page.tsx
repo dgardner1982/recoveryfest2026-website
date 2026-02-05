@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 export default function GalleryPage() {
-  // Real Recovery Fest photos - 19 unique images
+  // Real Recovery Fest photos - 18 unique images
   const galleryImages = [
     { src: '/gallery/image1.jpg', alt: 'Recovery Fest branded stickers with logo', id: 1 },
     { src: '/gallery/image2.jpg', alt: 'Community member smiling at Recovery Fest', id: 2 },
@@ -11,7 +11,6 @@ export default function GalleryPage() {
     { src: '/gallery/image5.jpg', alt: 'Holland Police Paw Patrol vehicle with families', id: 5 },
     { src: '/gallery/image6.jpg', alt: 'Recovery Fest venue exterior with banner', id: 6 },
     { src: '/gallery/image7.jpg', alt: 'Attendee receiving recovery resources and materials', id: 7 },
-    { src: '/gallery/image8.jpg', alt: 'Person adding name to Tree of Remembrance', id: 8 },
     { src: '/gallery/image9.jpg', alt: 'Indoor resource fair with multiple organizations', id: 9 },
     { src: '/gallery/image10.jpg', alt: 'Recovery Fest wristbands close-up', id: 10 },
     { src: '/gallery/image11.jpg', alt: 'Volunteer doing screen printing at Recovery Fest', id: 11 },
