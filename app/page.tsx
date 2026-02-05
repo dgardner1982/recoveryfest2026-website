@@ -138,10 +138,7 @@ export default function HomePage() {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
             <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. For{' '}
-            <strong className="text-foreground">23 years</strong>, this incredible festival has brought together
-            individuals in recovery, their families, and the broader community to celebrate strength, resilience,
-            and hope. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
+            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
         </div>
       </section>
