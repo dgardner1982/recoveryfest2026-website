@@ -464,6 +464,37 @@ export default function HomePage() {
           </form>
         </div>
       </section>
+
+      {/* Email Signup Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+        <div className="container mx-auto max-w-2xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-4">Stay Connected</h2>
+            <p className="text-lg mb-8 text-white/90">
+              Link your email to receive updates, event reminders, and important messages about Recovery Fest 2026.
+            </p>
+            
+            <form className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 bg-white text-foreground placeholder:text-muted-foreground"
+                required
+              />
+              <Button 
+                type="submit" 
+                className="bg-white text-purple-600 hover:bg-white/90 font-semibold px-8 whitespace-nowrap"
+              >
+                Subscribe
+              </Button>
+            </form>
+            
+            <p className="text-sm text-white/80 mt-4">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
