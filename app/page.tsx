@@ -9,9 +9,14 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { VenueMap } from '@/components/venue-map'
+import { subscribeToNewsletter } from '@/app/actions/email'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [email, setEmail] = useState('')
+  const [emailMessage, setEmailMessage] = useState('')
+  const [emailLoading, setEmailLoading] = useState(false)
+  
   const slides = [
     '/images/slide1.jpg',
     '/images/slide2.jpg',
@@ -58,6 +63,25 @@ export default function HomePage() {
 
     return () => clearInterval(slideTimer)
   }, [slides.length])
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setEmailLoading(true)
+    setEmailMessage('')
+    
+    const result = await subscribeToNewsletter(email)
+    
+    if (result.success) {
+      setEmailMessage(result.message || 'Thank you for subscribing!')
+      setEmail('')
+      // Clear message after 5 seconds
+      setTimeout(() => setEmailMessage(''), 5000)
+    } else {
+      setEmailMessage(result.error || 'Something went wrong')
+    }
+    
+    setEmailLoading(false)
+  }
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -474,20 +498,30 @@ export default function HomePage() {
               Link your email to receive updates, event reminders, and important messages about Recovery Fest 2026.
             </p>
             
-            <form className="flex flex-col sm:flex-row gap-4">
+            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
               <Input
                 type="email"
                 placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 bg-white text-foreground placeholder:text-muted-foreground"
                 required
+                disabled={emailLoading}
               />
               <Button 
                 type="submit" 
+                disabled={emailLoading}
                 className="bg-white text-purple-600 hover:bg-white/90 font-semibold px-8 whitespace-nowrap"
               >
-                Subscribe
+                {emailLoading ? 'Subscribing...' : 'Subscribe'}
               </Button>
             </form>
+            
+            {emailMessage && (
+              <p className={`text-sm mt-4 ${emailMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
+                {emailMessage}
+              </p>
+            )}
             
             <p className="text-sm text-white/80 mt-4">
               We respect your privacy. Unsubscribe at any time.
