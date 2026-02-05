@@ -2,8 +2,18 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 export default function GalleryPage() {
-  // Add your gallery images here - example: { src: '/gallery/image1.jpg', alt: 'Description', id: 1 }
-  const galleryImages: { src: string; alt: string; id: number }[] = []
+  const galleryImages = [
+    { src: '/gallery/image1.jpg', alt: 'Resource table with volunteers connecting with attendees', id: 1 },
+    { src: '/gallery/image2.jpg', alt: 'Community ACCESS Line volunteer assisting attendee', id: 2 },
+    { src: '/gallery/image3.jpg', alt: 'Recovery Fest volunteers with banner on building', id: 3 },
+    { src: '/gallery/image4.jpg', alt: 'Screen printing station volunteer at Recovery Fest', id: 4 },
+    { src: '/gallery/image5.jpg', alt: 'Recovery Fest banner displayed on venue', id: 5 },
+    { src: '/gallery/image6.jpg', alt: 'Indoor resource fair with attendees and volunteers', id: 6 },
+    { src: '/gallery/image7.jpg', alt: 'Attendee receiving Recovery Fest t-shirt', id: 7 },
+    { src: '/gallery/image8.jpg', alt: 'Busy resource fair with many community members', id: 8 },
+    { src: '/gallery/image9.jpg', alt: 'Two attendees networking outside at Recovery Fest', id: 9 },
+    { src: '/gallery/image10.jpg', alt: 'Family enjoying resources at Recovery Fest table', id: 10 },
+  ]
 
   return (
     <div className="w-full">
@@ -28,12 +38,12 @@ export default function GalleryPage() {
                 key={image.id} 
                 className="overflow-hidden bg-white border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 cursor-pointer group"
               >
-                <div className="relative aspect-square">
+                <div className="relative h-80 bg-gray-900 flex items-center justify-center">
                   <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain p-2"
                   />
                 </div>
               </Card>
