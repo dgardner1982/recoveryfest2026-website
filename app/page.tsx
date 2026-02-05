@@ -12,8 +12,17 @@ import { VenueMap } from '@/components/venue-map'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  // Add your slideshow images here - example: '/images/slide1.jpg'
-  const slides: string[] = []
+  const slides = [
+    '/images/slide1.jpg',
+    '/images/slide2.jpg',
+    '/images/slide3.jpg',
+    '/images/slide4.jpg',
+    '/images/slide5.jpg',
+    '/images/slide6.jpg',
+    '/images/slide7.jpg',
+    '/images/slide8.jpg',
+    '/images/slide9.jpg',
+  ]
 
   // Countdown timer
   const [timeLeft, setTimeLeft] = useState({
@@ -180,7 +189,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
             Experience the Joy
           </h2>
-          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100">
+          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
             {slides.map((slide, index) => (
               <div
                 key={slide}
@@ -192,7 +201,7 @@ export default function HomePage() {
                   src={slide || "/placeholder.svg"}
                   alt={`Recovery Fest moment ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             ))}
