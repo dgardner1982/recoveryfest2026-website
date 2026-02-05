@@ -141,9 +141,7 @@ export default function HomePage() {
             <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. For{' '}
             <strong className="text-foreground">23 years</strong>, this incredible festival has brought together
             individuals in recovery, their families, and the broader community to celebrate strength, resilience,
-            and hope. Expect a day filled with <strong className="text-foreground">live music, inspiring speakers,
-            food, fun activities, and valuable resources</strong>—all in support of fostering a strong, connected
-            recovery community.
+            and hope. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
         </div>
       </section>
@@ -343,7 +341,7 @@ export default function HomePage() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Your Support Makes Recovery Fest Possible
@@ -364,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Sponsorship Section */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Become a Sponsor of Recovery Fest
