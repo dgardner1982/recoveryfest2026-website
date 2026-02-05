@@ -2,34 +2,28 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 export default function GalleryPage() {
-  // Real Recovery Fest photos - 19 unique images repeated to create 40-photo gallery
   const galleryImages = [
-    { src: '/gallery/image1.jpg', alt: 'Recovery Fest branded stickers with logo' },
-    { src: '/gallery/image2.jpg', alt: 'Community member smiling at Recovery Fest' },
-    { src: '/gallery/image3.jpg', alt: 'Resource table with volunteers helping attendees' },
-    { src: '/gallery/image4.jpg', alt: 'Tree of Remembrance interactive display' },
-    { src: '/gallery/image5.jpg', alt: 'Holland Police Paw Patrol vehicle with families' },
-    { src: '/gallery/image6.jpg', alt: 'Recovery Fest venue exterior with banner' },
-    { src: '/gallery/image7.jpg', alt: 'Attendee receiving recovery resources and materials' },
-    { src: '/gallery/image8.jpg', alt: 'Person adding name to Tree of Remembrance' },
-    { src: '/gallery/image9.jpg', alt: 'Indoor resource fair with multiple organizations' },
-    { src: '/gallery/image10.jpg', alt: 'Recovery Fest wristbands close-up' },
-    { src: '/gallery/image11.jpg', alt: 'Volunteer doing screen printing at Recovery Fest' },
-    { src: '/gallery/image12.jpg', alt: 'Community members connecting at outdoor event' },
-    { src: '/gallery/image13.jpg', alt: 'Volunteers at resource table by windows' },
-    { src: '/gallery/image14.jpg', alt: 'Emotional moment with hug at resource table' },
-    { src: '/gallery/image15.jpg', alt: 'Crowded indoor resource fair with mental health messaging' },
-    { src: '/gallery/image16.jpg', alt: 'Young person holding Recovery Fest 2024 t-shirt' },
-    { src: '/gallery/image17.jpg', alt: 'Safe Harbor volunteer talking with attendees' },
-    { src: '/gallery/image18.jpg', alt: 'Reach for Recovery table with volunteers' },
-    { src: '/gallery/image19.jpg', alt: '211 Community ACCESS Line resource table' },
+    { src: '/gallery/image1.jpg', alt: 'Resource table with volunteers connecting with attendees', id: 1 },
+    { src: '/gallery/image2.jpg', alt: 'Community ACCESS Line volunteer assisting attendee', id: 2 },
+    { src: '/gallery/image3.jpg', alt: 'Recovery Fest volunteers with banner on building', id: 3 },
+    { src: '/gallery/image4.jpg', alt: 'Screen printing station volunteer at Recovery Fest', id: 4 },
+    { src: '/gallery/image5.jpg', alt: 'Recovery Fest banner displayed on venue', id: 5 },
+    { src: '/gallery/image6.jpg', alt: 'Indoor resource fair with attendees and volunteers', id: 6 },
+    { src: '/gallery/image7.jpg', alt: 'Attendee receiving Recovery Fest t-shirt', id: 7 },
+    { src: '/gallery/image8.jpg', alt: 'Busy resource fair with many community members', id: 8 },
+    { src: '/gallery/image9.jpg', alt: 'Two attendees networking outside at Recovery Fest', id: 9 },
+    { src: '/gallery/image10.jpg', alt: 'Family enjoying resources at Recovery Fest table', id: 10 },
+    { src: '/gallery/image11.jpg', alt: 'Volunteer speaking with passion at Recovery Fest', id: 11 },
+    { src: '/gallery/image12.jpg', alt: 'Two men networking outside venue', id: 12 },
+    { src: '/gallery/image13.jpg', alt: 'Person playing cornhole game at Recovery Fest', id: 13 },
+    { src: '/gallery/image14.jpg', alt: 'Recovery resources and beaded bracelets at table', id: 14 },
+    { src: '/gallery/image15.jpg', alt: 'Community member conversing with resource provider', id: 15 },
+    { src: '/gallery/image16.jpg', alt: 'Young attendee holding Recovery Fest 2024 t-shirt', id: 16 },
+    { src: '/gallery/image17.jpg', alt: 'Safe Harbor and Samaritas community resource tables', id: 17 },
+    { src: '/gallery/image18.jpg', alt: 'Tree of Remembrance interactive display at Recovery Fest', id: 18 },
+    { src: '/gallery/image19.jpg', alt: 'Community ACCESS Line 211 representative at table', id: 19 },
+    { src: '/gallery/image20.jpg', alt: 'Screen printing volunteer creating Recovery Fest merchandise', id: 20 },
   ]
-
-  // Create array of 40 images by repeating the base images
-  const allImages = Array.from({ length: 40 }, (_, i) => ({
-    ...galleryImages[i % 19],
-    id: i + 1,
-  }))
 
   return (
     <div className="w-full">
@@ -49,17 +43,17 @@ export default function GalleryPage() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {allImages.map((image) => (
+            {galleryImages.map((image) => (
               <Card 
                 key={image.id} 
                 className="overflow-hidden bg-white border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 cursor-pointer group"
               >
-                <div className="relative aspect-square">
+                <div className="relative h-80 bg-gray-900 flex items-center justify-center">
                   <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain p-2"
                   />
                 </div>
               </Card>

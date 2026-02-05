@@ -9,10 +9,25 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { VenueMap } from '@/components/venue-map'
+import { subscribeToNewsletter } from '@/app/actions/email'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const slides = ['/images/slide1.jpg', '/images/slide2.jpg', '/images/slide3.jpg', '/images/slide4.jpg', '/images/slide5.jpg', '/images/slide6.jpg', '/images/slide7.jpg', '/images/slide8.jpg']
+  const [email, setEmail] = useState('')
+  const [emailMessage, setEmailMessage] = useState('')
+  const [emailLoading, setEmailLoading] = useState(false)
+  
+  const slides = [
+    '/images/slide1.jpg',
+    '/images/slide2.jpg',
+    '/images/slide3.jpg',
+    '/images/slide4.jpg',
+    '/images/slide5.jpg',
+    '/images/slide6.jpg',
+    '/images/slide7.jpg',
+    '/images/slide8.jpg',
+    '/images/slide9.jpg',
+  ]
 
   // Countdown timer
   const [timeLeft, setTimeLeft] = useState({
@@ -48,6 +63,25 @@ export default function HomePage() {
 
     return () => clearInterval(slideTimer)
   }, [slides.length])
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setEmailLoading(true)
+    setEmailMessage('')
+    
+    const result = await subscribeToNewsletter(email)
+    
+    if (result.success) {
+      setEmailMessage(result.message || 'Thank you for subscribing!')
+      setEmail('')
+      // Clear message after 5 seconds
+      setTimeout(() => setEmailMessage(''), 5000)
+    } else {
+      setEmailMessage(result.error || 'Something went wrong')
+    }
+    
+    setEmailLoading(false)
+  }
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -100,6 +134,25 @@ export default function HomePage() {
       {/* Main Event Announcement */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* Countdown Timer */}
+          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto mb-8">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.days}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Days</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.hours}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Hours</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.minutes}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Minutes</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.seconds}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
+            </div>
+          </div>
           <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
             23rd Annual Event
           </div>
@@ -109,12 +162,7 @@ export default function HomePage() {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
             <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. For{' '}
-            <strong className="text-foreground">23 years</strong>, this incredible festival has brought together
-            individuals in recovery, their families, and the broader community to celebrate strength, resilience,
-            and hope. Expect a day filled with <strong className="text-foreground">live music, inspiring speakers,
-            food, fun activities, and valuable resources</strong>—all in support of fostering a strong, connected
-            recovery community.
+            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
         </div>
       </section>
@@ -179,7 +227,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
             Experience the Joy
           </h2>
-          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100">
+          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
             {slides.map((slide, index) => (
               <div
                 key={slide}
@@ -191,7 +239,7 @@ export default function HomePage() {
                   src={slide || "/placeholder.svg"}
                   alt={`Recovery Fest moment ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             ))}
@@ -252,50 +300,50 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Substance Use Disorders Impact</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Ottawa County Substance Impact</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recent data (2022-2024) shows that 17.9% of adults aged 18 or older have a substance use disorder,
-                  affecting millions of Americans and their families nationwide.
+                  Among underserved Ottawa County residents, 42.6% report that substance abuse or addiction has
+                  negatively impacted their lives or the lives of someone they know (2023 CHNA).
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-cyan-100 hover:border-cyan-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Youth Substance Use</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Mental Health Crisis</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Among adolescents aged 12 to 17, 8.3% had a substance use disorder in the past year (2022-2024),
-                  highlighting the need for early intervention and prevention programs.
+                  Ottawa County residents reporting poor mental health has doubled since 2014. Mental health is now
+                  a top priority need identified in the 2024 Healthy Ottawa Plan.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Treatment Gap Persists</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Healthcare Access Gap</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Despite millions affected by substance use disorders, only about 10% of those who need treatment
-                  actually receive it, underscoring the critical importance of accessible recovery resources.
+                  36.4% of non-white Ottawa County residents lack a personal healthcare provider, compared to 8.1%
+                  of white residents, highlighting critical disparities in access to care.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-green-100 hover:border-green-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Michigan Progress</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Health Perception</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Michigan's overdose death rate decreased from 2,998 in 2022 to 2,826 in 2023, showing positive
-                  progress in addressing substance-related fatalities across the state.
+                  While 14.8% of Ottawa County adults report fair or poor health, this rises to 32.5% among
+                  underserved adults, showing the need for targeted community support.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-yellow-100 hover:border-yellow-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Road Safety Impact</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Housing Instability</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  In 2023, 41% of Michigan's traffic fatalities involved alcohol or drugs, demonstrating the
-                  far-reaching impact of substance use on community safety and the need for prevention.
+                  1 in 5 Ottawa County underserved adults didn't pay full rent or mortgage last year. Housing
+                  instability is directly linked to poor health outcomes and recovery challenges.
                 </p>
               </CardContent>
             </Card>
@@ -304,8 +352,8 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-foreground">Recovery Fest Community Impact</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recovery Fest brings together thousands of community members annually, providing free resources,
-                  entertainment, and hope to those on their recovery journey for over two decades.
+                  For 23 years, Recovery Fest has connected Ottawa County residents with free resources, support,
+                  and hope—addressing the critical needs identified in our community health assessments.
                 </p>
               </CardContent>
             </Card>
@@ -314,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Your Support Makes Recovery Fest Possible
@@ -335,7 +383,7 @@ export default function HomePage() {
       </section>
 
       {/* Sponsorship Section */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Become a Sponsor of Recovery Fest
@@ -438,6 +486,47 @@ export default function HomePage() {
               Send
             </Button>
           </form>
+        </div>
+      </section>
+
+      {/* Email Signup Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+        <div className="container mx-auto max-w-2xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-4">Stay Connected</h2>
+            <p className="text-lg mb-8 text-white/90">
+              Link your email to receive updates, event reminders, and important messages about Recovery Fest 2026.
+            </p>
+            
+            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-white text-foreground placeholder:text-muted-foreground"
+                required
+                disabled={emailLoading}
+              />
+              <Button 
+                type="submit" 
+                disabled={emailLoading}
+                className="bg-white text-purple-600 hover:bg-white/90 font-semibold px-8 whitespace-nowrap"
+              >
+                {emailLoading ? 'Subscribing...' : 'Subscribe'}
+              </Button>
+            </form>
+            
+            {emailMessage && (
+              <p className={`text-sm mt-4 ${emailMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
+                {emailMessage}
+              </p>
+            )}
+            
+            <p className="text-sm text-white/80 mt-4">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
         </div>
       </section>
     </div>
