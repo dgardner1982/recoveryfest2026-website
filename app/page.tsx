@@ -110,6 +110,25 @@ export default function HomePage() {
       {/* Main Event Announcement */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
         <div className="container mx-auto max-w-4xl text-center">
+          {/* Countdown Timer */}
+          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto mb-8">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.days}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Days</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.hours}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Hours</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.minutes}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Minutes</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.seconds}</div>
+              <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
+            </div>
+          </div>
           <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
             23rd Annual Event
           </div>
@@ -262,50 +281,50 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Substance Use Disorders Impact</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Ottawa County Substance Impact</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recent data (2022-2024) shows that 17.9% of adults aged 18 or older have a substance use disorder,
-                  affecting millions of Americans and their families nationwide.
+                  Among underserved Ottawa County residents, 42.6% report that substance abuse or addiction has
+                  negatively impacted their lives or the lives of someone they know (2023 CHNA).
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-cyan-100 hover:border-cyan-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Youth Substance Use</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Mental Health Crisis</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Among adolescents aged 12 to 17, 8.3% had a substance use disorder in the past year (2022-2024),
-                  highlighting the need for early intervention and prevention programs.
+                  Ottawa County residents reporting poor mental health has doubled since 2014. Mental health is now
+                  a top priority need identified in the 2024 Healthy Ottawa Plan.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Treatment Gap Persists</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Healthcare Access Gap</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Despite millions affected by substance use disorders, only about 10% of those who need treatment
-                  actually receive it, underscoring the critical importance of accessible recovery resources.
+                  36.4% of non-white Ottawa County residents lack a personal healthcare provider, compared to 8.1%
+                  of white residents, highlighting critical disparities in access to care.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-green-100 hover:border-green-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Michigan Progress</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Health Perception</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Michigan's overdose death rate decreased from 2,998 in 2022 to 2,826 in 2023, showing positive
-                  progress in addressing substance-related fatalities across the state.
+                  While 14.8% of Ottawa County adults report fair or poor health, this rises to 32.5% among
+                  underserved adults, showing the need for targeted community support.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-white border-2 border-yellow-100 hover:border-yellow-300 shadow-lg hover:shadow-xl transition-all">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Road Safety Impact</h3>
+                <h3 className="text-lg font-bold mb-3 text-foreground">Housing Instability</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  In 2023, 41% of Michigan's traffic fatalities involved alcohol or drugs, demonstrating the
-                  far-reaching impact of substance use on community safety and the need for prevention.
+                  1 in 5 Ottawa County underserved adults didn't pay full rent or mortgage last year. Housing
+                  instability is directly linked to poor health outcomes and recovery challenges.
                 </p>
               </CardContent>
             </Card>
@@ -314,8 +333,8 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-foreground">Recovery Fest Community Impact</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Recovery Fest brings together thousands of community members annually, providing free resources,
-                  entertainment, and hope to those on their recovery journey for over two decades.
+                  For 23 years, Recovery Fest has connected Ottawa County residents with free resources, support,
+                  and hope—addressing the critical needs identified in our community health assessments.
                 </p>
               </CardContent>
             </Card>
