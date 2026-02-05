@@ -1,0 +1,445 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { VenueMap } from '@/components/venue-map'
+
+export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const slides = ['/images/slide1.jpg', '/images/slide2.jpg', '/images/slide3.jpg', '/images/slide4.jpg', '/images/slide5.jpg', '/images/slide6.jpg', '/images/slide7.jpg', '/images/slide8.jpg']
+
+  // Countdown timer
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+
+  useEffect(() => {
+    const eventDate = new Date('2026-09-09T15:00:00').getTime()
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime()
+      const distance = eventDate - now
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000)
+
+    return () => clearInterval(slideTimer)
+  }, [slides.length])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
+  return (
+    <div className="w-full">
+      {/* Banner Section */}
+      <section className="relative w-full bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 py-8 px-4 border-b-4 border-secondary">
+        <div className="container mx-auto max-w-5xl">
+          <div className="relative w-full h-32 md:h-48">
+            <Image
+              src="/images/banner.jpg"
+              alt="Recovery Fest - Invest in health, home, purpose, and community"
+              fill
+              className="object-contain drop-shadow-lg"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section with Video Background */}
+      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/85 to-cyan-600/90 z-10" />
+        <Image
+          src="/hero-recovery.jpg"
+          alt="Recovery Fest"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance drop-shadow-lg">
+            Support Recovery, Strengthen Community
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-balance font-medium">
+            Donate to Recovery Fest Today!
+          </p>
+          <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all text-lg px-10 py-6 font-bold">
+            <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate to Recovery Fest</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Main Event Announcement */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
+            23rd Annual Event
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+            Join Us for Recovery Fest!
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
+            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
+            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. For{' '}
+            <strong className="text-foreground">23 years</strong>, this incredible festival has brought together
+            individuals in recovery, their families, and the broader community to celebrate strength, resilience,
+            and hope. Expect a day filled with <strong className="text-foreground">live music, inspiring speakers,
+            food, fun activities, and valuable resources</strong>—all in support of fostering a strong, connected
+            recovery community.
+          </p>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-purple-50">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              Watch Now
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-balance mb-4">
+              Want to See What Recovery Fest is All About?
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+              Watch these videos to experience the joy, hope, and community that makes Recovery Fest such a special celebration. See highlights from past events and discover why this festival has been bringing people together for over two decades.
+            </p>
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+              <Link href="/gallery">View Photo Gallery</Link>
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/9hybir7nolQ"
+                  title="Recovery Fest Highlights"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Highlights</h3>
+            </div>
+
+            <div className="space-y-4">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/ZSF2bYwcl_o"
+                  title="Recovery Fest Experience"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Experience</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Slideshow */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+            Experience the Joy
+          </h2>
+          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100">
+            {slides.map((slide, index) => (
+              <div
+                key={slide}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={slide || "/placeholder.svg"}
+                  alt={`Recovery Fest moment ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-6 w-6 text-foreground" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-6 w-6 text-foreground" />
+            </button>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide ? 'bg-white' : 'bg-white/50'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Building Community Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-green-50 via-cyan-50 to-blue-50">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+            Building a Stronger Recovery Community
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center">
+            Since its beginning, <strong className="text-foreground">Recovery Fest</strong> has been a beacon of hope,
+            connection, and support for those impacted by addiction and mental health challenges. More than just a
+            celebration, this event serves as a powerful way to{' '}
+            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">break stigma, raise awareness, and connect individuals with essential
+            recovery resources</strong>. Whether you're in recovery, supporting a loved one, or simply passionate about
+            the cause, this festival is for everyone who believes in{' '}
+            <strong className="text-foreground">healing, second chances, and a brighter future.</strong>
+          </p>
+        </div>
+      </section>
+
+      {/* Did You Know Stats */}
+      <section className="py-20 px-4 bg-gradient-to-b from-purple-50 via-white to-purple-50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            Did You Know?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Substance Use Disorders Impact</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Recent data (2022-2024) shows that 17.9% of adults aged 18 or older have a substance use disorder,
+                  affecting millions of Americans and their families nationwide.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-2 border-cyan-100 hover:border-cyan-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Youth Substance Use</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Among adolescents aged 12 to 17, 8.3% had a substance use disorder in the past year (2022-2024),
+                  highlighting the need for early intervention and prevention programs.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Treatment Gap Persists</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Despite millions affected by substance use disorders, only about 10% of those who need treatment
+                  actually receive it, underscoring the critical importance of accessible recovery resources.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-2 border-green-100 hover:border-green-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Michigan Progress</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Michigan's overdose death rate decreased from 2,998 in 2022 to 2,826 in 2023, showing positive
+                  progress in addressing substance-related fatalities across the state.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-2 border-yellow-100 hover:border-yellow-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Road Safety Impact</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  In 2023, 41% of Michigan's traffic fatalities involved alcohol or drugs, demonstrating the
+                  far-reaching impact of substance use on community safety and the need for prevention.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold mb-3 text-foreground">Recovery Fest Community Impact</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Recovery Fest brings together thousands of community members annually, providing free resources,
+                  entertainment, and hope to those on their recovery journey for over two decades.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Support Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold mb-6 text-foreground">
+            Your Support Makes Recovery Fest Possible
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            Recovery Fest is a <strong className="text-foreground">free community event</strong>, made possible by
+            generous donations from individuals and local businesses who believe in the power of recovery. Your
+            contributions help us provide <strong className="text-foreground">entertainment, educational materials,
+            food, and outreach efforts</strong>—ensuring that this festival remains a{' '}
+            <strong className="text-foreground">safe and welcoming space</strong> for all. Every donation strengthens
+            our mission to support those on their recovery journey and bring life-changing resources to the community.
+            Thank you for being part of this movement!
+          </p>
+          <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate to Recovery Fest</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Sponsorship Section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold mb-6 text-foreground">
+            Become a Sponsor of Recovery Fest
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Support the journey of recovery and make a lasting impact in our community by becoming a sponsor of
+            Recovery Fest. Your partnership will help provide vital resources and raise awareness about recovery
+            services while showcasing your commitment to positive social change. Together, we can foster hope,
+            strength, and resilience.
+          </p>
+          <p className="text-base text-muted-foreground mb-8">
+            For more information on sponsorship opportunities, send us a message below or reach out to us via email
+            at <a href="mailto:RecoveryFestMI@Gmail.com" className="text-primary hover:underline">
+              RecoveryFestMI@Gmail.com
+            </a>. We look forward to working with you!
+          </p>
+        </div>
+      </section>
+
+      {/* Event Details with Countdown */}
+      <section className="py-16 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-4xl font-bold mb-12 text-center">Join Us!</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">When</h3>
+              <p className="text-lg">Thursday, September 9, 2026</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Time</h3>
+              <p className="text-lg">3:00pm – 6:00pm</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Where</h3>
+              <p className="text-lg">The Salvation Army<br />104 Clover St<br />Holland, MI 49423</p>
+            </div>
+          </div>
+
+          <div className="text-center mb-8">
+            <p className="text-2xl font-bold mb-2">Cost: FREE!</p>
+          </div>
+
+          {/* Countdown Timer */}
+          <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+              <div className="text-4xl font-bold mb-2">{timeLeft.days}</div>
+              <div className="text-sm uppercase tracking-wider">Days</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+              <div className="text-4xl font-bold mb-2">{timeLeft.hours}</div>
+              <div className="text-sm uppercase tracking-wider">Hours</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+              <div className="text-4xl font-bold mb-2">{timeLeft.minutes}</div>
+              <div className="text-sm uppercase tracking-wider">Minutes</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
+              <div className="text-4xl font-bold mb-2">{timeLeft.seconds}</div>
+              <div className="text-sm uppercase tracking-wider">Seconds</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Venue Map & Directions */}
+      <VenueMap />
+
+      {/* Contact Form */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-4xl font-bold mb-6 text-center text-foreground">
+            Have a question or want to get involved?
+          </h2>
+          <p className="text-center text-muted-foreground mb-8">Send us a message!</p>
+          
+          <form className="space-y-6">
+            <div>
+              <Input
+                type="text"
+                placeholder="Name"
+                className="w-full"
+              />
+            </div>
+            <div>
+              <Input
+                type="email"
+                placeholder="Email"
+                className="w-full"
+              />
+            </div>
+            <div>
+              <Textarea
+                placeholder="Message"
+                rows={6}
+                className="w-full resize-none"
+              />
+            </div>
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
+              Send
+            </Button>
+          </form>
+        </div>
+      </section>
+    </div>
+  )
+}
