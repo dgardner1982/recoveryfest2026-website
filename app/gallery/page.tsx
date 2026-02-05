@@ -2,34 +2,8 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 
 export default function GalleryPage() {
-  // Real Recovery Fest photos - 19 unique images repeated to create 40-photo gallery
-  const galleryImages = [
-    { src: '/gallery/image1.jpg', alt: 'Recovery Fest branded stickers with logo' },
-    { src: '/gallery/image2.jpg', alt: 'Community member smiling at Recovery Fest' },
-    { src: '/gallery/image3.jpg', alt: 'Resource table with volunteers helping attendees' },
-    { src: '/gallery/image4.jpg', alt: 'Tree of Remembrance interactive display' },
-    { src: '/gallery/image5.jpg', alt: 'Holland Police Paw Patrol vehicle with families' },
-    { src: '/gallery/image6.jpg', alt: 'Recovery Fest venue exterior with banner' },
-    { src: '/gallery/image7.jpg', alt: 'Attendee receiving recovery resources and materials' },
-    { src: '/gallery/image8.jpg', alt: 'Person adding name to Tree of Remembrance' },
-    { src: '/gallery/image9.jpg', alt: 'Indoor resource fair with multiple organizations' },
-    { src: '/gallery/image10.jpg', alt: 'Recovery Fest wristbands close-up' },
-    { src: '/gallery/image11.jpg', alt: 'Volunteer doing screen printing at Recovery Fest' },
-    { src: '/gallery/image12.jpg', alt: 'Community members connecting at outdoor event' },
-    { src: '/gallery/image13.jpg', alt: 'Volunteers at resource table by windows' },
-    { src: '/gallery/image14.jpg', alt: 'Emotional moment with hug at resource table' },
-    { src: '/gallery/image15.jpg', alt: 'Crowded indoor resource fair with mental health messaging' },
-    { src: '/gallery/image16.jpg', alt: 'Young person holding Recovery Fest 2024 t-shirt' },
-    { src: '/gallery/image17.jpg', alt: 'Safe Harbor volunteer talking with attendees' },
-    { src: '/gallery/image18.jpg', alt: 'Reach for Recovery table with volunteers' },
-    { src: '/gallery/image19.jpg', alt: '211 Community ACCESS Line resource table' },
-  ]
-
-  // Create array of 40 images by repeating the base images
-  const allImages = Array.from({ length: 40 }, (_, i) => ({
-    ...galleryImages[i % 19],
-    id: i + 1,
-  }))
+  // Add your gallery images here - example: { src: '/gallery/image1.jpg', alt: 'Description', id: 1 }
+  const galleryImages: { src: string; alt: string; id: number }[] = []
 
   return (
     <div className="w-full">
@@ -49,7 +23,7 @@ export default function GalleryPage() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {allImages.map((image) => (
+            {galleryImages.map((image) => (
               <Card 
                 key={image.id} 
                 className="overflow-hidden bg-white border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 cursor-pointer group"

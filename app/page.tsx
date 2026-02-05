@@ -12,7 +12,8 @@ import { VenueMap } from '@/components/venue-map'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const slides = ['/images/slide1.jpg', '/images/slide2.jpg', '/images/slide3.jpg', '/images/slide4.jpg', '/images/slide5.jpg', '/images/slide6.jpg', '/images/slide7.jpg', '/images/slide8.jpg']
+  // Add your slideshow images here - example: '/images/slide1.jpg'
+  const slides: string[] = []
 
   // Countdown timer
   const [timeLeft, setTimeLeft] = useState({
