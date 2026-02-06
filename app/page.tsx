@@ -446,28 +446,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center mb-8">
+          <div className="text-center">
             <p className="text-2xl font-bold mb-2">Cost: FREE!</p>
-          </div>
-
-          {/* Countdown Timer */}
-          <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.days}</div>
-              <div className="text-sm uppercase tracking-wider">Days</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.hours}</div>
-              <div className="text-sm uppercase tracking-wider">Hours</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.minutes}</div>
-              <div className="text-sm uppercase tracking-wider">Minutes</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.seconds}</div>
-              <div className="text-sm uppercase tracking-wider">Seconds</div>
-            </div>
           </div>
         </div>
       </section>
@@ -476,12 +456,12 @@ export default function HomePage() {
       <VenueMap />
 
       {/* Contact Form */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-bold mb-6 text-center text-foreground">
+          <h2 className="text-4xl font-bold mb-6 text-center text-white">
             Have a question or want to get involved?
           </h2>
-          <p className="text-center text-muted-foreground mb-8">Send us a message!</p>
+          <p className="text-center text-white/90 mb-8">Send us a message!</p>
           
           <form onSubmit={handleContactSubmit} className="space-y-6">
             <div>
@@ -490,7 +470,7 @@ export default function HomePage() {
                 placeholder="Name"
                 value={contactForm.name}
                 onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                className="w-full"
+                className="w-full bg-white text-foreground placeholder:text-muted-foreground"
                 required
                 disabled={contactLoading}
               />
@@ -501,7 +481,7 @@ export default function HomePage() {
                 placeholder="Email"
                 value={contactForm.email}
                 onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                className="w-full"
+                className="w-full bg-white text-foreground placeholder:text-muted-foreground"
                 required
                 disabled={contactLoading}
               />
@@ -512,14 +492,14 @@ export default function HomePage() {
                 value={contactForm.message}
                 onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                 rows={6}
-                className="w-full resize-none"
+                className="w-full resize-none bg-white text-foreground placeholder:text-muted-foreground"
                 required
                 disabled={contactLoading}
               />
             </div>
             
             {contactMessage && (
-              <p className={`text-sm ${contactMessage.includes('Thank') ? 'text-green-600' : 'text-red-600'}`}>
+              <p className={`text-sm ${contactMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
                 {contactMessage}
               </p>
             )}
@@ -527,7 +507,7 @@ export default function HomePage() {
             <Button 
               type="submit" 
               disabled={contactLoading}
-              className="w-full bg-primary hover:bg-primary/90 text-white"
+              className="w-full bg-white text-purple-600 hover:bg-white/90 font-semibold"
             >
               {contactLoading ? 'Sending...' : 'Send'}
             </Button>
@@ -535,46 +515,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Email Signup Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-        <div className="container mx-auto max-w-2xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Stay Connected</h2>
-            <p className="text-lg mb-8 text-white/90">
-              Link your email to receive updates, event reminders, and important messages about Recovery Fest 2026.
-            </p>
-            
-            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white text-foreground placeholder:text-muted-foreground"
-                required
-                disabled={emailLoading}
-              />
-              <Button 
-                type="submit" 
-                disabled={emailLoading}
-                className="bg-white text-purple-600 hover:bg-white/90 font-semibold px-8 whitespace-nowrap"
-              >
-                {emailLoading ? 'Subscribing...' : 'Subscribe'}
-              </Button>
-            </form>
-            
-            {emailMessage && (
-              <p className={`text-sm mt-4 ${emailMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
-                {emailMessage}
-              </p>
-            )}
-            
-            <p className="text-sm text-white/80 mt-4">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }
