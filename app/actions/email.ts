@@ -6,6 +6,12 @@ export async function subscribeToNewsletter(email: string) {
     return { error: 'Please enter a valid email address' }
   }
 
+  // Check if API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
     // Send email notification to recoveryfestmi@gmail.com
     const response = await fetch('https://api.resend.com/emails', {
@@ -15,7 +21,7 @@ export async function subscribeToNewsletter(email: string) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Recovery Fest <onboarding@resend.dev>',
+        from: process.env.RESEND_FROM_EMAIL || 'Recovery Fest <noreply@recoveryfest.org>',
         to: 'recoveryfestmi@gmail.com',
         subject: 'New Email Signup for Recovery Fest 2026',
         html: `
@@ -27,9 +33,11 @@ export async function subscribeToNewsletter(email: string) {
       }),
     })
 
+    const data = await response.json()
+
     if (!response.ok) {
-      // Fallback: Log the email if API fails (you can implement database storage here)
-      console.log('Newsletter signup:', email)
+      console.error('Resend API error:', data)
+      return { error: 'Failed to send notification. Please try again later.' }
     }
 
     return { success: true, message: 'Thank you for subscribing! Check your email for confirmation.' }
