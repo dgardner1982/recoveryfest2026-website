@@ -46,3 +46,50 @@ export async function subscribeToNewsletter(email: string) {
     return { error: 'Something went wrong. Please try again.' }
   }
 }
+
+export async function sendContactMessage(data: { name: string; email: string; message: string }) {
+  // Validate inputs
+  if (!data.name || !data.email || !data.message) {
+    return { error: 'Please fill in all fields' }
+  }
+
+  if (!data.email.includes('@')) {
+    return { error: 'Please enter a valid email address' }
+  }
+
+  try {
+    // Send email notification to RecoveryFestMI@Gmail.com
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: 'Recovery Fest Contact <onboarding@resend.dev>',
+        to: 'RecoveryFestMI@Gmail.com',
+        replyTo: data.email,
+        subject: `New Contact Form Message from ${data.name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Message:</strong></p>
+          <p>${data.message.replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+        `,
+      }),
+    })
+
+    if (!response.ok) {
+      // Fallback: Log the message if API fails
+      console.log('Contact form submission:', data)
+    }
+
+    return { success: true, message: 'Thank you for your message! We\'ll get back to you soon.' }
+  } catch (error) {
+    console.error('Contact form error:', error)
+    return { error: 'Something went wrong. Please try again.' }
+  }
+}

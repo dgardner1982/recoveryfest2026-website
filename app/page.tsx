@@ -9,13 +9,17 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { VenueMap } from '@/components/venue-map'
-import { subscribeToNewsletter } from '@/app/actions/email'
+import { subscribeToNewsletter, sendContactMessage } from '@/app/actions/email'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [email, setEmail] = useState('')
   const [emailMessage, setEmailMessage] = useState('')
   const [emailLoading, setEmailLoading] = useState(false)
+  
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+  const [contactMessage, setContactMessage] = useState('')
+  const [contactLoading, setContactLoading] = useState(false)
   
   const slides = [
     '/images/slide1.jpg',
@@ -63,6 +67,25 @@ export default function HomePage() {
 
     return () => clearInterval(slideTimer)
   }, [slides.length])
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setContactLoading(true)
+    setContactMessage('')
+    
+    const result = await sendContactMessage(contactForm)
+    
+    if (result.success) {
+      setContactMessage(result.message || 'Thank you for your message!')
+      setContactForm({ name: '', email: '', message: '' })
+      // Clear message after 5 seconds
+      setTimeout(() => setContactMessage(''), 5000)
+    } else {
+      setContactMessage(result.error || 'Something went wrong')
+    }
+    
+    setContactLoading(false)
+  }
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -153,16 +176,15 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-4 font-semibold">
             23rd Annual Event
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
             Join Us for Recovery Fest!
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
+          <p className="text-lg md:text-xl text-muted-foreground">
             <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
+            <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
           </p>
         </div>
       </section>
@@ -423,28 +445,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center mb-8">
+          <div className="text-center">
             <p className="text-2xl font-bold mb-2">Cost: FREE!</p>
-          </div>
-
-          {/* Countdown Timer */}
-          <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.days}</div>
-              <div className="text-sm uppercase tracking-wider">Days</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.hours}</div>
-              <div className="text-sm uppercase tracking-wider">Hours</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.minutes}</div>
-              <div className="text-sm uppercase tracking-wider">Minutes</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg p-6 text-center">
-              <div className="text-4xl font-bold mb-2">{timeLeft.seconds}</div>
-              <div className="text-sm uppercase tracking-wider">Seconds</div>
-            </div>
           </div>
         </div>
       </section>
@@ -453,82 +455,66 @@ export default function HomePage() {
       <VenueMap />
 
       {/* Contact Form */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-bold mb-6 text-center text-foreground">
+          <h2 className="text-4xl font-bold mb-6 text-center text-white">
             Have a question or want to get involved?
           </h2>
-          <p className="text-center text-muted-foreground mb-8">Send us a message!</p>
+          <p className="text-center text-white/90 mb-8">Send us a message!</p>
           
-          <form className="space-y-6">
+          <form onSubmit={handleContactSubmit} className="space-y-6">
             <div>
               <Input
                 type="text"
                 placeholder="Name"
-                className="w-full"
+                value={contactForm.name}
+                onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                className="w-full bg-white text-foreground placeholder:text-muted-foreground"
+                required
+                disabled={contactLoading}
               />
             </div>
             <div>
               <Input
                 type="email"
                 placeholder="Email"
-                className="w-full"
+                value={contactForm.email}
+                onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                className="w-full bg-white text-foreground placeholder:text-muted-foreground"
+                required
+                disabled={contactLoading}
               />
             </div>
             <div>
               <Textarea
                 placeholder="Message"
+                value={contactForm.message}
+                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                 rows={6}
-                className="w-full resize-none"
+                className="w-full resize-none bg-white text-foreground placeholder:text-muted-foreground"
+                required
+                disabled={contactLoading}
               />
             </div>
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-              Send
+            
+            {contactMessage && (
+              <p className={`text-sm ${contactMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
+                {contactMessage}
+              </p>
+            )}
+            
+            <Button 
+              type="submit" 
+              disabled={contactLoading}
+              className="w-full bg-white text-purple-600 hover:bg-white/90 font-semibold"
+            >
+              {contactLoading ? 'Sending...' : 'Send'}
             </Button>
           </form>
         </div>
       </section>
 
-      {/* Email Signup Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-        <div className="container mx-auto max-w-2xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Stay Connected</h2>
-            <p className="text-lg mb-8 text-white/90">
-              Link your email to receive updates, event reminders, and important messages about Recovery Fest 2026.
-            </p>
-            
-            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white text-foreground placeholder:text-muted-foreground"
-                required
-                disabled={emailLoading}
-              />
-              <Button 
-                type="submit" 
-                disabled={emailLoading}
-                className="bg-white text-purple-600 hover:bg-white/90 font-semibold px-8 whitespace-nowrap"
-              >
-                {emailLoading ? 'Subscribing...' : 'Subscribe'}
-              </Button>
-            </form>
-            
-            {emailMessage && (
-              <p className={`text-sm mt-4 ${emailMessage.includes('Thank') ? 'text-green-100' : 'text-red-100'}`}>
-                {emailMessage}
-              </p>
-            )}
-            
-            <p className="text-sm text-white/80 mt-4">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }
