@@ -9,13 +9,17 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { VenueMap } from '@/components/venue-map'
-import { subscribeToNewsletter } from '@/app/actions/email'
+import { subscribeToNewsletter, sendContactMessage } from '@/app/actions/email'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [email, setEmail] = useState('')
   const [emailMessage, setEmailMessage] = useState('')
   const [emailLoading, setEmailLoading] = useState(false)
+  
+  const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+  const [contactMessage, setContactMessage] = useState('')
+  const [contactLoading, setContactLoading] = useState(false)
   
   const slides = [
     '/images/slide1.jpg',
@@ -63,6 +67,25 @@ export default function HomePage() {
 
     return () => clearInterval(slideTimer)
   }, [slides.length])
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setContactLoading(true)
+    setContactMessage('')
+    
+    const result = await sendContactMessage(contactForm)
+    
+    if (result.success) {
+      setContactMessage(result.message || 'Thank you for your message!')
+      setContactForm({ name: '', email: '', message: '' })
+      // Clear message after 5 seconds
+      setTimeout(() => setContactMessage(''), 5000)
+    } else {
+      setContactMessage(result.error || 'Something went wrong')
+    }
+    
+    setContactLoading(false)
+  }
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -460,30 +483,53 @@ export default function HomePage() {
           </h2>
           <p className="text-center text-muted-foreground mb-8">Send us a message!</p>
           
-          <form className="space-y-6">
+          <form onSubmit={handleContactSubmit} className="space-y-6">
             <div>
               <Input
                 type="text"
                 placeholder="Name"
+                value={contactForm.name}
+                onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                 className="w-full"
+                required
+                disabled={contactLoading}
               />
             </div>
             <div>
               <Input
                 type="email"
                 placeholder="Email"
+                value={contactForm.email}
+                onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                 className="w-full"
+                required
+                disabled={contactLoading}
               />
             </div>
             <div>
               <Textarea
                 placeholder="Message"
+                value={contactForm.message}
+                onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                 rows={6}
                 className="w-full resize-none"
+                required
+                disabled={contactLoading}
               />
             </div>
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-              Send
+            
+            {contactMessage && (
+              <p className={`text-sm ${contactMessage.includes('Thank') ? 'text-green-600' : 'text-red-600'}`}>
+                {contactMessage}
+              </p>
+            )}
+            
+            <Button 
+              type="submit" 
+              disabled={contactLoading}
+              className="w-full bg-primary hover:bg-primary/90 text-white"
+            >
+              {contactLoading ? 'Sending...' : 'Send'}
             </Button>
           </form>
         </div>
