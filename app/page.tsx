@@ -176,16 +176,15 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-4 font-semibold">
             23rd Annual Event
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
             Join Us for Recovery Fest!
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
+          <p className="text-lg md:text-xl text-muted-foreground">
             <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
+            <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
           </p>
         </div>
       </section>
