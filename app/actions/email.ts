@@ -57,8 +57,14 @@ export async function sendContactMessage(data: { name: string; email: string; me
     return { error: 'Please enter a valid email address' }
   }
 
+  // Check if API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
-    // Send email notification to RecoveryFestMI@Gmail.com
+    // Send email notification to recoveryfestmi@gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -66,8 +72,8 @@ export async function sendContactMessage(data: { name: string; email: string; me
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Recovery Fest Contact <onboarding@resend.dev>',
-        to: 'RecoveryFestMI@Gmail.com',
+        from: process.env.RESEND_FROM_EMAIL || 'Recovery Fest <noreply@recoveryfest.org>',
+        to: 'recoveryfestmi@gmail.com',
         replyTo: data.email,
         subject: `New Contact Form Message from ${data.name}`,
         html: `
@@ -82,9 +88,11 @@ export async function sendContactMessage(data: { name: string; email: string; me
       }),
     })
 
+    const responseData = await response.json()
+
     if (!response.ok) {
-      // Fallback: Log the message if API fails
-      console.log('Contact form submission:', data)
+      console.error('Resend API error:', responseData)
+      return { error: 'Failed to send message. Please try again later.' }
     }
 
     return { success: true, message: 'Thank you for your message! We\'ll get back to you soon.' }
