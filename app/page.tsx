@@ -514,7 +514,23 @@ export default function HomePage() {
         </div>
       </section>
 
-
+      {/* Footer */}
+      <footer className="py-8 px-4 bg-foreground text-white border-t">
+        <div className="container mx-auto max-w-7xl">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+              <p className="font-semibold">Recovery Fest 2026</p>
+              <p className="text-sm text-white/80">Building a stronger, connected recovery community</p>
+            </div>
+            <div className="text-center sm:text-right">
+              <p className="text-sm text-white/80 mb-2">Questions?</p>
+              <a href="tel:6164945545" className="text-lg font-semibold hover:text-white/80 transition">
+                (616) 494-5545
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
