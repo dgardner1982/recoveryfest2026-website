@@ -19,6 +19,11 @@ export async function subscribeToNewsletter(email: string) {
   }
 
   try {
+    console.log('[v0] Sending newsletter signup via Resend')
+    console.log('[v0] From:', process.env.RESEND_FROM_EMAIL)
+    console.log('[v0] To: RecoveryFestMI@Gmail.com')
+    console.log('[v0] Subscriber email:', email)
+    
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -40,15 +45,18 @@ export async function subscribeToNewsletter(email: string) {
     })
 
     const data = await response.json()
+    console.log('[v0] Resend API response status:', response.status)
+    console.log('[v0] Resend API response:', data)
 
     if (!response.ok) {
-      console.error('Resend API error:', data)
-      return { error: 'Failed to send notification. Please try again later.' }
+      console.error('[v0] Resend API error:', data)
+      return { error: `Failed to send notification: ${data.message || 'Unknown error'}` }
     }
 
+    console.log('[v0] Newsletter signup sent successfully')
     return { success: true, message: 'Thank you for subscribing! Check your email for confirmation.' }
   } catch (error) {
-    console.error('Subscription error:', error)
+    console.error('[v0] Subscription error:', error)
     return { error: 'Something went wrong. Please try again.' }
   }
 }
@@ -76,6 +84,10 @@ export async function sendContactMessage(data: { name: string; email: string; me
   }
 
   try {
+    console.log('[v0] Sending contact message via Resend')
+    console.log('[v0] From:', process.env.RESEND_FROM_EMAIL)
+    console.log('[v0] To: RecoveryFestMI@Gmail.com')
+    
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -100,14 +112,19 @@ export async function sendContactMessage(data: { name: string; email: string; me
       }),
     })
 
+    const responseData = await response.json()
+    console.log('[v0] Resend API response status:', response.status)
+    console.log('[v0] Resend API response:', responseData)
+
     if (!response.ok) {
-      // Fallback: Log the message if API fails
-      console.log('Contact form submission:', data)
+      console.error('[v0] Resend API error:', responseData)
+      return { error: `Failed to send message: ${responseData.message || 'Unknown error'}` }
     }
 
+    console.log('[v0] Contact message sent successfully')
     return { success: true, message: 'Thank you for your message! We\'ll get back to you soon.' }
   } catch (error) {
-    console.error('Contact form error:', error)
+    console.error('[v0] Contact form error:', error)
     return { error: 'Something went wrong. Please try again.' }
   }
 }
