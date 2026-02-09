@@ -176,15 +176,14 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-4 font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1 rounded-full mb-2 text-sm font-semibold">
             23rd Annual Event
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
             Join Us for Recovery Fest!
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
+          <p className="text-base md:text-lg text-muted-foreground">
+            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
           </p>
         </div>
       </section>

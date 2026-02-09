@@ -286,8 +286,8 @@ export default function DonatePage() {
                   </a>
                   <p className="text-sm text-muted-foreground mt-4">
                     Or call us at:{' '}
-                    <a href="tel:6163965284" className="text-primary hover:underline">
-                      (616) 396-5284
+                    <a href="tel:6164945545" className="text-primary hover:underline">
+                      (616) 494-5545
                     </a>
                   </p>
                 </CardContent>

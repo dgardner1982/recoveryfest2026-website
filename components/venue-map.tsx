@@ -99,10 +99,10 @@ export function VenueMap() {
                   <strong className="text-foreground">Need help finding us?</strong><br />
                   Call us at{' '}
                   <a
-                    href="tel:6163965284"
+                    href="tel:6164945545"
                     className="text-primary hover:underline"
                   >
-                    (616) 396-5284
+                    (616) 494-5545
                   </a>
                 </p>
               </CardContent>
