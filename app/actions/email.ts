@@ -13,7 +13,7 @@ export async function subscribeToNewsletter(email: string) {
   }
 
   try {
-    // Send email notification to recoveryfestmi@gmail.com
+    // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -22,7 +22,7 @@ export async function subscribeToNewsletter(email: string) {
       },
       body: JSON.stringify({
         from: process.env.RESEND_FROM_EMAIL || 'Recovery Fest <noreply@recoveryfest.org>',
-        to: 'recoveryfestmi@gmail.com',
+        to: 'RecoveryFestMI@Gmail.com',
         subject: 'New Email Signup for Recovery Fest 2026',
         html: `
           <h2>New Newsletter Subscription</h2>
