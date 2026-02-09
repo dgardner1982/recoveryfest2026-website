@@ -73,7 +73,9 @@ export default function HomePage() {
     setContactLoading(true)
     setContactMessage('')
     
+    console.log('[v0] Submitting contact form:', contactForm)
     const result = await sendContactMessage(contactForm)
+    console.log('[v0] Contact result:', result)
     
     if (result.success) {
       setContactMessage(result.message || 'Thank you for your message!')
@@ -92,7 +94,9 @@ export default function HomePage() {
     setEmailLoading(true)
     setEmailMessage('')
     
+    console.log('[v0] Submitting newsletter form:', email)
     const result = await subscribeToNewsletter(email)
+    console.log('[v0] Newsletter result:', result)
     
     if (result.success) {
       setEmailMessage(result.message || 'Thank you for subscribing!')
