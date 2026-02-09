@@ -176,15 +176,16 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-4 font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
             23rd Annual Event
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
             Join Us for Recovery Fest!
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
             <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
+            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
         </div>
       </section>
@@ -426,27 +427,30 @@ export default function HomePage() {
       </section>
 
       {/* Event Details with Countdown */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">Join Us!</h2>
+          <h2 className="text-6xl md:text-7xl font-black mb-12 text-center" style={{
+            textShadow: '2px 2px 0px rgba(0,0,0,0.3), -2px -2px 0px rgba(255,255,255,0.2), 3px 3px 0px rgba(0,0,0,0.2)',
+            letterSpacing: '0.05em'
+          }}>Join Us!</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">When</h3>
-              <p className="text-lg">Thursday, September 9, 2026</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
+              <p className="text-xl leading-relaxed">Thursday, September 9, 2026</p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Time</h3>
-              <p className="text-lg">3:00pm – 6:00pm</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
+              <p className="text-xl leading-relaxed">3:00pm – 6:00pm</p>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Where</h3>
-              <p className="text-lg">The Salvation Army<br />104 Clover St<br />Holland, MI 49423</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
+              <p className="text-xl leading-relaxed">The Salvation Army<br /><span className="text-lg">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-2xl font-bold mb-2">Cost: FREE!</p>
+          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg">
+            <p className="text-4xl md:text-5xl font-black">Cost: FREE!</p>
           </div>
         </div>
       </section>
@@ -514,7 +518,23 @@ export default function HomePage() {
         </div>
       </section>
 
-
+      {/* Footer */}
+      <footer className="py-8 px-4 bg-foreground text-white border-t">
+        <div className="container mx-auto max-w-7xl">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+              <p className="font-semibold">Recovery Fest 2026</p>
+              <p className="text-sm text-white/80">Building a stronger, connected recovery community</p>
+            </div>
+            <div className="text-center sm:text-right">
+              <p className="text-sm text-white/80 mb-2">Questions?</p>
+              <a href="tel:6164945545" className="text-lg font-semibold hover:text-white/80 transition">
+                (616) 494-5545
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
