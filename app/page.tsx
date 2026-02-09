@@ -427,27 +427,30 @@ export default function HomePage() {
       </section>
 
       {/* Event Details with Countdown */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl font-bold mb-8 text-center">Join Us!</h2>
+          <h2 className="text-6xl md:text-7xl font-black mb-12 text-center" style={{
+            textShadow: '2px 2px 0px rgba(0,0,0,0.3), -2px -2px 0px rgba(255,255,255,0.2), 3px 3px 0px rgba(0,0,0,0.2)',
+            letterSpacing: '0.05em'
+          }}>Join Us!</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center text-sm md:text-base">
-            <div>
-              <h3 className="font-semibold mb-1">When</h3>
-              <p>Thursday, September 9, 2026</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
+              <p className="text-xl leading-relaxed">Thursday, September 9, 2026</p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-1">Time</h3>
-              <p>3:00pm – 6:00pm</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
+              <p className="text-xl leading-relaxed">3:00pm – 6:00pm</p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-1">Where</h3>
-              <p>The Salvation Army<br />104 Clover St<br />Holland, MI 49423</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
+              <p className="text-xl leading-relaxed">The Salvation Army<br /><span className="text-lg">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-xl font-bold">Cost: FREE!</p>
+          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg">
+            <p className="text-4xl md:text-5xl font-black">Cost: FREE!</p>
           </div>
         </div>
       </section>
