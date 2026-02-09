@@ -176,14 +176,16 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1 rounded-full mb-2 text-sm font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
             23rd Annual Event
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
             Join Us for Recovery Fest!
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground">
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong>, Holland, MI
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
+            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
+            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
         </div>
       </section>
@@ -427,25 +429,25 @@ export default function HomePage() {
       {/* Event Details with Countdown */}
       <section className="py-16 px-4 bg-gradient-to-br from-primary to-primary/80 text-white">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">Join Us!</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Join Us!</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center text-sm md:text-base">
             <div>
-              <h3 className="text-xl font-semibold mb-2">When</h3>
-              <p className="text-lg">Thursday, September 9, 2026</p>
+              <h3 className="font-semibold mb-1">When</h3>
+              <p>Thursday, September 9, 2026</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">Time</h3>
-              <p className="text-lg">3:00pm – 6:00pm</p>
+              <h3 className="font-semibold mb-1">Time</h3>
+              <p>3:00pm – 6:00pm</p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">Where</h3>
-              <p className="text-lg">The Salvation Army<br />104 Clover St<br />Holland, MI 49423</p>
+              <h3 className="font-semibold mb-1">Where</h3>
+              <p>The Salvation Army<br />104 Clover St<br />Holland, MI 49423</p>
             </div>
           </div>
 
           <div className="text-center">
-            <p className="text-2xl font-bold mb-2">Cost: FREE!</p>
+            <p className="text-xl font-bold">Cost: FREE!</p>
           </div>
         </div>
       </section>
