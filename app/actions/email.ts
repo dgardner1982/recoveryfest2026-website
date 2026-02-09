@@ -12,6 +12,12 @@ export async function subscribeToNewsletter(email: string) {
     return { error: 'Email service is not properly configured. Please contact support.' }
   }
 
+  // Check if verified from email is configured
+  if (!process.env.RESEND_FROM_EMAIL) {
+    console.error('RESEND_FROM_EMAIL is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
@@ -21,7 +27,7 @@ export async function subscribeToNewsletter(email: string) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL || 'Recovery Fest <noreply@recoveryfest.org>',
+        from: process.env.RESEND_FROM_EMAIL,
         to: 'RecoveryFestMI@Gmail.com',
         subject: 'New Email Signup for Recovery Fest 2026',
         html: `
@@ -57,6 +63,18 @@ export async function sendContactMessage(data: { name: string; email: string; me
     return { error: 'Please enter a valid email address' }
   }
 
+  // Check if API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
+  // Check if verified from email is configured
+  if (!process.env.RESEND_FROM_EMAIL) {
+    console.error('RESEND_FROM_EMAIL is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
@@ -66,7 +84,7 @@ export async function sendContactMessage(data: { name: string; email: string; me
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Recovery Fest Contact <onboarding@resend.dev>',
+        from: process.env.RESEND_FROM_EMAIL,
         to: 'RecoveryFestMI@Gmail.com',
         replyTo: data.email,
         subject: `New Contact Form Message from ${data.name}`,
