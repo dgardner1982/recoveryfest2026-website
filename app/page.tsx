@@ -70,6 +70,8 @@ export default function HomePage() {
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log('[v0] Contact submit handler called!')
+    alert('[v0] Contact form submitted! Check the console.')
     setContactLoading(true)
     setContactMessage('')
     
@@ -91,6 +93,8 @@ export default function HomePage() {
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log('[v0] Newsletter submit handler called!')
+    alert('[v0] Newsletter form submitted! Check the console.')
     setEmailLoading(true)
     setEmailMessage('')
     
