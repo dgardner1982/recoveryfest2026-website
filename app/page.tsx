@@ -70,14 +70,10 @@ export default function HomePage() {
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('[v0] Contact submit handler called!')
-    alert('[v0] Contact form submitted! Check the console.')
     setContactLoading(true)
     setContactMessage('')
     
-    console.log('[v0] Submitting contact form:', contactForm)
     const result = await sendContactMessage(contactForm)
-    console.log('[v0] Contact result:', result)
     
     if (result.success) {
       setContactMessage(result.message || 'Thank you for your message!')
@@ -93,14 +89,10 @@ export default function HomePage() {
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('[v0] Newsletter submit handler called!')
-    alert('[v0] Newsletter form submitted! Check the console.')
     setEmailLoading(true)
     setEmailMessage('')
     
-    console.log('[v0] Submitting newsletter form:', email)
     const result = await subscribeToNewsletter(email)
-    console.log('[v0] Newsletter result:', result)
     
     if (result.success) {
       setEmailMessage(result.message || 'Thank you for subscribing!')
