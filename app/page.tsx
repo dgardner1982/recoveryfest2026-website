@@ -188,20 +188,20 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-balance mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.2)'}}>
               Want to See What Recovery Fest is All About?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8">
               Watch these videos to experience the joy, hope, and community that makes Recovery Fest such a special celebration. See highlights from past events and discover why this festival has been bringing people together for over two decades.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="space-y-4">
-              <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
                 Watch Now
               </Button>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
@@ -216,11 +216,11 @@ export default function HomePage() {
                   className="absolute inset-0"
                 />
               </div>
-              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Highlights</h3>
+              <h3 className="text-xl font-bold text-center text-white">Recovery Fest Highlights</h3>
             </div>
 
             <div className="space-y-4">
-              <Button size="lg" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
                 Watch Now
               </Button>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
@@ -235,12 +235,12 @@ export default function HomePage() {
                   className="absolute inset-0"
                 />
               </div>
-              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Experience</h3>
+              <h3 className="text-xl font-bold text-center text-white">Recovery Fest Experience</h3>
             </div>
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="/gallery">View Photo Gallery</Link>
             </Button>
           </div>
@@ -248,9 +248,9 @@ export default function HomePage() {
       </section>
 
       {/* Image Slideshow */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-700" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
           <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
@@ -300,31 +300,31 @@ export default function HomePage() {
       </section>
 
       {/* Building Community Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-green-50 via-cyan-50 to-blue-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.1)'}}>
             Building a Stronger Recovery Community
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center">
-            Since its beginning, <strong className="text-foreground">Recovery Fest</strong> has been a beacon of hope,
+          <p className="text-lg md:text-xl text-blue-100 leading-relaxed text-center">
+            Since its beginning, <strong className="text-white">Recovery Fest</strong> has been a beacon of hope,
             connection, and support for those impacted by addiction and mental health challenges. More than just a
             celebration, this event serves as a powerful way to{' '}
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">break stigma, raise awareness, and connect individuals with essential
+            <strong className="text-cyan-300">break stigma, raise awareness, and connect individuals with essential
             recovery resources</strong>. Whether you're in recovery, supporting a loved one, or simply passionate about
             the cause, this festival is for everyone who believes in{' '}
-            <strong className="text-foreground">healing, second chances, and a brighter future.</strong>
+            <strong className="text-white">healing, second chances, and a brighter future.</strong>
           </p>
         </div>
       </section>
 
       {/* Did You Know Stats */}
-      <section className="py-20 px-4 bg-gradient-to-b from-purple-900 via-blue-900 to-purple-900">
+      <section className="py-20 px-4 bg-gradient-to-b from-cyan-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-blue-900" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(0,0,0,0.1)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Did You Know?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-purple-100 border-4 border-purple-600 hover:border-purple-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-purple-100 border-4 border-purple-600 hover:border-purple-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-purple-900">Ottawa County Substance Impact</h3>
                 <p className="text-sm text-purple-800 leading-relaxed">
@@ -334,7 +334,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-cyan-100 border-4 border-cyan-600 hover:border-cyan-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-cyan-100 border-4 border-cyan-600 hover:border-cyan-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-cyan-900">Mental Health Crisis</h3>
                 <p className="text-sm text-cyan-800 leading-relaxed">
@@ -344,7 +344,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-blue-100 border-4 border-blue-600 hover:border-blue-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-blue-100 border-4 border-blue-600 hover:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-blue-900">Healthcare Access Gap</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
@@ -354,7 +354,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-100 border-4 border-green-600 hover:border-green-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-green-100 border-4 border-green-600 hover:border-green-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-green-900">Health Perception</h3>
                 <p className="text-sm text-green-800 leading-relaxed">
@@ -364,7 +364,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-yellow-100 border-4 border-yellow-600 hover:border-yellow-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-yellow-100 border-4 border-yellow-600 hover:border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-yellow-900">Housing Instability</h3>
                 <p className="text-sm text-yellow-800 leading-relaxed">
@@ -374,7 +374,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-red-100 border-4 border-red-600 hover:border-red-500 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-red-100 border-4 border-red-600 hover:border-red-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-red-900">Recovery Fest Community Impact</h3>
                 <p className="text-sm text-red-800 leading-relaxed">
@@ -388,24 +388,24 @@ export default function HomePage() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-purple-900" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.4)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Support Recovery, Strengthen Community
           </h1>
-          <h2 className="text-4xl font-bold mb-6 text-cyan-200">
+          <h2 className="text-4xl font-bold mb-6 text-blue-700" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.3)'}}>
             Your Support Makes Recovery Fest Possible
           </h2>
-          <p className="text-lg text-blue-100 leading-relaxed mb-8">
-            Recovery Fest is a <strong className="text-white">free community event</strong>, made possible by
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            Recovery Fest is a <strong className="text-purple-900">free community event</strong>, made possible by
             generous donations from individuals and local businesses who believe in the power of recovery. Your
-            contributions help us provide <strong className="text-white">entertainment, educational materials,
+            contributions help us provide <strong className="text-purple-900">entertainment, educational materials,
             food, and outreach efforts</strong>—ensuring that this festival remains a{' '}
-            <strong className="text-white">safe and welcoming space</strong> for all. Every donation strengthens
+            <strong className="text-purple-900">safe and welcoming space</strong> for all. Every donation strengthens
             our mission to support those on their recovery journey and bring life-changing resources to the community.
             Thank you for being part of this movement!
           </p>
-          <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
+          <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
             <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate to Recovery Fest</Link>
           </Button>
         </div>
