@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { MapPin, Navigation } from 'lucide-react'
+import { MapPin, Navigation, Facebook } from 'lucide-react'
 
 export function VenueMap() {
   const venueAddress = '104 Clover St, Holland, MI 49423'
@@ -94,7 +94,7 @@ export function VenueMap() {
             </Card>
 
             <Card className="shadow-lg bg-muted">
-              <CardContent className="p-6">
+              <CardContent className="p-6 space-y-4">
                 <p className="text-base text-muted-foreground">
                   <strong className="text-lg text-foreground">Need help finding us?</strong><br />
                   <span className="text-base">Call us at{' '}
@@ -106,6 +106,15 @@ export function VenueMap() {
                     </a>
                   </span>
                 </p>
+                <a
+                  href="https://www.facebook.com/RFLakeshore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Facebook className="h-5 w-5" />
+                  <span className="font-medium">RecoveryFest on the LakeShore | Facebook</span>
+                </a>
               </CardContent>
             </Card>
           </div>
