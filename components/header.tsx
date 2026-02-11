@@ -26,13 +26,13 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/" className="text-base font-medium hover:text-primary transition-colors">
               Home
             </Link>
-            <Link href="/gallery" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/gallery" className="text-base font-medium hover:text-primary transition-colors">
               Gallery
             </Link>
-            <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
           </nav>

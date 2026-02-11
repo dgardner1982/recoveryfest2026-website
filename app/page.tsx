@@ -125,9 +125,9 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Banner Section */}
-      <section className="relative w-full bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 py-8 px-4 border-b-4 border-secondary">
-        <div className="container mx-auto max-w-5xl">
-          <div className="relative w-full h-32 md:h-48">
+      <section className="py-6 px-4 bg-white">
+        <div className="container mx-auto max-w-7xl">
+          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-pulse-shadow">
             <Image
               src="/images/banner.jpg"
               alt="Recovery Fest - Invest in health, home, purpose, and community"
@@ -407,7 +407,7 @@ export default function HomePage() {
       {/* Sponsorship Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Become a Sponsor of Recovery Fest
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
