@@ -127,7 +127,7 @@ export default function HomePage() {
       {/* Banner Section */}
       <section className="py-6 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-pulse-shadow">
+          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/images/banner.jpg"
               alt="Recovery Fest - Invest in health, home, purpose, and community"
@@ -416,7 +416,7 @@ export default function HomePage() {
             services while showcasing your commitment to positive social change. Together, we can foster hope,
             strength, and resilience.
           </p>
-          <p className="text-base text-muted-foreground mb-8">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             For more information on sponsorship opportunities, send us a message below or reach out to us via email
             at <a href="mailto:RecoveryFestMI@Gmail.com" className="text-primary hover:underline">
               RecoveryFestMI@Gmail.com
