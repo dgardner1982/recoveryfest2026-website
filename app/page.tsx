@@ -201,14 +201,19 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="space-y-4">
-              <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" onClick={() => {
+                const iframe = document.querySelector('iframe[src*="9hybir7nolQ"]');
+                if (iframe) {
+                  iframe.click();
+                }
+              }} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
                 Watch Now
               </Button>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/9hybir7nolQ"
+                  src="https://www.youtube.com/embed/9hybir7nolQ?autoplay=0"
                   title="Recovery Fest Highlights"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -220,14 +225,19 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-4">
-              <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
+              <Button size="lg" onClick={() => {
+                const iframe = document.querySelector('iframe[src*="ZSF2bYwcl_o"]');
+                if (iframe) {
+                  iframe.click();
+                }
+              }} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
                 Watch Now
               </Button>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/ZSF2bYwcl_o"
+                  src="https://www.youtube.com/embed/ZSF2bYwcl_o?autoplay=0"
                   title="Recovery Fest Experience"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -240,7 +250,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all px-12 py-6 text-lg">
               <Link href="/gallery">View Photo Gallery</Link>
             </Button>
           </div>
@@ -250,7 +260,7 @@ export default function HomePage() {
       {/* Image Slideshow */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-700" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-600" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
           <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
@@ -443,19 +453,19 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
-              <p className="text-xl leading-relaxed">Thursday, September 9, 2026</p>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">Thursday, September 9, 2026</p>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
-              <p className="text-xl leading-relaxed">3:00pm – 6:00pm</p>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">3:00pm – 6:00pm</p>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
-              <p className="text-xl leading-relaxed">The Salvation Army<br /><span className="text-lg">104 Clover St<br />Holland, MI 49423</span></p>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">The Salvation Army<br /><span className="text-lg md:text-xl">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
 
-          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg">
+          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.2), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'}}>
             <p className="text-4xl md:text-5xl font-black">Cost: FREE!</p>
           </div>
         </div>
