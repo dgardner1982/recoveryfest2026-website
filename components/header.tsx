@@ -13,8 +13,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
         <div className="flex h-48 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-48 h-48 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-48 h-48 flex-shrink-0 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
               <Image
                 src="/images/recovery-fest-logo.png"
                 alt="Recovery Fest Logo"
