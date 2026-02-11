@@ -140,16 +140,16 @@ export default function HomePage() {
       </section>
 
       {/* Hero Section with Video Background */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[600px] flex items-center justify-center overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/85 to-cyan-600/90 z-10" />
         <Image
-          src="/hero-recovery.jpg"
+          src="/hero-recovery-hands.jpg"
           alt="Recovery Fest"
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
           <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
             Join us in celebration at Recovery Fest 2026
           </p>
@@ -159,27 +159,27 @@ export default function HomePage() {
       {/* Main Event Announcement */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 animate-fade-in">
             Mark your calendars! Recovery Fest is happening on <strong className="text-foreground">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold hover:scale-110 transition-transform duration-300">
             23rd Annual Event
           </div>
           {/* Countdown Timer */}
           <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto">
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.days}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Days</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.hours}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Hours</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.minutes}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Minutes</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.seconds}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
@@ -191,25 +191,17 @@ export default function HomePage() {
       <section className="py-20 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.2)'}}>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white animate-fade-in" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.2)'}}>
               Want to See What Recovery Fest is All About?
             </h2>
-            <p className="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8 animate-fade-in">
               Watch these videos to experience the joy, hope, and community that makes Recovery Fest such a special celebration. See highlights from past events and discover why this festival has been bringing people together for over two decades.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="space-y-4">
-              <Button size="lg" onClick={() => {
-                const iframe = document.querySelector('iframe[src*="9hybir7nolQ"]');
-                if (iframe) {
-                  iframe.click();
-                }
-              }} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
-                Watch Now
-              </Button>
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+            <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white hover:ring-cyan-300 transition-all duration-300">
                 <iframe
                   width="100%"
                   height="100%"
@@ -224,16 +216,8 @@ export default function HomePage() {
               <h3 className="text-xl font-bold text-center text-white">Recovery Fest Highlights</h3>
             </div>
 
-            <div className="space-y-4">
-              <Button size="lg" onClick={() => {
-                const iframe = document.querySelector('iframe[src*="ZSF2bYwcl_o"]');
-                if (iframe) {
-                  iframe.click();
-                }
-              }} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
-                Watch Now
-              </Button>
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+            <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white hover:ring-cyan-300 transition-all duration-300">
                 <iframe
                   width="100%"
                   height="100%"
@@ -248,22 +232,16 @@ export default function HomePage() {
               <h3 className="text-xl font-bold text-center text-white">Recovery Fest Experience</h3>
             </div>
           </div>
-
-          <div className="text-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all px-12 py-6 text-lg">
-              <Link href="/gallery">View Photo Gallery</Link>
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Image Slideshow */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-600" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-600 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
-          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
+          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900 hover:shadow-3xl transition-all duration-300">
             {slides.map((slide, index) => (
               <div
                 key={slide}
@@ -275,20 +253,20 @@ export default function HomePage() {
                   src={slide || "/placeholder.svg"}
                   alt={`Recovery Fest moment ${index + 1}`}
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-105 transition-transform duration-700"
                 />
               </div>
             ))}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all z-10 hover:scale-110 hover:shadow-lg"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6 text-foreground" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all z-10 hover:scale-110 hover:shadow-lg"
               aria-label="Next slide"
             >
               <ChevronRight className="h-6 w-6 text-foreground" />
@@ -298,13 +276,18 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-white' : 'bg-white/50'
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:scale-110'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all px-12 py-6 text-lg hover:scale-105 duration-300">
+              <Link href="/gallery">View Photo Gallery</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -312,10 +295,10 @@ export default function HomePage() {
       {/* Building Community Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.1)'}}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white animate-fade-in hover:scale-105 transition-transform duration-300" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.1)'}}>
             Building a Stronger Recovery Community
           </h2>
-          <p className="text-lg md:text-xl text-blue-100 leading-relaxed text-center">
+          <p className="text-lg md:text-xl text-blue-100 leading-relaxed text-center transform hover:scale-102 transition-transform duration-300">
             Since its beginning, <strong className="text-white">Recovery Fest</strong> has been a beacon of hope,
             connection, and support for those impacted by addiction and mental health challenges. More than just a
             celebration, this event serves as a powerful way to{' '}
