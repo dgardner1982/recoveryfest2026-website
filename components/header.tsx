@@ -12,9 +12,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-36 items-center justify-between">
+        <div className="flex h-48 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-32 h-32 flex-shrink-0">
+            <div className="relative w-48 h-48 flex-shrink-0">
               <Image
                 src="/images/recovery-fest-logo.png"
                 alt="Recovery Fest Logo"
@@ -26,13 +26,13 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/" className="text-base font-medium hover:text-primary transition-colors">
               Home
             </Link>
-            <Link href="/gallery" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/gallery" className="text-base font-medium hover:text-primary transition-colors">
               Gallery
             </Link>
-            <Button asChild size="sm" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
           </nav>

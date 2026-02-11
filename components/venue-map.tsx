@@ -12,7 +12,7 @@ export function VenueMap() {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-8 text-center text-foreground">
+        <h2 className="text-4xl font-bold mb-8 text-center text-foreground" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)'}}>
           Location & Directions
         </h2>
 
@@ -81,10 +81,10 @@ export function VenueMap() {
 
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-lg">Parking & Accessibility</CardTitle>
+                <CardTitle className="text-2xl font-bold">Parking & Accessibility</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="space-y-3 text-base text-muted-foreground">
                   <li>• Free parking available on-site</li>
                   <li>• Wheelchair accessible venue</li>
                   <li>• ADA compliant facilities</li>
@@ -95,15 +95,16 @@ export function VenueMap() {
 
             <Card className="shadow-lg bg-muted">
               <CardContent className="p-6">
-                <p className="text-sm text-muted-foreground">
-                  <strong className="text-foreground">Need help finding us?</strong><br />
-                  Call us at{' '}
-                  <a
-                    href="tel:6164945545"
-                    className="text-primary hover:underline"
-                  >
-                    (616) 494-5545
-                  </a>
+                <p className="text-base text-muted-foreground">
+                  <strong className="text-lg text-foreground">Need help finding us?</strong><br />
+                  <span className="text-base">Call us at{' '}
+                    <a
+                      href="tel:6164945545"
+                      className="text-primary hover:underline font-semibold"
+                    >
+                      (616) 494-5545
+                    </a>
+                  </span>
                 </p>
               </CardContent>
             </Card>

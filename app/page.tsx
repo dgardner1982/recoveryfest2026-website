@@ -125,14 +125,14 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Banner Section */}
-      <section className="relative w-full bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 py-8 px-4 border-b-4 border-secondary">
-        <div className="container mx-auto max-w-5xl">
-          <div className="relative w-full h-32 md:h-48">
+      <section className="py-6 px-4 bg-white">
+        <div className="container mx-auto max-w-7xl">
+          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden transform hover:scale-102 transition-transform duration-300">
             <Image
               src="/images/banner.jpg"
               alt="Recovery Fest - Invest in health, home, purpose, and community"
               fill
-              className="object-contain drop-shadow-lg"
+              className="object-contain"
               priority
             />
           </div>
@@ -140,89 +140,72 @@ export default function HomePage() {
       </section>
 
       {/* Hero Section with Video Background */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[600px] flex items-center justify-center overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/85 to-cyan-600/90 z-10" />
         <Image
-          src="/hero-recovery.jpg"
+          src="/hero-recovery-hands.jpg"
           alt="Recovery Fest"
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance drop-shadow-lg">
-            Support Recovery, Strengthen Community
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-balance font-medium">
-            Donate to Recovery Fest Today!
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
+          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
+            Join us in celebration at Recovery Fest 2026
           </p>
-          <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all text-lg px-10 py-6 font-bold">
-            <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate to Recovery Fest</Link>
-          </Button>
         </div>
       </section>
 
       {/* Main Event Announcement */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 animate-fade-in">
+            Mark your calendars! Recovery Fest is happening on <strong className="text-foreground">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
+          </p>
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold hover:scale-110 transition-transform duration-300">
+            23rd Annual Event
+          </div>
           {/* Countdown Timer */}
-          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto mb-8">
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.days}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Days</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.hours}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Hours</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.minutes}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Minutes</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-1">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.seconds}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
-            23rd Annual Event
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
-            Join Us for Recovery Fest!
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
-          </p>
         </div>
       </section>
 
       {/* Video Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-cyan-50 via-blue-50 to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <div className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Watch Now
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-balance mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white animate-fade-in" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.2)'}}>
               Want to See What Recovery Fest is All About?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8 animate-fade-in">
               Watch these videos to experience the joy, hope, and community that makes Recovery Fest such a special celebration. See highlights from past events and discover why this festival has been bringing people together for over two decades.
             </p>
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
-              <Link href="/gallery">View Photo Gallery</Link>
-            </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white hover:ring-cyan-300 transition-all duration-300">
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/9hybir7nolQ"
+                  src="https://www.youtube.com/embed/9hybir7nolQ?autoplay=0"
                   title="Recovery Fest Highlights"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -230,15 +213,15 @@ export default function HomePage() {
                   className="absolute inset-0"
                 />
               </div>
-              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Highlights</h3>
+              <h3 className="text-xl font-bold text-center text-white">Recovery Fest Highlights</h3>
             </div>
 
-            <div className="space-y-4">
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white">
+            <div className="space-y-4 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl ring-4 ring-white hover:ring-cyan-300 transition-all duration-300">
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/ZSF2bYwcl_o"
+                  src="https://www.youtube.com/embed/ZSF2bYwcl_o?autoplay=0"
                   title="Recovery Fest Experience"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -246,19 +229,19 @@ export default function HomePage() {
                   className="absolute inset-0"
                 />
               </div>
-              <h3 className="text-xl font-bold text-center text-foreground">Recovery Fest Experience</h3>
+              <h3 className="text-xl font-bold text-center text-white">Recovery Fest Experience</h3>
             </div>
           </div>
         </div>
       </section>
 
       {/* Image Slideshow */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-blue-900 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(0,0,0,0.1)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
-          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900">
+          <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900 hover:shadow-3xl transition-all duration-300">
             {slides.map((slide, index) => (
               <div
                 key={slide}
@@ -270,20 +253,20 @@ export default function HomePage() {
                   src={slide || "/placeholder.svg"}
                   alt={`Recovery Fest moment ${index + 1}`}
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-105 transition-transform duration-700"
                 />
               </div>
             ))}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all z-10 hover:scale-110 hover:shadow-lg"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6 text-foreground" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-all z-10 hover:scale-110 hover:shadow-lg"
               aria-label="Next slide"
             >
               <ChevronRight className="h-6 w-6 text-foreground" />
@@ -293,96 +276,101 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-white' : 'bg-white/50'
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:scale-110'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
+          <div className="text-center mt-8">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all px-12 py-6 text-lg hover:scale-105 duration-300">
+              <Link href="/gallery">View Photo Gallery</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Building Community Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-green-50 via-cyan-50 to-blue-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-cyan-600 to-blue-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white animate-fade-in hover:scale-105 transition-transform duration-300" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.1)'}}>
             Building a Stronger Recovery Community
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center">
-            Since its beginning, <strong className="text-foreground">Recovery Fest</strong> has been a beacon of hope,
+          <p className="text-lg md:text-xl text-blue-100 leading-relaxed text-center transform hover:scale-102 transition-transform duration-300">
+            Since its beginning, <strong className="text-white">Recovery Fest</strong> has been a beacon of hope,
             connection, and support for those impacted by addiction and mental health challenges. More than just a
             celebration, this event serves as a powerful way to{' '}
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">break stigma, raise awareness, and connect individuals with essential
+            <strong className="text-cyan-300">break stigma, raise awareness, and connect individuals with essential
             recovery resources</strong>. Whether you're in recovery, supporting a loved one, or simply passionate about
             the cause, this festival is for everyone who believes in{' '}
-            <strong className="text-foreground">healing, second chances, and a brighter future.</strong>
+            <strong className="text-white">healing, second chances, and a brighter future.</strong>
           </p>
         </div>
       </section>
 
       {/* Did You Know Stats */}
-      <section className="py-20 px-4 bg-gradient-to-b from-purple-50 via-white to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-cyan-50 via-blue-50 to-cyan-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-blue-900" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(0,0,0,0.1)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Did You Know?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-purple-100 border-4 border-purple-600 hover:border-purple-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Ottawa County Substance Impact</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-purple-900">Ottawa County Substance Impact</h3>
+                <p className="text-sm text-purple-800 leading-relaxed">
                   Among underserved Ottawa County residents, 42.6% report that substance abuse or addiction has
                   negatively impacted their lives or the lives of someone they know (2023 CHNA).
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-2 border-cyan-100 hover:border-cyan-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-cyan-100 border-4 border-cyan-600 hover:border-cyan-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Mental Health Crisis</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-cyan-900">Mental Health Crisis</h3>
+                <p className="text-sm text-cyan-800 leading-relaxed">
                   Ottawa County residents reporting poor mental health has doubled since 2014. Mental health is now
                   a top priority need identified in the 2024 Healthy Ottawa Plan.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-blue-100 border-4 border-blue-600 hover:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Healthcare Access Gap</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-blue-900">Healthcare Access Gap</h3>
+                <p className="text-sm text-blue-800 leading-relaxed">
                   36.4% of non-white Ottawa County residents lack a personal healthcare provider, compared to 8.1%
                   of white residents, highlighting critical disparities in access to care.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-2 border-green-100 hover:border-green-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-green-100 border-4 border-green-600 hover:border-green-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Health Perception</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-green-900">Health Perception</h3>
+                <p className="text-sm text-green-800 leading-relaxed">
                   While 14.8% of Ottawa County adults report fair or poor health, this rises to 32.5% among
                   underserved adults, showing the need for targeted community support.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-2 border-yellow-100 hover:border-yellow-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-yellow-100 border-4 border-yellow-600 hover:border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Housing Instability</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-yellow-900">Housing Instability</h3>
+                <p className="text-sm text-yellow-800 leading-relaxed">
                   1 in 5 Ottawa County underserved adults didn't pay full rent or mortgage last year. Housing
                   instability is directly linked to poor health outcomes and recovery challenges.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-2 border-purple-100 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all">
+            <Card className="bg-red-100 border-4 border-red-600 hover:border-red-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold mb-3 text-foreground">Recovery Fest Community Impact</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-3 text-red-900">Recovery Fest Community Impact</h3>
+                <p className="text-sm text-red-800 leading-relaxed">
                   For 23 years, Recovery Fest has connected Ottawa County residents with free resources, support,
                   and hope—addressing the critical needs identified in our community health assessments.
                 </p>
@@ -393,17 +381,20 @@ export default function HomePage() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-purple-900" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.4)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
+            Support Recovery, Strengthen Community
+          </h1>
+          <h2 className="text-4xl font-bold mb-6 text-blue-700" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.3)'}}>
             Your Support Makes Recovery Fest Possible
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Recovery Fest is a <strong className="text-foreground">free community event</strong>, made possible by
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            Recovery Fest is a <strong className="text-purple-900">free community event</strong>, made possible by
             generous donations from individuals and local businesses who believe in the power of recovery. Your
-            contributions help us provide <strong className="text-foreground">entertainment, educational materials,
+            contributions help us provide <strong className="text-purple-900">entertainment, educational materials,
             food, and outreach efforts</strong>—ensuring that this festival remains a{' '}
-            <strong className="text-foreground">safe and welcoming space</strong> for all. Every donation strengthens
+            <strong className="text-purple-900">safe and welcoming space</strong> for all. Every donation strengthens
             our mission to support those on their recovery journey and bring life-changing resources to the community.
             Thank you for being part of this movement!
           </p>
@@ -414,9 +405,9 @@ export default function HomePage() {
       </section>
 
       {/* Sponsorship Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Become a Sponsor of Recovery Fest
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -425,7 +416,7 @@ export default function HomePage() {
             services while showcasing your commitment to positive social change. Together, we can foster hope,
             strength, and resilience.
           </p>
-          <p className="text-base text-muted-foreground mb-8">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             For more information on sponsorship opportunities, send us a message below or reach out to us via email
             at <a href="mailto:RecoveryFestMI@Gmail.com" className="text-primary hover:underline">
               RecoveryFestMI@Gmail.com
@@ -443,21 +434,25 @@ export default function HomePage() {
           }}>Join Us!</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
-              <p className="text-xl leading-relaxed">Thursday, September 9, 2026</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">When</h3>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">Thursday, September 9, 2026</p>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
-              <p className="text-xl leading-relaxed">3:00pm – 6:00pm</p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">Time</h3>
+              <div className="text-2xl md:text-3xl font-bold leading-relaxed text-center">
+                <p>3:00pm</p>
+                <p className="text-xl md:text-2xl mt-2 mb-2">to</p>
+                <p>6:00pm</p>
+              </div>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
-              <p className="text-xl leading-relaxed">The Salvation Army<br /><span className="text-lg">104 Clover St<br />Holland, MI 49423</span></p>
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">Where</h3>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">The Salvation Army<br /><span className="text-lg md:text-xl">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
 
-          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg">
+          <div className="text-center bg-gradient-to-r from-yellow-300 to-yellow-400 text-primary rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.2), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'}}>
             <p className="text-4xl md:text-5xl font-black">Cost: FREE!</p>
           </div>
         </div>
