@@ -13,8 +13,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
         <div className="flex h-48 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-48 h-48 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-48 h-48 flex-shrink-0 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
               <Image
                 src="/images/recovery-fest-logo.png"
                 alt="Recovery Fest Logo"
@@ -26,10 +26,10 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-base font-medium hover:text-primary transition-colors">
+            <Link href="/" className="text-base font-medium hover:text-primary transition-colors px-3 py-2 rounded-lg hover:shadow-lg hover:bg-primary/10 transition-all duration-300">
               Home
             </Link>
-            <Link href="/gallery" className="text-base font-medium hover:text-primary transition-colors">
+            <Link href="/gallery" className="text-base font-medium hover:text-primary transition-colors px-3 py-2 rounded-lg hover:shadow-lg hover:bg-primary/10 transition-all duration-300">
               Gallery
             </Link>
             <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
