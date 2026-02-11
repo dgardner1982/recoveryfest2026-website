@@ -238,7 +238,7 @@ export default function HomePage() {
       {/* Image Slideshow */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-300 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-300 animate-fade-in" style={{textShadow: '4px 4px 0 rgba(0,0,0,0.4), -2px -2px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
           <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900 hover:shadow-3xl transition-all duration-300">
