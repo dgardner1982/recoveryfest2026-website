@@ -57,7 +57,7 @@ export function VenueMap() {
                 <div>
                   <h4 className="font-semibold mb-2 text-foreground">Event Date & Time</h4>
                   <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Thursday, September 9, 2026</strong><br />
+                    <strong className="text-foreground">Wednesday, September 9, 2026</strong><br />
                     3:00pm – 6:00pm
                   </p>
                 </div>

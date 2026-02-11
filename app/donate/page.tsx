@@ -259,7 +259,7 @@ export default function DonatePage() {
                 <CardContent className="p-6 space-y-2">
                   <div>
                     <p className="font-semibold">Date</p>
-                    <p className="text-sm">Thursday, September 9, 2026</p>
+                    <p className="text-sm">Wednesday, September 9, 2026</p>
                   </div>
                   <div>
                     <p className="font-semibold">Time</p>
