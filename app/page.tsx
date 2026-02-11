@@ -159,7 +159,7 @@ export default function HomePage() {
       {/* Main Event Announcement */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 animate-fade-in">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 animate-fade-in">
             Mark your calendars! Recovery Fest is happening on <strong className="text-foreground">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
           </p>
           <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold hover:scale-110 transition-transform duration-300">
