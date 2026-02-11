@@ -435,11 +435,11 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">When</h3>
               <p className="text-2xl md:text-3xl font-bold leading-relaxed">Thursday, September 9, 2026</p>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">Time</h3>
               <div className="text-2xl md:text-3xl font-bold leading-relaxed text-center">
                 <p>3:00pm</p>
                 <p className="text-xl md:text-2xl mt-2 mb-2">to</p>
@@ -447,7 +447,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
-              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
+              <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">Where</h3>
               <p className="text-2xl md:text-3xl font-bold leading-relaxed">The Salvation Army<br /><span className="text-lg md:text-xl">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
