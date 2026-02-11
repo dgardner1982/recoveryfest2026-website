@@ -321,7 +321,7 @@ export default function HomePage() {
               <CardContent className="p-6">
                 <h3 className="text-lg font-bold mb-3 text-purple-900">Ottawa County Substance Impact</h3>
                 <p className="text-sm text-purple-800 leading-relaxed">
-                  Among underserved Ottawa County residents, 42.6% report that substance abuse or addiction has
+                  Among underserved Ottawa County residents, 42.6% report that substance use or addiction has
                   negatively impacted their lives or the lives of someone they know (2023 CHNA).
                 </p>
               </CardContent>
@@ -436,7 +436,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">When</h3>
-              <p className="text-2xl md:text-3xl font-bold leading-relaxed">Thursday, September 9, 2026</p>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed">Wednesday, September 9, 2026</p>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <h3 className="text-4xl md:text-5xl font-bold mb-3 text-yellow-300">Time</h3>
