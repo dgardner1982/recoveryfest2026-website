@@ -238,7 +238,7 @@ export default function HomePage() {
       {/* Image Slideshow */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-600 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-300 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
           </h2>
           <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl ring-4 ring-gray-100 bg-gray-900 hover:shadow-3xl transition-all duration-300">
@@ -434,21 +434,21 @@ export default function HomePage() {
           }}>Join Us!</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">When</h3>
               <p className="text-2xl md:text-3xl font-bold leading-relaxed">Thursday, September 9, 2026</p>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
               <p className="text-2xl md:text-3xl font-bold leading-relaxed">3:00pm – 6:00pm</p>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20">
+            <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
               <p className="text-2xl md:text-3xl font-bold leading-relaxed">The Salvation Army<br /><span className="text-lg md:text-xl">104 Clover St<br />Holland, MI 49423</span></p>
             </div>
           </div>
 
-          <div className="text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-primary rounded-lg p-8 shadow-lg" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.2), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'}}>
+          <div className="text-center bg-gradient-to-r from-yellow-300 to-yellow-400 text-primary rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.2), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '0.5px rgba(0,0,0,0.1)'}}>
             <p className="text-4xl md:text-5xl font-black">Cost: FREE!</p>
           </div>
         </div>
