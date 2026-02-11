@@ -150,23 +150,23 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance drop-shadow-lg">
-            Support Recovery, Strengthen Community
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-balance font-medium">
-            Donate to Recovery Fest Today!
+          <p className="text-2xl md:text-3xl font-semibold text-balance drop-shadow-lg">
+            Join us in celebration of all things recovery at Recovery Fest
           </p>
-          <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all text-lg px-10 py-6 font-bold">
-            <Link href="https://zeffy.com/en-US/donation-form/recovery-fest-on-the-lakeshore" target="_blank" rel="noopener noreferrer">Donate to Recovery Fest</Link>
-          </Button>
         </div>
       </section>
 
       {/* Main Event Announcement */}
       <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
         <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12">
+            Mark your calendars! Recovery Fest is happening on <strong className="text-foreground">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
+          </p>
+          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
+            23rd Annual Event
+          </div>
           {/* Countdown Timer */}
-          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto mb-8">
+          <div className="grid grid-cols-4 gap-3 max-w-xl mx-auto">
             <div className="bg-gradient-to-br from-purple-600 to-blue-600 text-white rounded-lg p-4 text-center shadow-lg">
               <div className="text-3xl md:text-4xl font-bold mb-1">{timeLeft.days}</div>
               <div className="text-xs uppercase tracking-wider opacity-90">Days</div>
@@ -184,17 +184,6 @@ export default function HomePage() {
               <div className="text-xs uppercase tracking-wider opacity-90">Seconds</div>
             </div>
           </div>
-          <div className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6 font-semibold">
-            23rd Annual Event
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
-            Join Us for Recovery Fest!
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Mark your calendars! <strong className="text-foreground">Recovery Fest</strong> is happening on{' '}
-            <strong className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">September 9, 2026</strong> at{' '}
-            <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
-          </p>
         </div>
       </section>
 

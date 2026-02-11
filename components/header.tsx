@@ -12,9 +12,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-36 items-center justify-between">
+        <div className="flex h-48 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-32 h-32 flex-shrink-0">
+            <div className="relative w-48 h-48 flex-shrink-0">
               <Image
                 src="/images/recovery-fest-logo.png"
                 alt="Recovery Fest Logo"
