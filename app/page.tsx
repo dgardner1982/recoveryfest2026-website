@@ -440,7 +440,7 @@ export default function HomePage() {
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:rotate-1">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Time</h3>
-              <p className="text-2xl md:text-3xl font-bold leading-relaxed">3:00pm – 6:00pm</p>
+              <p className="text-2xl md:text-3xl font-bold leading-relaxed text-center">3:00pm to 6:00pm</p>
             </div>
             <div className="text-center bg-white/10 backdrop-blur rounded-lg p-8 border-2 border-white/20 hover:border-yellow-300 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1">
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Where</h3>
