@@ -127,12 +127,12 @@ export default function HomePage() {
       {/* Banner Section */}
       <section className="py-6 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-32 md:h-48 rounded-lg overflow-hidden transform hover:scale-102 transition-transform duration-300">
             <Image
               src="/images/banner.jpg"
               alt="Recovery Fest - Invest in health, home, purpose, and community"
               fill
-              className="object-contain drop-shadow-lg"
+              className="object-contain"
               priority
             />
           </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* Main Event Announcement */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-white via-purple-50 to-white transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 animate-fade-in">
             Mark your calendars! Recovery Fest is happening on <strong className="text-foreground">September 9, 2026</strong> at <strong className="text-foreground">The Salvation Army</strong> in Holland, MI. Join us for an event full of fun, food, family friendly activities, connection and valuable resources.
@@ -188,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white animate-fade-in" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.2)'}}>
@@ -236,7 +236,7 @@ export default function HomePage() {
       </section>
 
       {/* Image Slideshow */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-yellow-600 animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Experience the Joy
@@ -293,7 +293,7 @@ export default function HomePage() {
       </section>
 
       {/* Building Community Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white animate-fade-in hover:scale-105 transition-transform duration-300" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.5), -1px -1px 0 rgba(255,255,255,0.1)'}}>
             Building a Stronger Recovery Community
@@ -311,7 +311,7 @@ export default function HomePage() {
       </section>
 
       {/* Did You Know Stats */}
-      <section className="py-20 px-4 bg-gradient-to-b from-cyan-50 via-blue-50 to-cyan-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-cyan-50 via-blue-50 to-cyan-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-blue-900" style={{textShadow: '2px 2px 0 rgba(255,255,255,0.5), -1px -1px 0 rgba(0,0,0,0.1)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Did You Know?
@@ -381,7 +381,7 @@ export default function HomePage() {
       </section>
 
       {/* Support Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 text-purple-900" style={{textShadow: '3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.4)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Support Recovery, Strengthen Community
@@ -405,7 +405,7 @@ export default function HomePage() {
       </section>
 
       {/* Sponsorship Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 transform hover:scale-102 transition-transform duration-300">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)', WebkitTextStroke: '1px rgba(0,0,0,0.05)'}}>
             Become a Sponsor of Recovery Fest
