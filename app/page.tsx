@@ -395,6 +395,9 @@ export default function HomePage() {
       {/* Support Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600">
+            Support Recovery, Strengthen Community
+          </h1>
           <h2 className="text-4xl font-bold mb-6 text-foreground">
             Your Support Makes Recovery Fest Possible
           </h2>
