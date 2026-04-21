@@ -12,7 +12,18 @@ export async function subscribeToNewsletter(email: string) {
     return { error: 'Email service is not properly configured. Please contact support.' }
   }
 
+  // Check if verified from email is configured
+  if (!process.env.RESEND_FROM_EMAIL) {
+    console.error('RESEND_FROM_EMAIL is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
+    console.log('[v0] Sending newsletter signup via Resend')
+    console.log('[v0] From:', process.env.RESEND_FROM_EMAIL)
+    console.log('[v0] To: RecoveryFestMI@Gmail.com')
+    console.log('[v0] Subscriber email:', email)
+    
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -21,7 +32,7 @@ export async function subscribeToNewsletter(email: string) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL || 'Recovery Fest <noreply@recoveryfest.org>',
+        from: process.env.RESEND_FROM_EMAIL,
         to: 'RecoveryFestMI@Gmail.com',
         subject: 'New Email Signup for Recovery Fest 2026',
         html: `
@@ -34,15 +45,18 @@ export async function subscribeToNewsletter(email: string) {
     })
 
     const data = await response.json()
+    console.log('[v0] Resend API response status:', response.status)
+    console.log('[v0] Resend API response:', data)
 
     if (!response.ok) {
-      console.error('Resend API error:', data)
-      return { error: 'Failed to send notification. Please try again later.' }
+      console.error('[v0] Resend API error:', data)
+      return { error: `Failed to send notification: ${data.message || 'Unknown error'}` }
     }
 
+    console.log('[v0] Newsletter signup sent successfully')
     return { success: true, message: 'Thank you for subscribing! Check your email for confirmation.' }
   } catch (error) {
-    console.error('Subscription error:', error)
+    console.error('[v0] Subscription error:', error)
     return { error: 'Something went wrong. Please try again.' }
   }
 }
@@ -57,7 +71,23 @@ export async function sendContactMessage(data: { name: string; email: string; me
     return { error: 'Please enter a valid email address' }
   }
 
+  // Check if API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
+  // Check if verified from email is configured
+  if (!process.env.RESEND_FROM_EMAIL) {
+    console.error('RESEND_FROM_EMAIL is not configured')
+    return { error: 'Email service is not properly configured. Please contact support.' }
+  }
+
   try {
+    console.log('[v0] Sending contact message via Resend')
+    console.log('[v0] From:', process.env.RESEND_FROM_EMAIL)
+    console.log('[v0] To: RecoveryFestMI@Gmail.com')
+    
     // Send email notification to RecoveryFestMI@Gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -66,7 +96,7 @@ export async function sendContactMessage(data: { name: string; email: string; me
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Recovery Fest Contact <onboarding@resend.dev>',
+        from: process.env.RESEND_FROM_EMAIL,
         to: 'RecoveryFestMI@Gmail.com',
         replyTo: data.email,
         subject: `New Contact Form Message from ${data.name}`,
@@ -82,14 +112,19 @@ export async function sendContactMessage(data: { name: string; email: string; me
       }),
     })
 
+    const responseData = await response.json()
+    console.log('[v0] Resend API response status:', response.status)
+    console.log('[v0] Resend API response:', responseData)
+
     if (!response.ok) {
-      // Fallback: Log the message if API fails
-      console.log('Contact form submission:', data)
+      console.error('[v0] Resend API error:', responseData)
+      return { error: `Failed to send message: ${responseData.message || 'Unknown error'}` }
     }
 
+    console.log('[v0] Contact message sent successfully')
     return { success: true, message: 'Thank you for your message! We\'ll get back to you soon.' }
   } catch (error) {
-    console.error('Contact form error:', error)
+    console.error('[v0] Contact form error:', error)
     return { error: 'Something went wrong. Please try again.' }
   }
 }
