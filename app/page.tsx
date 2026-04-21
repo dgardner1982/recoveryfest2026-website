@@ -150,9 +150,14 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
-          <p className="text-3xl sm:text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
-            Join us in celebration at Recovery Fest 2026
+          <p className="text-4xl sm:text-5xl md:text-7xl font-bold text-balance drop-shadow-lg mb-6">
+            Join us in celebration at Recovery Fest 2026!
           </p>
+          <Link href="/donate">
+            <Button className="md:hidden bg-yellow-400 hover:bg-yellow-300 text-primary font-bold px-8 py-3 text-lg">
+              Donate Now
+            </Button>
+          </Link>
         </div>
       </section>
 
