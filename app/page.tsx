@@ -150,7 +150,7 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
-          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
+          <p className="text-3xl sm:text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
             Join us in celebration at Recovery Fest 2026
           </p>
         </div>
