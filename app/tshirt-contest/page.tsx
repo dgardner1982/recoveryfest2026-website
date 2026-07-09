@@ -77,7 +77,7 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
 
   return (
     <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200">
-      <p className="text-xs font-bold text-green-700 mb-2">Event Countdown</p>
+      <p className="text-xs font-bold text-green-700 mb-2">Time Left to Submit Entry</p>
       <div className="grid grid-cols-4 gap-2 text-center">
         <div>
           <p className="text-xl font-bold text-green-600">{timeLeft.days}</p>
@@ -159,7 +159,7 @@ export default function Page() {
                 <p className="text-base">128 Clover Street</p>
                 <p className="text-base">Holland, MI</p>
               </div>
-              <CountdownTimer targetDate={new Date('2026-09-09T15:00:00').getTime()} />
+              <CountdownTimer targetDate={new Date('2026-08-21T17:00:00').getTime()} />
             </div>
           </div>
 
