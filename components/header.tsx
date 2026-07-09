@@ -20,7 +20,7 @@ export function Header() {
             <Button asChild size="lg" className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="/gallery">Gallery</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest">Design Contest</Link>
             </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
@@ -55,7 +55,7 @@ export function Header() {
             >
               Gallery
             </Link>
-            <Button asChild size="sm" className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest" onClick={() => setMobileMenuOpen(false)}>
                 Design Contest
               </Link>
