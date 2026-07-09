@@ -26,12 +26,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-base font-medium hover:text-primary transition-colors px-3 py-2 rounded-lg hover:shadow-lg hover:bg-primary/10 transition-all duration-300">
-              Home
-            </Link>
-            <Link href="/gallery" className="text-base font-medium hover:text-primary transition-colors px-3 py-2 rounded-lg hover:shadow-lg hover:bg-primary/10 transition-all duration-300">
-              Gallery
-            </Link>
+            <Button asChild variant="outline" className="border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-base font-medium px-4 py-2">
+              <Link href="/">Home</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-base font-medium px-4 py-2">
+              <Link href="/gallery">Gallery</Link>
+            </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
