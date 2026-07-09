@@ -140,7 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* Hero Section with Video Background */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden group">
+      <section className="relative flex items-center justify-center overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/90 via-blue-600/85 to-cyan-600/90 z-10" />
         <Image
           src="/hero-recovery-hands.jpg"
@@ -149,10 +149,13 @@ export default function HomePage() {
           className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority
         />
-        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
-          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in py-20 flex flex-col items-center justify-center min-h-[600px]">
+          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg mb-8">
             Join us in celebration at Recovery Fest 2026
           </p>
+          <Link href="/tshirt-contest" className="text-lg hover:underline font-semibold drop-shadow-lg hover:text-cyan-200 transition-colors">
+            Interested in submitting a design for this year&apos;s T-shirt contest? Click here.
+          </Link>
         </div>
       </section>
 
