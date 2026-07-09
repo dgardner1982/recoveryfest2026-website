@@ -353,9 +353,9 @@ export default function Page() {
               </div>
               <button
                 onClick={handleSubmitClick}
-                className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-cyan-600 text-white font-bold py-3 px-4 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer flex-shrink-0"
+                className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white font-bold py-3 px-4 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer flex-shrink-0"
               >
-                ✎ Submit Your Design
+                ✎ SUBMIT YOUR DESIGN
               </button>
             </div>
 
