@@ -128,8 +128,8 @@ export default function Page() {
       <section className="relative w-full py-0 px-4 bg-gradient-to-b from-blue-50 to-white pt-2">
         <div className="max-w-6xl mx-auto">
           {/* Logo and Title with Event Details */}
-          <div className="flex flex-col items-center justify-center gap-6 mb-2">
-            {/* Logo */}
+          <div className="flex items-center justify-between gap-6 mb-2">
+            {/* Left: Logo */}
             <div className="flex-shrink-0">
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RF%20LOGO%202024%20%281%29-yMPvnByCZ2CfYNpvBemsnBhDKR33e9.jpg" 
@@ -139,8 +139,8 @@ export default function Page() {
               />
             </div>
 
-            {/* Center: Recovery Fest Logo/Title */}
-            <div className="text-center">
+            {/* Middle: Recovery Fest Logo/Title */}
+            <div className="text-left flex-1">
               <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
                 <span className="text-green-500">Recovery</span>
                 <span className="text-cyan-500"> Fest</span>
@@ -150,8 +150,8 @@ export default function Page() {
               </p>
             </div>
 
-            {/* Event Details and Countdown */}
-            <div className="text-center flex flex-col items-center gap-3">
+            {/* Right: Event Details and Countdown */}
+            <div className="text-right flex flex-col items-end gap-3 flex-shrink-0">
               <div className="text-sm font-semibold text-gray-800">
                 <p className="text-lg font-bold">September 9</p>
                 <p className="text-base">3:00 - 6:00 PM</p>
