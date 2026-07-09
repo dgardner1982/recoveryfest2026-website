@@ -32,6 +32,9 @@ export function Header() {
             <Button asChild size="lg" className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="/gallery">Gallery</Link>
             </Button>
+            <Button asChild size="lg" className="bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all">
+              <Link href="/tshirt-contest">Design Contest</Link>
+            </Button>
             <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
@@ -64,6 +67,11 @@ export function Header() {
             >
               Gallery
             </Link>
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all">
+              <Link href="/tshirt-contest" onClick={() => setMobileMenuOpen(false)}>
+                Design Contest
+              </Link>
+            </Button>
             <Button asChild size="sm" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                 Donate Now
