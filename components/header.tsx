@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
@@ -12,18 +11,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-32 items-center justify-between gap-6">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RF%20LOGO%202024%20%281%29-PCDajyfjQAzNQOeo4vY2wJqpJ5Jzyy.jpg"
-              alt="Recovery Fest Logo"
-              width={144}
-              height={144}
-              className="h-28 w-auto"
-            />
-          </Link>
-
+        <div className="flex h-16 items-center justify-center gap-6">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <Button asChild size="lg" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
