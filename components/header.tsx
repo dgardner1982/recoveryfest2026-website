@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
@@ -12,30 +11,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-48 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-48 h-48 flex-shrink-0 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-              <Image
-                src="/images/recovery-fest-logo.png"
-                alt="Recovery Fest Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </Link>
-
+        <div className="flex h-16 items-center justify-center gap-6">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-300 to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/">Home</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-pink-300 to-purple-400 hover:from-pink-400 hover:to-purple-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/gallery">Gallery</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest">Design Contest</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
           </nav>
@@ -67,12 +55,12 @@ export function Header() {
             >
               Gallery
             </Link>
-            <Button asChild size="sm" className="w-full bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest" onClick={() => setMobileMenuOpen(false)}>
                 Design Contest
               </Link>
             </Button>
-            <Button asChild size="sm" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                 Donate Now
               </Link>

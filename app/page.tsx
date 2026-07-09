@@ -162,10 +162,10 @@ export default function HomePage() {
           <Link href="/tshirt-contest" className="block">
             <div className="bg-pink-400 hover:bg-pink-500 transition-colors duration-300 rounded-xl p-8 md:p-12 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
               <div className="flex flex-col items-center gap-4">
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center">
+                <p className="text-xl md:text-2xl lg:text-4xl font-bold text-white text-center whitespace-nowrap">
                   Interested in submitting a design for this year&apos;s T-shirt contest?
                 </p>
-                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white underline">
                   CLICK HERE
                 </p>
               </div>
