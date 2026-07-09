@@ -12,15 +12,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between gap-6">
+        <div className="flex h-32 items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RF%20LOGO%202024%20%281%29-PCDajyfjQAzNQOeo4vY2wJqpJ5Jzyy.jpg"
               alt="Recovery Fest Logo"
-              width={120}
-              height={60}
-              className="h-14 w-auto"
+              width={144}
+              height={144}
+              className="h-28 w-auto"
             />
           </Link>
 
