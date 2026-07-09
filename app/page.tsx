@@ -165,7 +165,7 @@ export default function HomePage() {
                 <p className="text-xl md:text-2xl lg:text-4xl font-bold text-white text-center whitespace-nowrap">
                   Interested in submitting a design for this year&apos;s T-shirt contest?
                 </p>
-                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white underline">
                   CLICK HERE
                 </p>
               </div>
