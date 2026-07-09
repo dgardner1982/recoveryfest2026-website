@@ -140,7 +140,7 @@ export default function Page() {
             </div>
 
             {/* Middle: Recovery Fest Logo/Title */}
-            <div className="flex-1">
+            <div className="flex-1 mr-auto">
               <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
                 <span className="text-green-500">Recovery</span>
                 <span className="text-cyan-500"> Fest</span>
