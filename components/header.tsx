@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
@@ -12,17 +11,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-48 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-48 h-48 flex-shrink-0 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-              <Image
-                src="/images/recovery-fest-logo.png"
-                alt="Recovery Fest Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </Link>
+        <div className="flex h-16 items-center justify-between">
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
