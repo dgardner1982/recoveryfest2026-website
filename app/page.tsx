@@ -150,11 +150,21 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in py-20 flex flex-col items-center justify-center min-h-[600px]">
-          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg mb-8">
+          <p className="text-5xl md:text-7xl font-bold text-balance drop-shadow-lg">
             Join us in celebration at Recovery Fest 2026
           </p>
-          <Link href="/tshirt-contest" className="text-lg hover:underline font-semibold drop-shadow-lg hover:text-cyan-200 transition-colors">
-            Interested in submitting a design for this year&apos;s T-shirt contest? Click here.
+        </div>
+      </section>
+
+      {/* T-Shirt Contest Box */}
+      <section className="py-12 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <Link href="/tshirt-contest" className="block">
+            <div className="bg-pink-400 hover:bg-pink-500 transition-colors duration-300 rounded-xl p-8 md:p-12 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+              <p className="text-2xl md:text-3xl font-bold text-white text-center">
+                Interested in submitting a design for this year&apos;s T-shirt contest? Click here.
+              </p>
+            </div>
           </Link>
         </div>
       </section>
