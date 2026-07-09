@@ -376,6 +376,13 @@ export default function Page() {
           </div>
         </div>
 
+        {/* Contact Box */}
+        <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-6 mb-8 text-center">
+          <p className="text-lg font-semibold text-gray-800">
+            For Questions, contact Daniel Gardner at <a href="mailto:dgardner@miottawa.org" className="text-blue-600 hover:text-blue-800 underline font-bold">dgardner@miottawa.org</a>
+          </p>
+        </div>
+
         {/* Submit CTA */}
         <div id="submit" className="text-center py-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
