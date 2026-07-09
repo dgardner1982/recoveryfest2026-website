@@ -14,16 +14,16 @@ export function Header() {
         <div className="flex h-16 items-center justify-center gap-6">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-300 to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-cyan-300 to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/">Home</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-pink-300 to-purple-400 hover:from-pink-400 hover:to-purple-500 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-pink-300 to-purple-400 hover:from-pink-400 hover:to-purple-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/gallery">Gallery</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest">Design Contest</Link>
             </Button>
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="lg" className="bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer">Donate Now</Link>
             </Button>
           </nav>
@@ -55,12 +55,12 @@ export function Header() {
             >
               Gallery
             </Link>
-            <Button asChild size="sm" className="w-full bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-yellow-300 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/tshirt-contest" onClick={() => setMobileMenuOpen(false)}>
                 Design Contest
               </Link>
             </Button>
-            <Button asChild size="sm" className="w-full bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black shadow-lg hover:shadow-xl transition-all">
+            <Button asChild size="sm" className="w-full bg-gradient-to-r from-purple-300 to-blue-300 hover:from-purple-400 hover:to-blue-400 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                 Donate Now
               </Link>
