@@ -25,12 +25,6 @@ const locations = [
     ],
   },
   {
-    name: 'Recovery Court',
-    addresses: [
-      { address: '414 Washington St. Suite 300 Grand Haven, MI 49417', coords: '414 Washington Street Suite 300 Grand Haven MI 49417' },
-    ],
-  },
-  {
     name: '58th District Court Probation',
     addresses: [
       { address: '85 W 8th St. Holland, MI 49423', coords: '85 West 8th Street Holland MI 49423' },
