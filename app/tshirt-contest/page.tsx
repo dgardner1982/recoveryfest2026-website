@@ -137,7 +137,7 @@ export default function Page() {
             {/* Middle: Recovery Fest Logo/Title */}
             <div className="flex-shrink-0 -ml-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
-                <span style={{ color: '#f3d131' }}>Recovery</span>
+                <span style={{ color: '#5a00db' }}>Recovery</span>
                 <span style={{ color: '#5a00db' }}> Fest</span>
               </h1>
               <p className="text-2xl md:text-3xl text-gray-700 font-bold leading-none mt-2 text-center">
@@ -165,7 +165,7 @@ export default function Page() {
       {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 py-0">
         {/* Instructions */}
-        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
+        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6 text-center">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
 
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* What is it */}
@@ -174,7 +174,7 @@ export default function Page() {
             onMouseEnter={() => setHoveredCard('what')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-blue-700 mb-3">What is it?</h3>
+            <h3 className="text-3xl font-bold text-blue-700 mb-3">What is it?</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               A community design contest celebrating recovery! Create a design about recovery and it could be printed on t-shirts for Recovery Fest.
             </p>
@@ -191,7 +191,7 @@ export default function Page() {
             onMouseEnter={() => setHoveredCard('requirements')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-green-700 mb-3">Design Requirements</h3>
+            <h3 className="text-3xl font-bold text-green-700 mb-3">Design Requirements</h3>
             <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
               <li>• 8½&quot; × 11&quot; format</li>
               <li>• Black or blue ink only</li>
@@ -214,9 +214,9 @@ export default function Page() {
             onMouseEnter={() => setHoveredCard('ideas')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-purple-700 mb-3">Design Ideas</h3>
+            <h3 className="text-3xl font-bold text-purple-700 mb-3">Design Ideas</h3>
             <p className="text-lg text-gray-700 mb-3">Show us your vision of recovery:</p>
-            <ul className="text-base text-gray-700 space-y-2 inline-block text-left">
+            <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
               <li>• What recovery looks like to you</li>
               <li>• What recovery has done for you</li>
               <li>• What recovery means to you</li>
@@ -231,7 +231,7 @@ export default function Page() {
           {/* Event Location */}
           <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center">
             <div>
-              <h3 className="text-2xl font-bold text-cyan-700 mb-3">Event Location</h3>
+              <h3 className="text-3xl font-bold text-cyan-700 mb-3">Event Location</h3>
               <p className="text-xl font-semibold text-gray-700 mb-1">The Salvation Army</p>
               <p className="text-lg text-gray-600 mb-1">128 Clover Street</p>
               <p className="text-lg text-gray-600 mb-4">Holland, MI</p>
