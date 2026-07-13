@@ -150,9 +150,16 @@ export default function Page() {
               <div className="text-sm font-semibold text-gray-800">
                 <p className="text-lg font-bold">September 9</p>
                 <p className="text-base">3:00 - 6:00 PM</p>
-                <p className="text-base">The Salvation Army</p>
-                <p className="text-base">128 Clover Street</p>
-                <p className="text-base">Holland, MI</p>
+                <a 
+                  href="https://maps.google.com/?q=The+Salvation+Army,+128+Clover+Street,+Holland,MI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base hover:text-blue-600 hover:underline transition-colors cursor-pointer"
+                >
+                  <p className="text-base">The Salvation Army</p>
+                  <p className="text-base">128 Clover Street</p>
+                  <p className="text-base">Holland, MI</p>
+                </a>
               </div>
               <CountdownTimer targetDate={new Date('2026-08-21T17:00:00').getTime()} />
             </div>
