@@ -137,8 +137,8 @@ export default function Page() {
             {/* Middle: Recovery Fest Logo/Title */}
             <div className="flex-shrink-0 -ml-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
-                <span className="text-green-500">Recovery</span>
-                <span className="text-cyan-500"> Fest</span>
+                <span style={{ color: '#f3d131' }}>Recovery</span>
+                <span style={{ color: '#5a00db' }}> Fest</span>
               </h1>
               <p className="text-2xl md:text-3xl text-gray-700 font-bold leading-none mt-2 text-center">
                 T-Shirt Design Contest
@@ -166,10 +166,9 @@ export default function Page() {
       <section className="max-w-6xl mx-auto px-4 py-0">
         {/* Instructions */}
         <div className="mb-6 text-center">
-          <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
-        </div>
+        {/* Submission Details Grid */}
+        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
 
-        {/* Contest Details Grid */}
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* What is it */}
           <div
@@ -245,7 +244,7 @@ export default function Page() {
 
         {/* Important Notes */}
         <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8">
-          <h3 className="font-bold text-2xl text-red-800 mb-3 underline">★ IMPORTANT ★</h3>
+          <h3 className="font-bold text-4xl text-red-800 mb-3 underline text-center">★ IMPORTANT ★</h3>
           <ul className="text-lg text-gray-700 space-y-2 font-bold uppercase">
             <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
             <li className="underline">✓ Must use black/blue ink or black pencil only, no color please</li>
@@ -297,7 +296,7 @@ export default function Page() {
                 <FileText className="w-6 h-6 text-green-600" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-2xl mb-2 text-gray-800">In Person</h3>
+                <h3 className="font-bold text-4xl mb-2 text-gray-800">In Person</h3>
                 <p className="text-lg text-red-600 mb-2 font-bold uppercase">(CLICK ORGANIZATION FOR ADDRESS)</p>
                 <p className="text-lg text-gray-600 mb-2 font-semibold">Drop off at:</p>
                 <ul className="text-lg space-y-1">
@@ -340,7 +339,7 @@ export default function Page() {
                 <Mail className="w-6 h-6 text-cyan-600" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-2xl mb-2 text-gray-800">Electronic</h3>
+                <h3 className="font-bold text-4xl mb-2 text-gray-800">Electronic</h3>
                 <p className="text-lg text-gray-600 mb-2">Send digital designs or photos of your artwork to:</p>
                 <p className="font-sans text-lg font-semibold bg-gray-100 p-3 rounded text-gray-900 break-all hover:bg-gray-200 transition-colors">
                   cmhcustomerservices@miottawa.org
@@ -360,12 +359,12 @@ export default function Page() {
                 <Mail className="w-6 h-6 text-blue-600" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-2xl mb-2 text-gray-800">Mail</h3>
+                <h3 className="font-bold text-4xl mb-2 text-gray-800">Mail</h3>
                 <p className="text-lg text-gray-600 mb-1">Send to:</p>
                 <p className="text-lg font-semibold text-gray-800">CMH Customer Services</p>
                 <p className="text-lg text-gray-600">12265 James Street</p>
                 <p className="text-lg text-gray-600">Holland, MI 49424</p>
-                <p className="text-sm text-gray-500 mt-2">Try not to fold your artwork!</p>
+                <p className="text-base font-semibold text-black mt-2 underline">Try not to fold your artwork!</p>
               </div>
             </div>
           </div>
