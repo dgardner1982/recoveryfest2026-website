@@ -247,7 +247,7 @@ export default function Page() {
           <h3 className="font-bold text-2xl text-red-800 mb-3 underline">★ IMPORTANT ★</h3>
           <ul className="text-lg text-gray-700 space-y-2 font-bold uppercase">
             <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
-            <li className="underline">✓ Must use black/blue ink or black pencil only</li>
+            <li className="underline">✓ Must use black/blue ink or black pencil only, no color please</li>
             <li>✓ One submission per person</li>
             <li>✓ Design must be Recovery-related in some way</li>
           </ul>
