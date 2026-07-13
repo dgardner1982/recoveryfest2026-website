@@ -245,7 +245,7 @@ export default function Page() {
         {/* Important Notes */}
         <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8">
           <h3 className="font-bold text-2xl text-red-800 mb-3 underline">★ IMPORTANT ★</h3>
-          <ul className="text-lg text-gray-700 space-y-2">
+          <ul className="text-lg text-gray-700 space-y-2 font-bold">
             <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
             <li>✓ Must use black/blue ink or black pencil only</li>
             <li>✓ One submission per person</li>
