@@ -11,9 +11,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-center gap-6">
+        <div className="flex h-16 items-center justify-between gap-6">
+          {/* Logo */}
+          <Link href="/" className="font-bold text-lg md:text-xl text-black hover:opacity-80 transition-opacity">
+            Recovery Fest
+          </Link>
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 ml-auto">
             <Button asChild size="lg" className="bg-gradient-to-r from-cyan-300 to-blue-400 hover:from-cyan-400 hover:to-blue-500 text-black font-bold shadow-lg hover:shadow-xl transition-all">
               <Link href="/">Home</Link>
             </Button>
@@ -30,7 +34,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 ml-auto"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
