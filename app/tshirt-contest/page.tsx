@@ -165,8 +165,6 @@ export default function Page() {
       {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 py-0">
         {/* Instructions */}
-        <div className="mb-6 text-center">
-        {/* Submission Details Grid */}
         <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
 
         <div className="grid md:grid-cols-2 gap-4 mb-10">
