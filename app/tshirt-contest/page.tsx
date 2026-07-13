@@ -293,7 +293,7 @@ export default function Page() {
 
         {/* How to Submit */}
         <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200 shadow-lg">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800">How to Submit</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)' }}>How to Submit</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* In Person */}
             <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
