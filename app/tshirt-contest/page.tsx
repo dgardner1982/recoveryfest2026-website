@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Clock, MapPin, FileText, Mail, Star, Heart } from 'lucide-react';
 
 const locations = [
@@ -124,14 +125,14 @@ export default function Page() {
           {/* Logo and Title with Event Details */}
           <div className="flex items-center justify-between gap-6 mb-2">
             {/* Left: Logo */}
-            <div className="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RF%20LOGO%202024%20%281%29-yMPvnByCZ2CfYNpvBemsnBhDKR33e9.jpg" 
                 alt="Recovery Fest Logo" 
                 className="w-56 h-auto md:w-72"
                 style={{ mixBlendMode: 'multiply' }}
               />
-            </div>
+            </Link>
 
             {/* Middle: Recovery Fest Logo/Title */}
             <div className="flex-shrink-0 -ml-20">
