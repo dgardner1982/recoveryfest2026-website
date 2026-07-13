@@ -71,7 +71,7 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
   }, [targetDate]);
 
   return (
-    <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200">
+    <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200 shadow-lg">
       <p className="text-xs font-bold text-green-700 mb-2">Time Left to Submit Entry</p>
       <div className="grid grid-cols-4 gap-2 text-center">
         <div>
@@ -137,7 +137,7 @@ export default function Page() {
             {/* Middle: Recovery Fest Logo/Title */}
             <div className="flex-shrink-0 -ml-20">
               <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
-                <span style={{ color: '#f3d131' }}>Recovery</span>
+                <span style={{ color: '#5a00db' }}>Recovery</span>
                 <span style={{ color: '#5a00db' }}> Fest</span>
               </h1>
               <p className="text-2xl md:text-3xl text-gray-700 font-bold leading-none mt-2 text-center">
@@ -150,9 +150,16 @@ export default function Page() {
               <div className="text-sm font-semibold text-gray-800">
                 <p className="text-lg font-bold">September 9</p>
                 <p className="text-base">3:00 - 6:00 PM</p>
-                <p className="text-base">The Salvation Army</p>
-                <p className="text-base">128 Clover Street</p>
-                <p className="text-base">Holland, MI</p>
+                <a 
+                  href="https://maps.google.com/?q=The+Salvation+Army,+128+Clover+Street,+Holland,MI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base hover:text-blue-600 hover:underline transition-colors cursor-pointer"
+                >
+                  <p className="text-base">The Salvation Army</p>
+                  <p className="text-base">128 Clover Street</p>
+                  <p className="text-base">Holland, MI</p>
+                </a>
               </div>
               <CountdownTimer targetDate={new Date('2026-08-21T17:00:00').getTime()} />
             </div>
@@ -165,18 +172,16 @@ export default function Page() {
       {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 py-0">
         {/* Instructions */}
-        <div className="mb-6 text-center">
-        {/* Submission Details Grid */}
-        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
+        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6 text-center">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
 
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* What is it */}
           <div
-            className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('what')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-blue-700 mb-3">What is it?</h3>
+            <h3 className="text-3xl font-bold text-blue-700 mb-3">What is it?</h3>
             <p className="text-lg text-gray-700 leading-relaxed">
               A community design contest celebrating recovery! Create a design about recovery and it could be printed on t-shirts for Recovery Fest.
             </p>
@@ -189,11 +194,11 @@ export default function Page() {
 
           {/* Design Requirements */}
           <div
-            className="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('requirements')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-green-700 mb-3">Design Requirements</h3>
+            <h3 className="text-3xl font-bold text-green-700 mb-3">Design Requirements</h3>
             <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
               <li>• 8½&quot; × 11&quot; format</li>
               <li>• Black or blue ink only</li>
@@ -212,13 +217,13 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* Design Ideas */}
           <div
-            className="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('ideas')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-2xl font-bold text-purple-700 mb-3">Design Ideas</h3>
+            <h3 className="text-3xl font-bold text-purple-700 mb-3">Design Ideas</h3>
             <p className="text-lg text-gray-700 mb-3">Show us your vision of recovery:</p>
-            <ul className="text-base text-gray-700 space-y-2 inline-block text-left">
+            <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
               <li>• What recovery looks like to you</li>
               <li>• What recovery has done for you</li>
               <li>• What recovery means to you</li>
@@ -231,9 +236,9 @@ export default function Page() {
           </div>
 
           {/* Event Location */}
-          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center">
+          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center shadow-lg">
             <div>
-              <h3 className="text-2xl font-bold text-cyan-700 mb-3">Event Location</h3>
+              <h3 className="text-3xl font-bold text-cyan-700 mb-3">Event Location</h3>
               <p className="text-xl font-semibold text-gray-700 mb-1">The Salvation Army</p>
               <p className="text-lg text-gray-600 mb-1">128 Clover Street</p>
               <p className="text-lg text-gray-600 mb-4">Holland, MI</p>
@@ -243,7 +248,7 @@ export default function Page() {
         </div>
 
         {/* Important Notes */}
-        <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8">
+        <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8 shadow-lg">
           <h3 className="font-bold text-4xl text-red-800 mb-3 underline text-center">★ IMPORTANT ★</h3>
           <ul className="text-lg text-gray-700 space-y-2 font-bold uppercase">
             <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
@@ -254,7 +259,7 @@ export default function Page() {
         </div>
 
         {/* Timeline Section */}
-        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-10 border-2 border-yellow-200">
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-10 border-2 border-yellow-200 shadow-lg">
           <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Important Dates</h2>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center card-hover">
@@ -287,11 +292,11 @@ export default function Page() {
         </div>
 
         {/* How to Submit */}
-        <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200">
+        <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200 shadow-lg">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800">How to Submit</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* In Person */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <FileText className="w-6 h-6 text-green-600" />
               </div>
@@ -334,7 +339,7 @@ export default function Page() {
             </div>
 
             {/* Electronic */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-cyan-600" />
               </div>
@@ -354,7 +359,7 @@ export default function Page() {
             </div>
 
             {/* Mail */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-blue-600" />
               </div>
