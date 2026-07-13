@@ -71,7 +71,7 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
   }, [targetDate]);
 
   return (
-    <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200">
+    <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200 shadow-lg">
       <p className="text-xs font-bold text-green-700 mb-2">Time Left to Submit Entry</p>
       <div className="grid grid-cols-4 gap-2 text-center">
         <div>
@@ -177,7 +177,7 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* What is it */}
           <div
-            className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('what')}
             onMouseLeave={() => setHoveredCard(null)}
           >
@@ -194,7 +194,7 @@ export default function Page() {
 
           {/* Design Requirements */}
           <div
-            className="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('requirements')}
             onMouseLeave={() => setHoveredCard(null)}
           >
@@ -217,7 +217,7 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* Design Ideas */}
           <div
-            className="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-200 cursor-pointer text-center"
+            className="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-200 cursor-pointer text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('ideas')}
             onMouseLeave={() => setHoveredCard(null)}
           >
@@ -236,7 +236,7 @@ export default function Page() {
           </div>
 
           {/* Event Location */}
-          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center">
+          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center shadow-lg">
             <div>
               <h3 className="text-3xl font-bold text-cyan-700 mb-3">Event Location</h3>
               <p className="text-xl font-semibold text-gray-700 mb-1">The Salvation Army</p>
@@ -248,7 +248,7 @@ export default function Page() {
         </div>
 
         {/* Important Notes */}
-        <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8">
+        <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8 shadow-lg">
           <h3 className="font-bold text-4xl text-red-800 mb-3 underline text-center">★ IMPORTANT ★</h3>
           <ul className="text-lg text-gray-700 space-y-2 font-bold uppercase">
             <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
@@ -259,7 +259,7 @@ export default function Page() {
         </div>
 
         {/* Timeline Section */}
-        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-10 border-2 border-yellow-200">
+        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-10 border-2 border-yellow-200 shadow-lg">
           <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Important Dates</h2>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center card-hover">
@@ -292,11 +292,11 @@ export default function Page() {
         </div>
 
         {/* How to Submit */}
-        <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200">
+        <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200 shadow-lg">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800">How to Submit</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* In Person */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <FileText className="w-6 h-6 text-green-600" />
               </div>
@@ -339,7 +339,7 @@ export default function Page() {
             </div>
 
             {/* Electronic */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-cyan-600" />
               </div>
@@ -359,7 +359,7 @@ export default function Page() {
             </div>
 
             {/* Mail */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6">
+            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-blue-600" />
               </div>
