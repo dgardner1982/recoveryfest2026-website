@@ -20,6 +20,12 @@ const locations = [
     ],
   },
   {
+    name: 'Arbor Circle',
+    addresses: [
+      { address: '412 Century Ln, Holland, MI 49423', coords: '412 Century Lane Holland MI 49423' },
+    ],
+  },
+  {
     name: 'Sobar Recovery Community Center',
     addresses: [
       { address: '347 Hoover Blvd, Holland, MI 49423', coords: '347 Hoover Boulevard Holland MI 49423' },
