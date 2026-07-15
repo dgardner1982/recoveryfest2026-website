@@ -1,29 +1,13 @@
 'use client'
 
-import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { MapPin, Navigation, Facebook } from 'lucide-react'
 
 export function VenueMap() {
-  const [selectedVenue, setSelectedVenue] = useState<'salvation-army' | 'arbor-circle'>('salvation-army')
-
-  const venues = {
-    'salvation-army': {
-      name: 'The Salvation Army',
-      address: '104 Clover St, Holland, MI 49423',
-      googleMapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=104%20Clover%20St%2C%20Holland%2C%20MI%2049423',
-      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus'
-    },
-    'arbor-circle': {
-      name: 'Arbor Circle',
-      address: '412 Century Ln, Holland, MI 49423',
-      googleMapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=412%20Century%20Ln%2C%20Holland%2C%20MI%2049423',
-      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s412%20Century%20Ln%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus'
-    }
-  }
-
-  const venue = venues[selectedVenue]
+  const venueAddress = '104 Clover St, Holland, MI 49423'
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(venueAddress)}`
+  const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus`
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -38,16 +22,15 @@ export function VenueMap() {
             <Card className="overflow-hidden shadow-lg border-none">
               <div className="relative w-full h-[450px]">
                 <iframe
-                  src={venue.embedUrl}
+                  src={embedUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title={`${venue.name} Location Map`}
+                  title="Venue Location Map"
                   className="absolute inset-0"
-                  key={selectedVenue}
                 />
               </div>
             </Card>
@@ -55,24 +38,6 @@ export function VenueMap() {
 
           {/* Venue Information */}
           <div className="space-y-6">
-            {/* Venue Selector */}
-            <div className="flex gap-2">
-              <Button
-                onClick={() => setSelectedVenue('salvation-army')}
-                variant={selectedVenue === 'salvation-army' ? 'default' : 'outline'}
-                className="flex-1 text-sm"
-              >
-                The Salvation Army
-              </Button>
-              <Button
-                onClick={() => setSelectedVenue('arbor-circle')}
-                variant={selectedVenue === 'arbor-circle' ? 'default' : 'outline'}
-                className="flex-1 text-sm"
-              >
-                Arbor Circle
-              </Button>
-            </div>
-
             <Card className="shadow-lg border-primary/20">
               <CardHeader className="bg-primary/5">
                 <CardTitle className="text-xl flex items-center gap-2">
@@ -82,14 +47,10 @@ export function VenueMap() {
               </CardHeader>
               <CardContent className="p-6 space-y-4">
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-foreground">{venue.name}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">The Salvation Army</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    {venue.address.split(', ').map((part, index) => (
-                      <span key={index}>
-                        {part}
-                        {index < venue.address.split(', ').length - 1 && <br />}
-                      </span>
-                    ))}
+                    104 Clover St<br />
+                    Holland, MI 49423
                   </p>
                 </div>
 
@@ -106,7 +67,7 @@ export function VenueMap() {
                   className="w-full bg-primary hover:bg-primary/90 text-white"
                 >
                   <a
-                    href={venue.googleMapsUrl}
+                    href={googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2"
