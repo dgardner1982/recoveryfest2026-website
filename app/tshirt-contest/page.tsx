@@ -157,13 +157,13 @@ export default function Page() {
                 <p className="text-lg font-bold">September 9</p>
                 <p className="text-base">3:00 - 6:00 PM</p>
                 <a 
-                  href="https://maps.google.com/?q=The+Salvation+Army,+128+Clover+Street,+Holland,MI"
+                  href="https://maps.google.com/?q=The+Salvation+Army,+104+Clover+Street,+Holland,MI"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base hover:text-blue-600 hover:underline transition-colors cursor-pointer"
                 >
                   <p className="text-base">The Salvation Army</p>
-                  <p className="text-base">128 Clover Street</p>
+                  <p className="text-base">104 Clover Street</p>
                   <p className="text-base">Holland, MI</p>
                 </a>
               </div>
@@ -246,7 +246,7 @@ export default function Page() {
             <div>
               <h3 className="text-3xl font-bold text-cyan-700 mb-3">Event Location</h3>
               <p className="text-xl font-semibold text-gray-700 mb-1">The Salvation Army</p>
-              <p className="text-lg text-gray-600 mb-1">128 Clover Street</p>
+                <p className="text-lg text-gray-600 mb-1">104 Clover Street</p>
               <p className="text-lg text-gray-600 mb-4">Holland, MI</p>
               <p className="text-base text-gray-500">All submissions will be displayed at Recovery Fest</p>
             </div>
@@ -419,7 +419,7 @@ export default function Page() {
           <h3 className="text-2xl font-bold mb-2">Recovery Fest</h3>
           <p className="text-blue-100 mb-4">Invest in health, home, purpose, and community</p>
           <p className="text-sm text-blue-200">September 9, 2025 | 3-6 PM | The Salvation Army</p>
-          <p className="text-xs text-blue-300 mt-4">128 Clover Street, Holland, MI</p>
+                <p className="text-xs text-blue-300 mt-4">104 Clover Street, Holland, MI</p>
         </div>
       </footer>
 
