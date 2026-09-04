@@ -169,7 +169,7 @@ export default function HomePage() {
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <p className="mb-4 text-center text-xl font-extrabold uppercase tracking-wide text-red-700 md:text-2xl">
-            USE CHICAGO DRIVE TO TURN DOWN CLOVER
+            <span className="text-red-600">★</span> USE CHICAGO DRIVE TO TURN DOWN CLOVER AVE <span className="text-red-600">★</span>
           </p>
           <div className="overflow-hidden rounded-xl border-2 border-red-200 bg-red-50 shadow-lg">
             <div className="grid gap-8 md:grid-cols-[1fr_1.1fr]">
