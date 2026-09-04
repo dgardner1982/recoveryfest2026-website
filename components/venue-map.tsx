@@ -12,14 +12,15 @@ export function VenueMap() {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-8 text-center text-foreground" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)'}}>
-          Location & Directions
-        </h2>
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold text-foreground md:text-5xl">Location &amp; Directions</h2>
+          <div className="divider-accent mx-auto mt-4" />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
-            <Card className="overflow-hidden shadow-lg border-none">
+            <Card className="card-lift overflow-hidden shadow-lg border-none">
               <div className="relative w-full h-[450px]">
                 <iframe
                   src={embedUrl}
