@@ -10,16 +10,21 @@ export function VenueMap() {
   const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus`
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section id="location" className="relative bg-background px-4 py-20">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-8 text-center text-foreground" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)'}}>
-          Location & Directions
-        </h2>
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-block rounded-full bg-accent/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-accent">
+            Get There
+          </span>
+          <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
+            Location &amp; Directions
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
-            <Card className="overflow-hidden shadow-lg border-none">
+            <Card className="overflow-hidden rounded-2xl border-none shadow-xl ring-1 ring-border">
               <div className="relative w-full h-[450px]">
                 <iframe
                   src={embedUrl}
@@ -38,24 +43,24 @@ export function VenueMap() {
 
           {/* Venue Information */}
           <div className="space-y-6">
-            <Card className="shadow-lg border-primary/20">
+            <Card className="rounded-2xl border-primary/20 shadow-lg card-lift">
               <CardHeader className="bg-primary/5">
-                <CardTitle className="text-xl flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-xl">
                   <MapPin className="h-5 w-5 text-primary" />
                   Venue Details
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="space-y-4 p-6">
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-foreground">The Salvation Army</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h3 className="mb-2 text-lg font-bold text-foreground">The Salvation Army</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     104 Clover St<br />
                     Holland, MI 49423
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-2 text-foreground">Event Date & Time</h4>
+                  <h4 className="mb-2 font-semibold text-foreground">Event Date &amp; Time</h4>
                   <p className="text-sm text-muted-foreground">
                     <strong className="text-foreground">Wednesday, September 9, 2026</strong><br />
                     3:00pm – 6:00pm
@@ -64,7 +69,7 @@ export function VenueMap() {
 
                 <Button
                   asChild
-                  className="w-full bg-primary hover:bg-primary/90 text-white"
+                  className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   <a
                     href={googleMapsUrl}
@@ -79,9 +84,9 @@ export function VenueMap() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg">
+            <Card className="rounded-2xl shadow-lg card-lift">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Parking & Accessibility</CardTitle>
+                <CardTitle className="font-heading text-2xl font-bold text-accent">Parking &amp; Accessibility</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <ul className="space-y-3 text-base text-muted-foreground">
@@ -93,14 +98,14 @@ export function VenueMap() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg bg-muted">
-              <CardContent className="p-6 space-y-4">
+            <Card className="rounded-2xl bg-muted shadow-lg">
+              <CardContent className="space-y-4 p-6">
                 <p className="text-base text-muted-foreground">
                   <strong className="text-lg text-foreground">Need help finding us?</strong><br />
                   <span className="text-base">Call us at{' '}
                     <a
                       href="tel:6164945545"
-                      className="text-primary hover:underline font-semibold"
+                      className="font-semibold text-primary hover:underline"
                     >
                       (616) 494-5545
                     </a>
@@ -110,7 +115,7 @@ export function VenueMap() {
                   href="https://www.facebook.com/RFLakeshore"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                  className="flex items-center gap-2 text-primary transition-colors hover:text-primary/80"
                 >
                   <Facebook className="h-5 w-5" />
                   <span className="font-medium">RecoveryFest on the LakeShore | Facebook</span>
