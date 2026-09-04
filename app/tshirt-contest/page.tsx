@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Clock, MapPin, FileText, Mail, Star, Heart } from 'lucide-react';
+import { Clock, MapPin, FileText, Mail, Star, Heart, Check } from 'lucide-react';
 
 const locations = [
   {
@@ -77,24 +77,24 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
   }, [targetDate]);
 
   return (
-    <div className="inline-block bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border-2 border-green-200 shadow-lg">
-      <p className="text-xs font-bold text-green-700 mb-2">Time Left to Submit Entry</p>
+    <div className="inline-block rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/10 to-accent/5 p-4 shadow-lg">
+      <p className="mb-2 text-xs font-bold text-accent">Time Left to Submit Entry</p>
       <div className="grid grid-cols-4 gap-2 text-center">
         <div>
-          <p className="text-xl font-bold text-green-600">{timeLeft.days}</p>
-          <p className="text-xs text-green-700">Days</p>
+          <p className="text-xl font-bold text-accent">{timeLeft.days}</p>
+          <p className="text-xs text-accent/80">Days</p>
         </div>
         <div>
-          <p className="text-xl font-bold text-green-600">{String(timeLeft.hours).padStart(2, '0')}</p>
-          <p className="text-xs text-green-700">Hours</p>
+          <p className="text-xl font-bold text-accent">{String(timeLeft.hours).padStart(2, '0')}</p>
+          <p className="text-xs text-accent/80">Hours</p>
         </div>
         <div>
-          <p className="text-xl font-bold text-green-600">{String(timeLeft.minutes).padStart(2, '0')}</p>
-          <p className="text-xs text-green-700">Mins</p>
+          <p className="text-xl font-bold text-accent">{String(timeLeft.minutes).padStart(2, '0')}</p>
+          <p className="text-xs text-accent/80">Mins</p>
         </div>
         <div>
-          <p className="text-xl font-bold text-green-600">{String(timeLeft.seconds).padStart(2, '0')}</p>
-          <p className="text-xs text-green-700">Secs</p>
+          <p className="text-xl font-bold text-accent">{String(timeLeft.seconds).padStart(2, '0')}</p>
+          <p className="text-xs text-accent/80">Secs</p>
         </div>
       </div>
     </div>
@@ -124,14 +124,14 @@ export default function Page() {
   };
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden pt-0">
+    <main className="min-h-screen overflow-hidden bg-background pt-0">
       {/* Hero Section */}
-      <section className="relative w-full py-0 px-4 bg-gradient-to-b from-blue-50 to-white pt-2">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative w-full bg-gradient-to-b from-primary/5 to-background px-4 py-0 pt-2">
+        <div className="mx-auto max-w-6xl">
           {/* Logo and Title with Event Details */}
-          <div className="flex items-center justify-between gap-6 mb-2">
+          <div className="mb-2 flex items-center justify-between gap-6">
             {/* Left: Logo */}
-            <Link href="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
+            <Link href="/" className="flex-shrink-0 transition-opacity hover:opacity-80">
               <img 
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RF%20LOGO%202024%20%281%29-yMPvnByCZ2CfYNpvBemsnBhDKR33e9.jpg" 
                 alt="Recovery Fest Logo" 
@@ -141,26 +141,25 @@ export default function Page() {
             </Link>
 
             {/* Middle: Recovery Fest Logo/Title */}
-            <div className="flex-shrink-0 -ml-20">
-              <h1 className="text-5xl md:text-6xl font-bold mb-0 leading-none">
-                <span style={{ color: '#5a00db' }}>Recovery</span>
-                <span style={{ color: '#5a00db' }}> Fest</span>
+            <div className="-ml-20 flex-shrink-0">
+              <h1 className="mb-0 font-heading text-5xl font-bold leading-none text-primary md:text-6xl">
+                Recovery Fest
               </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 font-bold leading-none mt-2 text-center">
+              <p className="mt-2 text-center text-2xl font-bold leading-none text-muted-foreground md:text-3xl">
                 T-Shirt Design Contest
               </p>
             </div>
 
             {/* Right: Event Details and Countdown */}
-            <div className="text-right flex flex-col items-end gap-3 flex-shrink-0">
-              <div className="text-sm font-semibold text-gray-800">
+            <div className="flex flex-shrink-0 flex-col items-end gap-3 text-right">
+              <div className="text-sm font-semibold text-foreground">
                 <p className="text-lg font-bold">September 9</p>
                 <p className="text-base">3:00 - 6:00 PM</p>
                 <a 
                   href="https://maps.google.com/?q=The+Salvation+Army,+104+Clover+Street,+Holland,MI"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base hover:text-blue-600 hover:underline transition-colors cursor-pointer"
+                  className="text-base transition-colors hover:text-primary hover:underline cursor-pointer"
                 >
                   <p className="text-base">The Salvation Army</p>
                   <p className="text-base">104 Clover Street</p>
@@ -176,23 +175,23 @@ export default function Page() {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto px-4 py-0">
+      <section className="mx-auto max-w-6xl px-4 py-0">
         {/* Instructions */}
-        <p className="text-2xl md:text-3xl text-gray-700 font-bold whitespace-nowrap mb-6 text-center">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
+        <p className="mb-6 text-center text-2xl font-bold text-muted-foreground md:text-3xl">Please Read Instructions Carefully and Learn How to Submit Your Design Below.</p>
 
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* What is it */}
           <div
-            className="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-200 cursor-pointer text-center shadow-lg"
+            className="card-hover card-lift cursor-pointer rounded-2xl border-2 border-primary/25 bg-gradient-to-br from-primary/10 to-primary/5 p-6 text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('what')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-3xl font-bold text-blue-700 mb-3">What is it?</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <h3 className="mb-3 font-heading text-3xl font-bold text-primary">What is it?</h3>
+            <p className="text-lg leading-relaxed text-muted-foreground">
               A community design contest celebrating recovery! Create a design about recovery and it could be printed on t-shirts for Recovery Fest.
             </p>
             {hoveredCard === 'what' && (
-              <div className="mt-4 pt-4 border-t border-blue-200 text-base text-blue-600 font-semibold">
+              <div className="mt-4 border-t border-primary/20 pt-4 text-base font-semibold text-primary">
                 → Winner gets featured at the event!
               </div>
             )}
@@ -200,19 +199,19 @@ export default function Page() {
 
           {/* Design Requirements */}
           <div
-            className="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border-2 border-green-200 cursor-pointer text-center shadow-lg"
+            className="card-hover card-lift cursor-pointer rounded-2xl border-2 border-accent/25 bg-gradient-to-br from-accent/10 to-accent/5 p-6 text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('requirements')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-3xl font-bold text-green-700 mb-3">Design Requirements</h3>
-            <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
+            <h3 className="mb-3 font-heading text-3xl font-bold text-accent">Design Requirements</h3>
+            <ul className="inline-block space-y-2 text-left text-lg text-muted-foreground">
               <li>• 8½&quot; × 11&quot; format</li>
               <li>• Black or blue ink only</li>
               <li>• Black pencil acceptable</li>
               <li>• Recovery-themed</li>
             </ul>
             {hoveredCard === 'requirements' && (
-              <div className="mt-4 pt-4 border-t border-green-200 text-base text-green-600 font-semibold">
+              <div className="mt-4 border-t border-accent/20 pt-4 text-base font-semibold text-accent">
                 → Cardstock available at drop-off locations
               </div>
             )}
@@ -223,93 +222,95 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {/* Design Ideas */}
           <div
-            className="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-200 cursor-pointer text-center shadow-lg"
+            className="card-hover card-lift cursor-pointer rounded-2xl border-2 border-secondary/40 bg-gradient-to-br from-secondary/15 to-secondary/5 p-6 text-center shadow-lg"
             onMouseEnter={() => setHoveredCard('ideas')}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <h3 className="text-3xl font-bold text-purple-700 mb-3">Design Ideas</h3>
-            <p className="text-lg text-gray-700 mb-3">Show us your vision of recovery:</p>
-            <ul className="text-lg text-gray-700 space-y-2 inline-block text-left">
+            <h3 className="mb-3 font-heading text-3xl font-bold text-secondary-foreground">Design Ideas</h3>
+            <p className="mb-3 text-lg text-muted-foreground">Show us your vision of recovery:</p>
+            <ul className="inline-block space-y-2 text-left text-lg text-muted-foreground">
               <li>• What recovery looks like to you</li>
               <li>• What recovery has done for you</li>
               <li>• What recovery means to you</li>
             </ul>
             {hoveredCard === 'ideas' && (
-              <div className="mt-4 pt-4 border-t border-purple-200 text-base text-purple-600 font-semibold">
+              <div className="mt-4 border-t border-secondary/30 pt-4 text-base font-semibold text-secondary-foreground">
                 → The possibilities are endless!
               </div>
             )}
           </div>
 
           {/* Event Location */}
-          <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg p-6 border-2 border-cyan-200 card-hover text-center shadow-lg">
+          <div className="card-hover card-lift rounded-2xl border-2 border-primary/25 bg-gradient-to-br from-primary/10 to-accent/5 p-6 text-center shadow-lg">
             <div>
-              <h3 className="text-3xl font-bold text-cyan-700 mb-3">Event Location</h3>
-              <p className="text-xl font-semibold text-gray-700 mb-1">The Salvation Army</p>
-                <p className="text-lg text-gray-600 mb-1">104 Clover Street</p>
-              <p className="text-lg text-gray-600 mb-4">Holland, MI</p>
-              <p className="text-base text-gray-500">All submissions will be displayed at Recovery Fest</p>
+              <h3 className="mb-3 font-heading text-3xl font-bold text-primary">Event Location</h3>
+              <p className="mb-1 text-xl font-semibold text-foreground">The Salvation Army</p>
+                <p className="mb-1 text-lg text-muted-foreground">104 Clover Street</p>
+              <p className="mb-4 text-lg text-muted-foreground">Holland, MI</p>
+              <p className="text-base text-muted-foreground">All submissions will be displayed at Recovery Fest</p>
             </div>
           </div>
         </div>
 
         {/* Important Notes */}
-        <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg mb-8 shadow-lg">
-          <h3 className="font-bold text-4xl text-red-800 mb-3 underline text-center">★ IMPORTANT ★</h3>
-          <ul className="text-lg text-gray-700 space-y-2 font-bold uppercase">
-            <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
-            <li className="underline">✓ Must use black/blue ink or black pencil only, no color please</li>
-            <li>✓ One submission per person</li>
-            <li>✓ Design must be Recovery-related in some way</li>
+        <div className="mb-8 rounded-2xl border-l-4 border-destructive bg-destructive/5 p-4 shadow-lg">
+          <h3 className="mb-3 flex items-center justify-center gap-3 text-center font-heading text-4xl font-bold text-destructive underline">
+            <Star className="h-8 w-8 fill-destructive" aria-hidden="true" /> IMPORTANT <Star className="h-8 w-8 fill-destructive" aria-hidden="true" />
+          </h3>
+          <ul className="space-y-2 text-lg font-bold uppercase text-foreground">
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Write your <span className="font-semibold">name and contact info on the back</span> of your design</span></li>
+            <li className="flex items-start gap-2 underline"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Must use black/blue ink or black pencil only, no color please</span></li>
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>One submission per person</span></li>
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Design must be Recovery-related in some way</span></li>
           </ul>
         </div>
 
         {/* Timeline Section */}
-        <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6 mb-10 border-2 border-yellow-200 shadow-lg">
-          <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Important Dates</h2>
+        <div className="mb-10 rounded-2xl border-2 border-secondary/40 bg-gradient-to-r from-secondary/15 to-secondary/5 p-6 shadow-lg">
+          <h2 className="mb-6 text-center font-heading text-3xl font-bold text-foreground">Important Dates</h2>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="text-center card-hover">
-              <div className="inline-block bg-white rounded-full p-4 mb-4 border-4 border-yellow-500">
-                <Clock className="w-8 h-8 text-yellow-500" />
+            <div className="card-hover text-center">
+              <div className="mb-4 inline-block rounded-full border-4 border-secondary bg-card p-4">
+                <Clock className="h-8 w-8 text-secondary-foreground" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-800">Entries Due</h3>
-              <p className="text-2xl font-bold text-blue-600">August 21</p>
-              <p className="text-gray-600">by 5:00 PM</p>
+              <h3 className="mb-2 text-lg font-bold text-foreground">Entries Due</h3>
+              <p className="text-2xl font-bold text-primary">August 21</p>
+              <p className="text-muted-foreground">by 5:00 PM</p>
             </div>
 
-            <div className="text-center card-hover">
-              <div className="inline-block bg-white rounded-full p-4 mb-4 border-4 border-green-500">
-                <Star className="w-8 h-8 text-green-500" />
+            <div className="card-hover text-center">
+              <div className="mb-4 inline-block rounded-full border-4 border-accent bg-card p-4">
+                <Star className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-800">Winner Announced</h3>
-              <p className="text-2xl font-bold text-green-600">August 31</p>
-              <p className="text-gray-600">Winner will be contacted directly</p>
+              <h3 className="mb-2 text-lg font-bold text-foreground">Winner Announced</h3>
+              <p className="text-2xl font-bold text-accent">August 31</p>
+              <p className="text-muted-foreground">Winner will be contacted directly</p>
             </div>
 
-            <div className="text-center card-hover">
-              <div className="inline-block bg-white rounded-full p-4 mb-4 border-4 border-purple-500">
-                <Heart className="w-8 h-8 text-purple-500" />
+            <div className="card-hover text-center">
+              <div className="mb-4 inline-block rounded-full border-4 border-primary bg-card p-4">
+                <Heart className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-800">Recovery Fest Event</h3>
-              <p className="text-2xl font-bold text-purple-600">September 9</p>
-              <p className="text-gray-600">3:00 - 6:00 PM</p>
+              <h3 className="mb-2 text-lg font-bold text-foreground">Recovery Fest Event</h3>
+              <p className="text-2xl font-bold text-primary">September 9</p>
+              <p className="text-muted-foreground">3:00 - 6:00 PM</p>
             </div>
           </div>
         </div>
 
         {/* How to Submit */}
-        <div className="bg-gradient-to-r from-green-50 to-cyan-50 rounded-lg p-6 mb-10 border-2 border-green-200 shadow-lg">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)' }}>How to Submit</h2>
+        <div className="mb-10 rounded-2xl border-2 border-primary/25 bg-gradient-to-r from-primary/10 to-accent/5 p-6 shadow-lg">
+          <h2 className="mb-6 text-center font-heading text-4xl font-bold text-foreground md:text-5xl">How to Submit</h2>
           <div className="grid grid-cols-1 gap-4">
             {/* In Person */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <FileText className="w-6 h-6 text-green-600" />
+            <div className="card-hover card-lift flex items-center gap-6 rounded-2xl border border-border bg-card p-6 shadow-md">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <FileText className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-4xl mb-2 text-gray-800">In Person</h3>
-                <p className="text-lg text-red-600 mb-2 font-bold uppercase">(CLICK ORGANIZATION FOR ADDRESS)</p>
-                <p className="text-lg text-gray-600 mb-2 font-semibold">Drop off at:</p>
+                <h3 className="mb-2 font-heading text-4xl font-bold text-foreground">In Person</h3>
+                <p className="mb-2 text-lg font-bold uppercase text-destructive">(CLICK ORGANIZATION FOR ADDRESS)</p>
+                <p className="mb-2 text-lg font-semibold text-muted-foreground">Drop off at:</p>
                 <ul className="text-lg space-y-1">
                 {locations.map((location) => {
                   let displayName = location.name;
@@ -334,7 +335,7 @@ export default function Page() {
                     <li
                       key={location.name}
                       onClick={() => setSelectedLocation(location)}
-                      className="text-green-600 hover:text-green-700 cursor-pointer font-semibold hover:underline transition-colors"
+                      className="cursor-pointer font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
                     >
                       {displayName}
                     </li>
@@ -345,67 +346,67 @@ export default function Page() {
             </div>
 
             {/* Electronic */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
-              <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <Mail className="w-6 h-6 text-cyan-600" />
+            <div className="card-hover card-lift flex items-center gap-6 rounded-2xl border border-border bg-card p-6 shadow-md">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-accent/10">
+                <Mail className="h-6 w-6 text-accent" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-4xl mb-2 text-gray-800">Electronic</h3>
-                <p className="text-lg text-gray-600 mb-2">Send digital designs or photos of your artwork to:</p>
-                <p className="font-sans text-lg font-semibold bg-gray-100 p-3 rounded text-gray-900 break-all hover:bg-gray-200 transition-colors">
+                <h3 className="mb-2 font-heading text-4xl font-bold text-foreground">Electronic</h3>
+                <p className="mb-2 text-lg text-muted-foreground">Send digital designs or photos of your artwork to:</p>
+                <p className="break-all rounded-lg bg-muted p-3 font-sans text-lg font-semibold text-foreground transition-colors hover:bg-muted/70">
                   cmhcustomerservices@miottawa.org
                 </p>
               </div>
               <button
                 onClick={handleSubmitClick}
-                className="bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white font-bold py-3 px-4 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer flex-shrink-0"
+                className="flex flex-shrink-0 items-center gap-2 cursor-pointer rounded-full bg-gradient-to-r from-primary to-accent px-4 py-3 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105"
               >
-                ✎ SUBMIT YOUR DESIGN
+                <FileText className="h-5 w-5" aria-hidden="true" /> SUBMIT YOUR DESIGN
               </button>
             </div>
 
             {/* Mail */}
-            <div className="card-hover bg-white rounded-lg p-6 border border-gray-200 flex items-center gap-6 shadow-md">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <Mail className="w-6 h-6 text-blue-600" />
+            <div className="card-hover card-lift flex items-center gap-6 rounded-2xl border border-border bg-card p-6 shadow-md">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <Mail className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-4xl mb-2 text-gray-800">Mail</h3>
-                <p className="text-lg text-gray-600 mb-1">Send to:</p>
-                <p className="text-lg font-semibold text-gray-800">CMH Customer Services</p>
-                <p className="text-lg text-gray-600">12265 James Street</p>
-                <p className="text-lg text-gray-600">Holland, MI 49424</p>
-                <p className="text-base font-semibold text-black mt-2 underline">Try not to fold your artwork!</p>
+                <h3 className="mb-2 font-heading text-4xl font-bold text-foreground">Mail</h3>
+                <p className="mb-1 text-lg text-muted-foreground">Send to:</p>
+                <p className="text-lg font-semibold text-foreground">CMH Customer Services</p>
+                <p className="text-lg text-muted-foreground">12265 James Street</p>
+                <p className="text-lg text-muted-foreground">Holland, MI 49424</p>
+                <p className="mt-2 text-base font-semibold text-foreground underline">Try not to fold your artwork!</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Contact Box */}
-        <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-6 mb-8 text-center">
-          <p className="text-lg font-semibold text-gray-800">
-            For Questions, contact Daniel Gardner at <a href="mailto:dgardner@miottawa.org" className="text-blue-600 hover:text-blue-800 underline font-bold">dgardner@miottawa.org</a>
+        <div className="mb-8 rounded-2xl border-2 border-primary/25 bg-primary/5 p-6 text-center">
+          <p className="text-lg font-semibold text-foreground">
+            For Questions, contact Daniel Gardner at <a href="mailto:dgardner@miottawa.org" className="font-bold text-primary underline hover:text-primary/80">dgardner@miottawa.org</a>
           </p>
         </div>
 
         {/* Submit CTA */}
         <div id="submit" className="text-center py-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="mb-4 font-heading text-3xl font-bold text-foreground md:text-4xl">
             Ready to Share Your Vision?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="mb-8 text-lg text-muted-foreground">
             Submit your recovery-inspired t-shirt design by August 21 at 5 PM
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <button
               onClick={handleSubmitClick}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="cursor-pointer rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90"
             >
               Email Your Design
             </button>
             <button
               onClick={() => setShowDropOffModal(true)}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="cursor-pointer rounded-full bg-gradient-to-r from-secondary to-secondary/80 px-8 py-4 text-lg font-bold text-secondary-foreground shadow-lg transition-all duration-300 hover:scale-105"
             >
               Find a Drop-Off Location
             </button>
@@ -414,23 +415,23 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 mt-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-2">Recovery Fest</h3>
-          <p className="text-blue-100 mb-4">Invest in health, home, purpose, and community</p>
-          <p className="text-sm text-blue-200">September 9, 2025 | 3-6 PM | The Salvation Army</p>
-                <p className="text-xs text-blue-300 mt-4">104 Clover Street, Holland, MI</p>
+      <footer className="mt-16 bg-gradient-to-r from-primary to-accent py-8 text-primary-foreground">
+        <div className="mx-auto max-w-6xl px-4 text-center">
+          <h3 className="mb-2 font-heading text-2xl font-bold">Recovery Fest</h3>
+          <p className="mb-4 text-primary-foreground/85">Invest in health, home, purpose, and community</p>
+          <p className="text-sm text-primary-foreground/75">September 9, 2026 | 3-6 PM | The Salvation Army</p>
+                <p className="mt-4 text-xs text-primary-foreground/60">104 Clover Street, Holland, MI</p>
         </div>
       </footer>
 
       {/* Drop-Off Locations Modal */}
       {showDropOffModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-8 max-w-2xl w-full shadow-2xl max-h-96 overflow-y-auto">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Drop-Off Locations</h2>
-            <p className="text-gray-600 mb-6">Click an organization to view addresses and get directions:</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/60 p-4 backdrop-blur-sm">
+          <div className="max-h-96 w-full max-w-2xl overflow-y-auto rounded-2xl bg-card p-8 shadow-2xl">
+            <h2 className="mb-6 font-heading text-2xl font-bold text-foreground">Drop-Off Locations</h2>
+            <p className="mb-6 text-muted-foreground">Click an organization to view addresses and get directions:</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
               {locations.map((location) => (
                 <button
                   key={location.name}
@@ -438,17 +439,17 @@ export default function Page() {
                     setSelectedLocation(location);
                     setShowDropOffModal(false);
                   }}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 p-4 rounded-lg border border-purple-200 transition-all duration-300 text-left hover:shadow-lg"
+                  className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-left transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:shadow-lg"
                 >
-                  <p className="font-semibold text-gray-800">{location.name}</p>
-                  <p className="text-xs text-purple-600 mt-1">Click for addresses →</p>
+                  <p className="font-semibold text-foreground">{location.name}</p>
+                  <p className="mt-1 text-xs text-primary">Click for addresses →</p>
                 </button>
               ))}
             </div>
 
             <button
               onClick={() => setShowDropOffModal(false)}
-              className="w-full py-2 px-4 rounded-lg font-semibold bg-gray-300 hover:bg-gray-400 text-gray-800 transition-all duration-300"
+              className="w-full rounded-full bg-muted px-4 py-2 font-semibold text-foreground transition-all duration-300 hover:bg-muted/70"
             >
               Close
             </button>
@@ -458,27 +459,27 @@ export default function Page() {
 
       {/* Location Modal */}
       {selectedLocation && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-2xl">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">{selectedLocation.name}</h2>
-            <p className="text-gray-600 mb-6">Select an address to open in maps:</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/60 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl bg-card p-8 shadow-2xl">
+            <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">{selectedLocation.name}</h2>
+            <p className="mb-6 text-muted-foreground">Select an address to open in maps:</p>
             
-            <div className="space-y-3 mb-6">
+            <div className="mb-6 space-y-3">
               {selectedLocation.addresses.map((addr, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleOpenMaps(addr.coords)}
-                  className="w-full bg-gradient-to-r from-green-50 to-cyan-50 hover:from-green-100 hover:to-cyan-100 p-4 rounded-lg border border-green-200 transition-all duration-300 text-left"
+                  className="w-full rounded-xl border border-accent/20 bg-accent/5 p-4 text-left transition-all duration-300 hover:border-accent/40 hover:bg-accent/10"
                 >
-                  <p className="font-semibold text-gray-800">{addr.address}</p>
-                  <p className="text-xs text-green-600 mt-1">Click to open in maps →</p>
+                  <p className="font-semibold text-foreground">{addr.address}</p>
+                  <p className="mt-1 text-xs text-accent">Click to open in maps →</p>
                 </button>
               ))}
             </div>
 
             <button
               onClick={() => setSelectedLocation(null)}
-              className="w-full py-2 px-4 rounded-lg font-semibold bg-gray-300 hover:bg-gray-400 text-gray-800 transition-all duration-300"
+              className="w-full rounded-full bg-muted px-4 py-2 font-semibold text-foreground transition-all duration-300 hover:bg-muted/70"
             >
               Close
             </button>
@@ -488,22 +489,22 @@ export default function Page() {
 
       {/* Submission Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full shadow-2xl">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Submit Your Design</h2>
-            <p className="text-gray-600 mb-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/60 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl bg-card p-8 shadow-2xl">
+            <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">Submit Your Design</h2>
+            <p className="mb-6 text-muted-foreground">
               Send your recovery-inspired t-shirt design (PDF, JPEG, PNG, or Word document) to:
             </p>
             
-            <div className="bg-gradient-to-r from-green-50 to-cyan-50 p-4 rounded-lg mb-6 border border-green-200">
-              <p className="text-center font-mono text-lg font-bold text-gray-800">
+            <div className="mb-6 rounded-xl border border-accent/20 bg-accent/5 p-4">
+              <p className="text-center font-mono text-lg font-bold text-foreground">
                 cmhcustomerservices@miottawa.org
               </p>
             </div>
 
-            <div className="bg-blue-50 p-4 rounded-lg mb-6 border border-blue-200">
-              <p className="text-sm text-gray-700 mb-2 font-semibold">Don&apos;t forget to include:</p>
-              <ul className="text-sm text-gray-600 space-y-1">
+            <div className="mb-6 rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <p className="mb-2 text-sm font-semibold text-foreground">Don&apos;t forget to include:</p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Your name and contact information</li>
                 <li>• Your design file (PDF, JPEG, PNG, or Word)</li>
                 <li>• Submission deadline: August 21 at 5 PM</li>
@@ -513,17 +514,17 @@ export default function Page() {
             <div className="flex gap-3">
               <button
                 onClick={handleCopyEmail}
-                className={`flex-1 py-2 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                className={`flex-1 rounded-full px-4 py-2 font-semibold transition-all duration-300 ${
                   copied
-                    ? 'bg-green-500 text-white'
-                    : 'bg-green-500 hover:bg-green-600 text-white'
+                    ? 'bg-accent text-accent-foreground'
+                    : 'bg-primary text-primary-foreground hover:bg-primary/90'
                 }`}
               >
                 {copied ? 'Copied!' : 'Copy Email'}
               </button>
               <button
                 onClick={() => setShowModal(false)}
-                className="flex-1 py-2 px-4 rounded-lg font-semibold bg-gray-300 hover:bg-gray-400 text-gray-800 transition-all duration-300"
+                className="flex-1 rounded-full bg-muted px-4 py-2 font-semibold text-foreground transition-all duration-300 hover:bg-muted/70"
               >
                 Close
               </button>

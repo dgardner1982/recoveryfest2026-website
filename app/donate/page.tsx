@@ -20,8 +20,13 @@ export default function DonatePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
+<<<<<<< HEAD
       <section className="relative flex h-[420px] items-center justify-center overflow-hidden">
         <div className="bg-hero-gradient bg-dot-grid absolute inset-0 z-10 opacity-90" />
+=======
+      <section className="relative flex h-[400px] items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-primary/92 to-accent/80" />
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
         <Image
           src="/donate-hero.jpg"
           alt="Support Recovery"
@@ -29,6 +34,7 @@ export default function DonatePage() {
           className="object-cover mix-blend-luminosity"
           priority
         />
+<<<<<<< HEAD
         <div className="relative z-20 mx-auto max-w-4xl px-4 text-center text-white">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-secondary ring-1 ring-white/25">
             Give Today
@@ -37,21 +43,31 @@ export default function DonatePage() {
             Make a Difference Today
           </h1>
           <p className="text-balance text-xl text-white/85 md:text-2xl">
+=======
+        <div className="relative z-20 mx-auto max-w-4xl px-4 text-center text-primary-foreground">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+            Every Gift Matters
+          </span>
+          <h1 className="mb-6 font-heading text-5xl font-bold text-balance md:text-6xl">
+            Make a Difference Today
+          </h1>
+          <p className="text-xl text-balance text-primary-foreground/90 md:text-2xl">
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
             Your donation helps bring hope and healing to our community
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 px-4 bg-white">
+      <section className="bg-background px-4 py-16">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Donation Form */}
             <div className="lg:col-span-2">
-              <Card className="shadow-xl border-none">
+              <Card className="rounded-2xl border-none shadow-xl">
                 <CardHeader className="bg-primary/5">
-                  <CardTitle className="text-3xl text-foreground">Donate to Recovery Fest</CardTitle>
-                  <p className="text-muted-foreground mt-2">
+                  <CardTitle className="font-heading text-3xl text-foreground">Donate to Recovery Fest</CardTitle>
+                  <p className="mt-2 text-muted-foreground">
                     Every contribution makes a meaningful impact in supporting recovery and strengthening our community.
                   </p>
                 </CardHeader>
@@ -59,7 +75,7 @@ export default function DonatePage() {
                   <form className="space-y-8">
                     {/* Donation Type */}
                     <div>
-                      <Label className="text-lg font-semibold mb-4 block">Donation Type</Label>
+                      <Label className="mb-4 block text-lg font-semibold">Donation Type</Label>
                       <RadioGroup value={donationType} onValueChange={setDonationType} className="flex gap-4">
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="one-time" id="one-time" />
@@ -74,8 +90,8 @@ export default function DonatePage() {
 
                     {/* Amount Selection */}
                     <div>
-                      <Label className="text-lg font-semibold mb-4 block">Select Amount</Label>
-                      <div className="grid grid-cols-3 md:grid-cols-5 gap-3 mb-4">
+                      <Label className="mb-4 block text-lg font-semibold">Select Amount</Label>
+                      <div className="mb-4 grid grid-cols-3 gap-3 md:grid-cols-5">
                         {predefinedAmounts.map((amt) => (
                           <button
                             key={amt}
@@ -84,9 +100,9 @@ export default function DonatePage() {
                               setAmount(amt)
                               setCustomAmount('')
                             }}
-                            className={`py-3 px-4 rounded-lg border-2 font-semibold transition-all ${
+                            className={`rounded-xl border-2 px-4 py-3 font-semibold transition-all ${
                               amount === amt && !customAmount
-                                ? 'border-primary bg-primary text-white'
+                                ? 'border-primary bg-primary text-primary-foreground shadow-md'
                                 : 'border-border hover:border-primary'
                             }`}
                           >
@@ -107,7 +123,7 @@ export default function DonatePage() {
                               setCustomAmount(e.target.value)
                               setAmount('')
                             }}
-                            className="pl-8"
+                            className="rounded-xl pl-8"
                           />
                         </div>
                       </div>
@@ -115,45 +131,45 @@ export default function DonatePage() {
 
                     {/* Personal Information */}
                     <div>
-                      <Label className="text-lg font-semibold mb-4 block">Your Information</Label>
+                      <Label className="mb-4 block text-lg font-semibold">Your Information</Label>
                       <div className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                           <div>
                             <Label htmlFor="first-name">First Name *</Label>
-                            <Input id="first-name" required />
+                            <Input id="first-name" className="rounded-xl" required />
                           </div>
                           <div>
                             <Label htmlFor="last-name">Last Name *</Label>
-                            <Input id="last-name" required />
+                            <Input id="last-name" className="rounded-xl" required />
                           </div>
                         </div>
                         <div>
                           <Label htmlFor="email">Email Address *</Label>
-                          <Input id="email" type="email" required />
+                          <Input id="email" type="email" className="rounded-xl" required />
                         </div>
                         <div>
                           <Label htmlFor="phone">Phone Number</Label>
-                          <Input id="phone" type="tel" />
+                          <Input id="phone" type="tel" className="rounded-xl" />
                         </div>
                       </div>
                     </div>
 
                     {/* Payment Information */}
                     <div>
-                      <Label className="text-lg font-semibold mb-4 block">Payment Information</Label>
+                      <Label className="mb-4 block text-lg font-semibold">Payment Information</Label>
                       <div className="space-y-4">
                         <div>
                           <Label htmlFor="card-number">Card Number *</Label>
-                          <Input id="card-number" placeholder="1234 5678 9012 3456" required />
+                          <Input id="card-number" className="rounded-xl" placeholder="1234 5678 9012 3456" required />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                           <div>
                             <Label htmlFor="expiry">Expiry Date *</Label>
-                            <Input id="expiry" placeholder="MM/YY" required />
+                            <Input id="expiry" className="rounded-xl" placeholder="MM/YY" required />
                           </div>
                           <div>
                             <Label htmlFor="cvv">CVV *</Label>
-                            <Input id="cvv" placeholder="123" required />
+                            <Input id="cvv" className="rounded-xl" placeholder="123" required />
                           </div>
                         </div>
                       </div>
@@ -179,12 +195,12 @@ export default function DonatePage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-secondary hover:bg-secondary/90 text-white text-lg"
+                      className="w-full rounded-full bg-gradient-to-r from-primary to-accent text-lg text-primary-foreground shadow-lg transition-all hover:scale-[1.01] hover:shadow-xl"
                     >
                       Complete Donation of ${customAmount || amount || '0'}
                     </Button>
 
-                    <p className="text-sm text-muted-foreground text-center">
+                    <p className="text-center text-sm text-muted-foreground">
                       Your donation is tax-deductible. Recovery Fest is a 501(c)3 nonprofit organization.
                     </p>
                   </form>
@@ -195,37 +211,37 @@ export default function DonatePage() {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Impact Card */}
-              <Card className="shadow-lg border-primary/20">
+              <Card className="card-lift rounded-2xl border-primary/20 shadow-lg">
                 <CardHeader className="bg-primary/5">
-                  <CardTitle className="text-xl flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-xl">
                     <Heart className="h-5 w-5 text-primary" />
                     Your Impact
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-6 space-y-4">
+                <CardContent className="space-y-4 p-6">
                   <div className="flex items-start gap-3">
-                    <Gift className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
+                    <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-secondary" />
                     <div>
                       <p className="font-semibold">$25</p>
                       <p className="text-sm text-muted-foreground">Provides recovery resources and materials for 5 individuals</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Gift className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
+                    <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-secondary" />
                     <div>
                       <p className="font-semibold">$50</p>
                       <p className="text-sm text-muted-foreground">Sponsors meals and refreshments for festival attendees</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Gift className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
+                    <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-secondary" />
                     <div>
                       <p className="font-semibold">$100</p>
                       <p className="text-sm text-muted-foreground">Helps fund entertainment and activities for families</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Gift className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
+                    <Gift className="mt-1 h-5 w-5 flex-shrink-0 text-secondary" />
                     <div>
                       <p className="font-semibold">$250+</p>
                       <p className="text-sm text-muted-foreground">Supports outreach programs and community connections</p>
@@ -235,15 +251,15 @@ export default function DonatePage() {
               </Card>
 
               {/* Why Donate Card */}
-              <Card className="shadow-lg">
-                <CardHeader className="bg-primary/5">
-                  <CardTitle className="text-xl flex items-center gap-2">
-                    <Users className="h-5 w-5 text-primary" />
+              <Card className="card-lift rounded-2xl shadow-lg">
+                <CardHeader className="bg-accent/5">
+                  <CardTitle className="flex items-center gap-2 text-xl">
+                    <Users className="h-5 w-5 text-accent" />
                     Why Donate?
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     Recovery Fest is completely FREE for all attendees. Your generous donations ensure we can continue
                     providing live music, inspiring speakers, food, activities, and essential recovery resources to
                     thousands of community members each year. Together, we break stigma and build hope.
@@ -252,14 +268,14 @@ export default function DonatePage() {
               </Card>
 
               {/* Event Info Card */}
-              <Card className="shadow-lg bg-gradient-to-br from-primary to-primary/80 text-white">
+              <Card className="rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-xl">
                     <Calendar className="h-5 w-5" />
                     Event Details
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-6 space-y-2">
+                <CardContent className="space-y-2 p-6">
                   <div>
                     <p className="font-semibold">Date</p>
                     <p className="text-sm">Wednesday, September 9, 2026</p>
@@ -276,18 +292,18 @@ export default function DonatePage() {
               </Card>
 
               {/* Contact Card */}
-              <Card className="shadow-lg">
+              <Card className="rounded-2xl shadow-lg">
                 <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="mb-4 text-sm text-muted-foreground">
                     Questions about donating or sponsorship opportunities?
                   </p>
                   <a
                     href="mailto:RecoveryFestMI@Gmail.com"
-                    className="text-primary hover:underline font-medium"
+                    className="font-medium text-primary hover:underline"
                   >
                     RecoveryFestMI@Gmail.com
                   </a>
-                  <p className="text-sm text-muted-foreground mt-4">
+                  <p className="mt-4 text-sm text-muted-foreground">
                     Or call us at:{' '}
                     <a href="tel:6164945545" className="text-primary hover:underline">
                       (616) 494-5545
@@ -301,12 +317,12 @@ export default function DonatePage() {
       </section>
 
       {/* Thank You Section */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="bg-muted/40 px-4 py-16">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
+          <h2 className="mb-6 font-heading text-4xl font-bold text-foreground">
             Thank You for Your Support
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             Every donation, no matter the size, makes a real difference in the lives of individuals and families
             affected by addiction. Your generosity helps us create a safe, welcoming environment where hope and healing
             can flourish. On behalf of everyone in the Recovery Fest community, thank you
