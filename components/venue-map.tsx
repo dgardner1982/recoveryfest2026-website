@@ -10,16 +10,17 @@ export function VenueMap() {
   const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus`
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="bg-background px-4 py-16">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-8 text-center text-foreground" style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(255,255,255,0.3)'}}>
-          Location & Directions
-        </h2>
+        <div className="mb-10 text-center">
+          <h2 className="text-4xl font-extrabold text-foreground md:text-5xl">Location &amp; Directions</h2>
+          <div className="divider-accent mx-auto mt-4" />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
-            <Card className="overflow-hidden shadow-lg border-none">
+            <Card className="card-pop overflow-hidden shadow-lg border-none">
               <div className="relative w-full h-[450px]">
                 <iframe
                   src={embedUrl}
