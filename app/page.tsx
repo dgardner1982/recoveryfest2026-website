@@ -168,6 +168,9 @@ export default function HomePage() {
       {/* Road Closure Announcement */}
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
+          <p className="mb-4 text-center text-xl font-extrabold uppercase tracking-wide text-red-700 md:text-2xl">
+            USE CHICAGO DRIVE TO TURN DOWN CLOVER
+          </p>
           <div className="overflow-hidden rounded-xl border-2 border-red-200 bg-red-50 shadow-lg">
             <div className="grid gap-8 md:grid-cols-[1fr_1.1fr]">
               <div className="p-6 md:p-8">
@@ -197,7 +200,7 @@ export default function HomePage() {
                 aria-label="Open road closure map for zooming"
               >
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army-AJSKYC9qhcdRopB696c4n3fCrMHdVB.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army%20%2811-HDbNv5oCqs5QcAjb7WHSNGYe7jUwvq.jpg"
                   alt="Map showing the 8th Street road closure, Salvation Army, and Chicago Drive to U.S. 31 detour"
                   className="h-full max-h-[520px] w-full object-contain transition-transform group-hover:scale-[1.02]"
                 />
@@ -215,7 +218,7 @@ export default function HomePage() {
               </DialogHeader>
               <div className="max-h-[70vh] overflow-auto rounded-md bg-red-100 p-2">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army-AJSKYC9qhcdRopB696c4n3fCrMHdVB.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army%20%2811-HDbNv5oCqs5QcAjb7WHSNGYe7jUwvq.jpg"
                   alt="Detailed map showing the 8th Street road closure and detour route"
                   className="mx-auto block origin-top transition-transform duration-200"
                   style={{ width: `${mapZoom * 100}%`, maxWidth: 'none' }}
