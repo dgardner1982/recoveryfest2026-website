@@ -156,21 +156,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* T-Shirt Contest Box */}
+      {/* Road Closure Announcement */}
       <section className="py-12 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <Link href="/tshirt-contest" className="block">
-            <div className="bg-pink-400 hover:bg-pink-500 transition-colors duration-300 rounded-xl p-8 md:p-12 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-              <div className="flex flex-col items-center gap-4">
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white text-center">
-                  Interested in submitting a design for this year&apos;s T-shirt contest?
-                </p>
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white underline">
-                  CLICK HERE
-                </p>
+        <div className="container mx-auto max-w-6xl">
+          <div className="overflow-hidden rounded-xl border-2 border-red-200 bg-red-50 shadow-lg">
+            <div className="grid gap-8 md:grid-cols-[1fr_1.1fr]">
+              <div className="p-6 md:p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-wider text-red-700">Road Closure</p>
+                <h2 className="mb-6 text-2xl font-bold leading-tight text-red-950 md:text-3xl">
+                  8th St., U.S. 31 to Chicago Dr., Holland, begins Sept. 8
+                </h2>
+                <dl className="grid gap-4 text-sm leading-relaxed text-red-950 md:grid-cols-2">
+                  <div><dt className="font-bold">WHAT</dt><dd>Permitted Road Closure</dd></div>
+                  <div><dt className="font-bold">WHEN</dt><dd>Beginning Sept. 8, 2026</dd></div>
+                  <div><dt className="font-bold">WHERE</dt><dd>8th St., U.S. 31 to Chicago Dr., Holland Twp.</dd></div>
+                  <div><dt className="font-bold">WHY</dt><dd>Storm Sewer Work</dd></div>
+                </dl>
+                <div className="mt-6 border-t border-red-200 pt-6 text-sm leading-relaxed text-red-950">
+                  <p><strong>BACKGROUND:</strong> 8th Street between U.S. 31 and Chicago Drive in Holland Township will be closed beginning Tuesday, September 8, 2026, for permitted storm sewer work.</p>
+                  <p className="mt-4">This closure should last through Tuesday, September 15, 2026. Please note that all dates are tentative, and work is weather dependent.</p>
+                  <p className="mt-4"><strong>TRAFFIC IMPACT:</strong> The detour route is Chicago Dr. to U.S. 31.</p>
+                </div>
+              </div>
+              <div className="flex min-h-64 items-center justify-center bg-red-100 p-4 md:min-h-full">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/road%20close-z9FMebXXzUMx8oR9j2e1W4YVqA2I60.png"
+                  alt="Map showing the 8th Street road closure and Chicago Drive to U.S. 31 detour"
+                  className="h-full max-h-[520px] w-full object-contain"
+                />
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </section>
 
