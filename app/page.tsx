@@ -377,7 +377,7 @@ export default function HomePage() {
             <h2 className="animate-fade-in mb-4 text-3xl font-extrabold text-white md:text-5xl">
               Want to See What Recovery Fest is All About?
             </h2>
-            <p className="animate-fade-in mx-auto max-w-3xl text-lg leading-relaxed text-white/80">
+            <p className="animate-fade-in mx-auto max-w-3xl text-lg font-medium leading-relaxed text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.45)]">
               Watch these videos to experience the joy, hope, and community that makes Recovery Fest such
               a special celebration. See highlights from past events and discover why this festival has
               been bringing people together for over two decades.
@@ -585,15 +585,17 @@ export default function HomePage() {
       {/* Event Details */}
       <section className="bg-hero-gradient bg-dot-grid px-4 py-20 text-white">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="mb-12 text-center text-5xl font-black tracking-tight md:text-7xl">Join Us!</h2>
+          <h2 className="mb-12 text-center text-5xl font-black tracking-tight md:text-7xl [text-shadow:0_2px_10px_rgba(0,0,0,0.4)]">
+            Join Us!
+          </h2>
 
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="card-pop glass-panel rounded-2xl p-8 text-center">
+            <div className="card-pop rounded-2xl border border-white/15 bg-black/30 p-8 text-center backdrop-blur-md">
               <Calendar className="mx-auto mb-3 h-10 w-10 text-secondary" />
               <h3 className="mb-3 text-2xl font-bold text-secondary">When</h3>
               <p className="text-xl font-bold leading-relaxed">Wednesday, September 9, 2026</p>
             </div>
-            <div className="card-pop glass-panel rounded-2xl p-8 text-center">
+            <div className="card-pop rounded-2xl border border-white/15 bg-black/30 p-8 text-center backdrop-blur-md">
               <Clock className="mx-auto mb-3 h-10 w-10 text-secondary" />
               <h3 className="mb-3 text-2xl font-bold text-secondary">Time</h3>
               <div className="text-xl font-bold leading-relaxed">
@@ -602,7 +604,7 @@ export default function HomePage() {
                 <p>6:00pm</p>
               </div>
             </div>
-            <div className="card-pop glass-panel rounded-2xl p-8 text-center">
+            <div className="card-pop rounded-2xl border border-white/15 bg-black/30 p-8 text-center backdrop-blur-md">
               <MapPin className="mx-auto mb-3 h-10 w-10 text-secondary" />
               <h3 className="mb-3 text-2xl font-bold text-secondary">Where</h3>
               <p className="text-xl font-bold leading-relaxed">
