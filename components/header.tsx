@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/tshirt-contest', label: 'T-Shirt Contest' },
 ]
 
 export function Header() {

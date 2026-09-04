@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, HeartHandshake, Navigation, PartyPopper, Sparkles, MapPin, AlertTriangle, Brain, Stethoscope, HeartPulse, Home as HomeIcon, Users, Calendar, Clock } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, HeartHandshake, Navigation, PartyPopper, Sparkles, MapPin, AlertTriangle, Brain, Stethoscope, HeartPulse, Home as HomeIcon, Users } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -216,76 +216,6 @@ export default function HomePage() {
 
   return (
     <div className="w-full">
-      {/* Hero Section with Video Background */}
-      <section className="relative flex items-center justify-center overflow-hidden">
-        <div className="bg-hero-gradient absolute inset-0 z-10 opacity-90" />
-        <div className="bg-dot-grid absolute inset-0 z-10 opacity-40" />
-        <Image
-          src="/hero-recovery-hands.jpg"
-          alt="Recovery Fest"
-          fill
-          className="object-cover mix-blend-luminosity"
-          priority
-        />
-        <div className="relative z-20 mx-auto flex min-h-[640px] max-w-4xl flex-col items-center justify-center px-4 py-24 text-center text-white">
-          <span className="animate-fade-in mb-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-secondary ring-1 ring-white/25">
-            <Sparkles className="h-3.5 w-3.5" />
-            23rd Annual &middot; Free Community Event
-          </span>
-          <h1 className="animate-fade-in text-balance text-5xl font-extrabold leading-tight md:text-7xl">
-            Join Us in Celebration at <span className="text-secondary">Recovery Fest</span> 2026
-          </h1>
-          <p className="animate-fade-in mt-6 max-w-2xl text-balance text-lg text-white/85 md:text-xl">
-            A day of hope, healing, and community &mdash; free music, food, family activities, and vital
-            recovery resources for everyone in Holland, MI.
-          </p>
-          <div className="animate-fade-in mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="btn-shine bg-secondary text-secondary-foreground px-8 py-6 text-base font-bold shadow-xl shadow-secondary/40 hover:-translate-y-0.5 hover:bg-secondary/90"
-            >
-              <Link href="https://zeffy.com/en-US/donation-form/recovery-fest" target="_blank" rel="noopener noreferrer">
-                Donate Now
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="glass-panel px-8 py-6 text-base font-bold text-white hover:bg-white/20 hover:text-white"
-            >
-              <Link href="/gallery">View Photo Gallery</Link>
-            </Button>
-          </div>
-
-          {/* Quick info chips */}
-          <div className="glass-panel animate-fade-in mt-12 grid w-full max-w-3xl grid-cols-1 gap-4 rounded-2xl p-5 text-left sm:grid-cols-3">
-            <div className="flex items-center gap-3">
-              <Calendar className="h-5 w-5 shrink-0 text-secondary" />
-              <div>
-                <p className="text-xs uppercase tracking-wide text-white/70">Date</p>
-                <p className="text-sm font-bold">Sept 9, 2026</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock className="h-5 w-5 shrink-0 text-secondary" />
-              <div>
-                <p className="text-xs uppercase tracking-wide text-white/70">Time</p>
-                <p className="text-sm font-bold">3&ndash;6 PM</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <MapPin className="h-5 w-5 shrink-0 text-secondary" />
-              <div>
-                <p className="text-xs uppercase tracking-wide text-white/70">Where</p>
-                <p className="text-sm font-bold">Salvation Army, Holland</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Banner Section */}
       <section className="bg-background px-4 py-6">
         <div className="container mx-auto max-w-7xl">
