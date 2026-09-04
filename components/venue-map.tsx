@@ -7,7 +7,7 @@ import { MapPin, Navigation, Facebook } from 'lucide-react'
 export function VenueMap() {
   const venueAddress = '104 Clover St, Holland, MI 49423'
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(venueAddress)}`
-  const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus`
+  const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(venueAddress)}&z=15&output=embed`
 
   return (
     <section className="bg-background px-4 py-16">
