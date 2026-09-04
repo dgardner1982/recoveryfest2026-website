@@ -20,8 +20,8 @@ export default function DonatePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative flex h-[420px] items-center justify-center overflow-hidden">
-        <div className="bg-dot-grid absolute inset-0 z-10 bg-gradient-to-br from-navy-deep/95 via-primary/85 to-navy/90" />
+      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-10" />
         <Image
           src="/donate-hero.jpg"
           alt="Support Recovery"
@@ -29,14 +29,11 @@ export default function DonatePage() {
           className="object-cover"
           priority
         />
-        <div className="relative z-20 mx-auto max-w-4xl px-4 text-center text-white">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-secondary ring-1 ring-white/20">
-            Give Today
-          </span>
-          <h1 className="mb-6 text-balance text-5xl font-extrabold md:text-6xl">
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
             Make a Difference Today
           </h1>
-          <p className="text-balance text-xl text-white/85 md:text-2xl">
+          <p className="text-xl md:text-2xl text-balance">
             Your donation helps bring hope and healing to our community
           </p>
         </div>

@@ -1,8 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Camera } from 'lucide-react'
 
 export default function GalleryPage() {
   const galleryImages = [
@@ -29,36 +26,32 @@ export default function GalleryPage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-dot-grid relative overflow-hidden bg-gradient-to-br from-primary to-navy-deep px-4 py-24">
-        <div className="container relative z-10 mx-auto max-w-6xl text-center text-white">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-secondary ring-1 ring-white/20">
-            <Camera className="h-3.5 w-3.5" />
-            Photo Gallery
-          </span>
-          <h1 className="mb-6 text-balance text-5xl font-extrabold md:text-6xl">
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
+        <div className="container mx-auto max-w-6xl text-center text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance drop-shadow-lg">
             Recovery Fest Photo Gallery
           </h1>
-          <p className="text-balance text-xl text-white/80 md:text-2xl">
+          <p className="text-xl md:text-2xl text-balance">
             Celebrating moments of hope, community, and recovery
           </p>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="bg-background px-4 py-16">
+      <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {galleryImages.map((image) => (
-              <Card
-                key={image.id}
-                className="card-lift group overflow-hidden border-border shadow-sm"
+              <Card 
+                key={image.id} 
+                className="overflow-hidden bg-white border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-300 cursor-pointer group"
               >
-                <div className="relative flex h-80 items-center justify-center bg-navy-deep">
+                <div className="relative h-80 bg-gray-900 flex items-center justify-center">
                   <Image
-                    src={image.src || '/placeholder.svg'}
+                    src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     fill
-                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain p-2"
                   />
                 </div>
               </Card>
@@ -68,21 +61,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-muted/40 px-4 py-16">
+      <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             Join Us at Recovery Fest 2026
           </h2>
-          <p className="mb-8 text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-8">
             Be part of the celebration and help us create more memories like these
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="btn-shine bg-primary px-8 py-6 text-base font-bold shadow-lg hover:-translate-y-0.5 hover:bg-primary/90"
-          >
-            <Link href="/">Learn More</Link>
-          </Button>
         </div>
       </section>
     </div>
