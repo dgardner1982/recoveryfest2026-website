@@ -313,7 +313,7 @@ export default function Page() {
                 <p className="mb-2 text-lg font-semibold text-muted-foreground">Drop off at:</p>
                 <ul className="text-lg space-y-1">
                 {locations.map((location) => {
-                  let displayName = location.name;
+                  let displayName: React.ReactNode = location.name;
                   if (location.name === 'Sobar Recovery Community Center') {
                     displayName = (
                       <>

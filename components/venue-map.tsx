@@ -10,13 +10,6 @@ export function VenueMap() {
   const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(venueAddress)}&z=15&output=embed`
 
   return (
-<<<<<<< HEAD
-    <section className="bg-background px-4 py-16">
-      <div className="container mx-auto max-w-6xl">
-        <div className="mb-10 text-center">
-          <h2 className="text-4xl font-extrabold text-foreground md:text-5xl">Location &amp; Directions</h2>
-          <div className="divider-accent mx-auto mt-4" />
-=======
     <section id="location" className="relative bg-background px-4 py-20">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-10 text-center">
@@ -26,17 +19,12 @@ export function VenueMap() {
           <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
             Location &amp; Directions
           </h2>
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
-<<<<<<< HEAD
-            <Card className="card-pop overflow-hidden shadow-lg border-none">
-=======
             <Card className="overflow-hidden rounded-2xl border-none shadow-xl ring-1 ring-border">
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
               <div className="relative w-full h-[450px]">
                 <iframe
                   src={embedUrl}

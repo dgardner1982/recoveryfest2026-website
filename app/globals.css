@@ -20,25 +20,6 @@
   --accent-foreground: oklch(0.99 0.01 90);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-<<<<<<< HEAD
-  --border: oklch(0.92 0 0);
-  --input: oklch(0.92 0 0);
-  --ring: oklch(0.55 0.20 285);
-  --chart-1: oklch(0.55 0.20 285);
-  --chart-2: oklch(0.65 0.25 200);
-  --chart-3: oklch(0.70 0.28 145);
-  --chart-4: oklch(0.60 0.23 230);
-  --chart-5: oklch(0.75 0.22 85);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.30 0 0);
-  --sidebar-primary: oklch(0.55 0.20 285);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.30 0 0);
-  --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.55 0.20 285);
-=======
   --border: oklch(0.9 0.015 85);
   --input: oklch(0.9 0.015 85);
   --ring: oklch(0.47 0.19 291);
@@ -56,7 +37,6 @@
   --sidebar-accent-foreground: oklch(0.26 0.03 285);
   --sidebar-border: oklch(0.9 0.015 85);
   --sidebar-ring: oklch(0.47 0.19 291);
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
 }
 
 .dark {
@@ -195,24 +175,6 @@
     }
   }
 
-<<<<<<< HEAD
-  @keyframes shine-sweep {
-    0% {
-      transform: translateX(-120%) skewX(-15deg);
-    }
-    100% {
-      transform: translateX(220%) skewX(-15deg);
-    }
-  }
-
-  @keyframes float-soft {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-=======
   @keyframes float-slow {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-14px) rotate(2deg); }
@@ -232,7 +194,6 @@
     0% { transform: scale(1); }
     50% { transform: scale(1.12); }
     100% { transform: scale(1); }
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
   }
 
   .animate-fade-in {
@@ -248,12 +209,6 @@
     animation: pulse-shadow 3s ease-in-out infinite;
   }
 
-<<<<<<< HEAD
-  .animate-float-soft {
-    animation: float-soft 4s ease-in-out infinite;
-  }
-
-=======
   .animate-float-slow {
     animation: float-slow 7s ease-in-out infinite;
   }
@@ -277,7 +232,6 @@
   .delay-400 { animation-delay: 0.4s; }
   .delay-500 { animation-delay: 0.5s; }
 
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
   .transform {
     @apply transition-transform;
   }
@@ -286,84 +240,6 @@
     @apply scale-102;
   }
 
-<<<<<<< HEAD
-  /* Vibrant gradient text used for headlines */
-  .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-  }
-
-  /* Elevated card interaction: lift + glow, no rotation gimmicks */
-  .card-pop {
-    @apply transition-all duration-300 ease-out;
-    box-shadow: 0 1px 2px rgba(15, 10, 40, 0.06);
-  }
-  .card-pop:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 40px -12px rgba(88, 28, 217, 0.28);
-  }
-
-  /* Frosted glass panel for use over vibrant gradients */
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-  }
-
-  /* Shimmer sweep on CTA buttons */
-  .btn-shine {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-  }
-  .btn-shine::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 40%;
-    background: linear-gradient(
-      110deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.55) 50%,
-      transparent 100%
-    );
-    transform: translateX(-120%) skewX(-15deg);
-    z-index: 1;
-    pointer-events: none;
-  }
-  .btn-shine:hover::after {
-    animation: shine-sweep 1.1s ease-in-out;
-  }
-
-  /* Subtle dot-grid texture for dark/gradient sections */
-  .bg-dot-grid {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
-    background-size: 22px 22px;
-  }
-
-  /* Vibrant three-color hero/section gradient */
-  .bg-hero-gradient {
-    background-image: linear-gradient(
-      120deg,
-      oklch(0.5 0.21 292) 0%,
-      oklch(0.52 0.2 265) 45%,
-      oklch(0.58 0.2 220) 100%
-    );
-  }
-
-  .bg-vivid-gradient {
-    background-image: linear-gradient(
-      120deg,
-      oklch(0.5 0.21 292) 0%,
-      oklch(0.55 0.22 250) 50%,
-      oklch(0.62 0.2 205) 100%
-    );
-  }
-
-  .divider-accent {
-    @apply h-1.5 w-20 rounded-full bg-gradient-to-r from-primary via-accent to-secondary;
-  }
-=======
   .text-gradient-brand {
     background-image: linear-gradient(120deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
@@ -399,5 +275,4 @@ html {
   background: linear-gradient(180deg, var(--primary), var(--accent));
   border-radius: 999px;
   border: 3px solid var(--muted);
->>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
 }
