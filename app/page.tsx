@@ -7,7 +7,14 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import { VenueMap } from '@/components/venue-map'
 import { subscribeToNewsletter, sendContactMessage } from '@/app/actions/email'
 
@@ -20,6 +27,8 @@ export default function HomePage() {
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
   const [contactMessage, setContactMessage] = useState('')
   const [contactLoading, setContactLoading] = useState(false)
+  const [mapOpen, setMapOpen] = useState(false)
+  const [mapZoom, setMapZoom] = useState(1)
   
   const slides = [
     '/images/slide1.jpg',
@@ -156,21 +165,90 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* T-Shirt Contest Box */}
+      {/* Road Closure Announcement */}
       <section className="py-12 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <Link href="/tshirt-contest" className="block">
-            <div className="bg-pink-400 hover:bg-pink-500 transition-colors duration-300 rounded-xl p-8 md:p-12 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-              <div className="flex flex-col items-center gap-4">
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white text-center">
-                  Interested in submitting a design for this year&apos;s T-shirt contest?
-                </p>
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white underline">
-                  CLICK HERE
-                </p>
+        <div className="container mx-auto max-w-6xl">
+          <p className="mb-4 text-center text-xl font-extrabold uppercase tracking-wide text-red-700 md:text-2xl">
+            <span className="text-red-600">★</span> USE CHICAGO DRIVE TO TURN DOWN CLOVER AVE <span className="text-red-600">★</span>
+          </p>
+          <div className="overflow-hidden rounded-xl border-2 border-red-200 bg-red-50 shadow-lg">
+            <div className="grid gap-8 md:grid-cols-[1fr_1.1fr]">
+              <div className="p-6 md:p-8">
+                <p className="mb-3 text-sm font-bold uppercase tracking-wider text-red-700">Road Closure</p>
+                <h2 className="mb-6 text-2xl font-bold leading-tight text-red-950 md:text-3xl">
+                  8th St., U.S. 31 to Chicago Dr., Holland, begins Sept. 8
+                </h2>
+                <dl className="grid gap-4 text-sm leading-relaxed text-red-950 md:grid-cols-2">
+                  <div><dt className="font-bold">WHAT</dt><dd>Permitted Road Closure</dd></div>
+                  <div><dt className="font-bold">WHEN</dt><dd>Beginning Sept. 8, 2026</dd></div>
+                  <div><dt className="font-bold">WHERE</dt><dd>8th St., U.S. 31 to Chicago Dr., Holland Twp.</dd></div>
+                  <div><dt className="font-bold">WHY</dt><dd>Storm Sewer Work</dd></div>
+                </dl>
+                <div className="mt-6 border-t border-red-200 pt-6 text-sm leading-relaxed text-red-950">
+                  <p><strong>BACKGROUND:</strong> 8th Street between U.S. 31 and Chicago Drive in Holland Township will be closed beginning Tuesday, September 8, 2026, for permitted storm sewer work.</p>
+                  <p className="mt-4">This closure should last through Tuesday, September 15, 2026. Please note that all dates are tentative, and work is weather dependent.</p>
+                  <p className="mt-4"><strong>TRAFFIC IMPACT:</strong> The detour route is Chicago Dr. to U.S. 31.</p>
+                </div>
               </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setMapZoom(1)
+                  setMapOpen(true)
+                }}
+                className="group flex min-h-64 cursor-zoom-in flex-col items-center justify-center bg-red-100 p-4 text-left focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-400 md:min-h-full"
+                aria-label="Open road closure map for zooming"
+              >
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army%20%2811-HDbNv5oCqs5QcAjb7WHSNGYe7jUwvq.jpg"
+                  alt="Map showing the 8th Street road closure, Salvation Army, and Chicago Drive to U.S. 31 detour"
+                  className="h-full max-h-[520px] w-full object-contain transition-transform group-hover:scale-[1.02]"
+                />
+                <span className="mt-3 rounded-full bg-red-950 px-4 py-2 text-sm font-semibold text-white">
+                  Click map to zoom
+                </span>
+              </button>
             </div>
-          </Link>
+          </div>
+          <Dialog open={mapOpen} onOpenChange={setMapOpen}>
+            <DialogContent className="max-w-[calc(100%-1rem)] border-red-200 bg-red-50 p-3 sm:max-w-6xl">
+              <DialogHeader className="px-2 pt-1">
+                <DialogTitle className="text-red-950">8th Street Road Closure Map</DialogTitle>
+                <DialogDescription>Use the controls to zoom in on the closure and detour.</DialogDescription>
+              </DialogHeader>
+              <div className="max-h-[70vh] overflow-auto rounded-md bg-red-100 p-2">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army%20%2811-HDbNv5oCqs5QcAjb7WHSNGYe7jUwvq.jpg"
+                  alt="Detailed map showing the 8th Street road closure and detour route"
+                  className="mx-auto block origin-top transition-transform duration-200"
+                  style={{ width: `${mapZoom * 100}%`, maxWidth: 'none' }}
+                />
+              </div>
+              <div className="flex items-center justify-center gap-3" aria-label="Map zoom controls">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMapZoom((zoom) => Math.max(1, zoom - 0.25))}
+                  disabled={mapZoom <= 1}
+                >
+                  <ZoomOut data-icon="inline-start" />
+                  Zoom out
+                </Button>
+                <span className="min-w-16 text-center text-sm font-semibold text-red-950">{Math.round(mapZoom * 100)}%</span>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMapZoom((zoom) => Math.min(3, zoom + 0.25))}
+                  disabled={mapZoom >= 3}
+                >
+                  <ZoomIn data-icon="inline-start" />
+                  Zoom in
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
