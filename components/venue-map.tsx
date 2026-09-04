@@ -7,9 +7,16 @@ import { MapPin, Navigation, Facebook } from 'lucide-react'
 export function VenueMap() {
   const venueAddress = '104 Clover St, Holland, MI 49423'
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(venueAddress)}`
-  const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d-86.1089!3d42.7875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819909c0b8c8c8b%3A0x1234567890abcdef!2s104%20Clover%20St%2C%20Holland%2C%20MI%2049423!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus`
+  const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(venueAddress)}&z=15&output=embed`
 
   return (
+<<<<<<< HEAD
+    <section className="bg-background px-4 py-16">
+      <div className="container mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-4xl font-extrabold text-foreground md:text-5xl">Location &amp; Directions</h2>
+          <div className="divider-accent mx-auto mt-4" />
+=======
     <section id="location" className="relative bg-background px-4 py-20">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-10 text-center">
@@ -19,12 +26,17 @@ export function VenueMap() {
           <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
             Location &amp; Directions
           </h2>
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map */}
           <div className="lg:col-span-2">
+<<<<<<< HEAD
+            <Card className="card-pop overflow-hidden shadow-lg border-none">
+=======
             <Card className="overflow-hidden rounded-2xl border-none shadow-xl ring-1 ring-border">
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
               <div className="relative w-full h-[450px]">
                 <iframe
                   src={embedUrl}

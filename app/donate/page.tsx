@@ -20,15 +20,30 @@ export default function DonatePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
+<<<<<<< HEAD
+      <section className="relative flex h-[420px] items-center justify-center overflow-hidden">
+        <div className="bg-hero-gradient bg-dot-grid absolute inset-0 z-10 opacity-90" />
+=======
       <section className="relative flex h-[400px] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-primary/92 to-accent/80" />
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
         <Image
           src="/donate-hero.jpg"
           alt="Support Recovery"
           fill
-          className="object-cover"
+          className="object-cover mix-blend-luminosity"
           priority
         />
+<<<<<<< HEAD
+        <div className="relative z-20 mx-auto max-w-4xl px-4 text-center text-white">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-secondary ring-1 ring-white/25">
+            Give Today
+          </span>
+          <h1 className="mb-6 text-balance text-5xl font-extrabold md:text-6xl">
+            Make a Difference Today
+          </h1>
+          <p className="text-balance text-xl text-white/85 md:text-2xl">
+=======
         <div className="relative z-20 mx-auto max-w-4xl px-4 text-center text-primary-foreground">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-1.5 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
             Every Gift Matters
@@ -37,6 +52,7 @@ export default function DonatePage() {
             Make a Difference Today
           </h1>
           <p className="text-xl text-balance text-primary-foreground/90 md:text-2xl">
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
             Your donation helps bring hope and healing to our community
           </p>
         </div>

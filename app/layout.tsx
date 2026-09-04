@@ -45,7 +45,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
+<<<<<<< HEAD
+    <html lang="en" className="bg-background">
+=======
     <html lang="en" className={`bg-background ${_baloo.variable}`}>
+>>>>>>> 7f9520f47a7b56e31741f9d9d614407a497ce2f8
       <body className={`font-sans antialiased`}>
         <Header />
         <main className="min-h-screen overflow-x-hidden">
