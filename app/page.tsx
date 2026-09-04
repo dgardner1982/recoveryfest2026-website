@@ -7,7 +7,14 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import { VenueMap } from '@/components/venue-map'
 import { subscribeToNewsletter, sendContactMessage } from '@/app/actions/email'
 
@@ -20,6 +27,8 @@ export default function HomePage() {
   const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
   const [contactMessage, setContactMessage] = useState('')
   const [contactLoading, setContactLoading] = useState(false)
+  const [mapOpen, setMapOpen] = useState(false)
+  const [mapZoom, setMapZoom] = useState(1)
   
   const slides = [
     '/images/slide1.jpg',
@@ -178,15 +187,65 @@ export default function HomePage() {
                   <p className="mt-4"><strong>TRAFFIC IMPACT:</strong> The detour route is Chicago Dr. to U.S. 31.</p>
                 </div>
               </div>
-              <div className="flex min-h-64 items-center justify-center bg-red-100 p-4 md:min-h-full">
+              <button
+                type="button"
+                onClick={() => {
+                  setMapZoom(1)
+                  setMapOpen(true)
+                }}
+                className="group flex min-h-64 cursor-zoom-in flex-col items-center justify-center bg-red-100 p-4 text-left focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-400 md:min-h-full"
+                aria-label="Open road closure map for zooming"
+              >
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/road%20close-z9FMebXXzUMx8oR9j2e1W4YVqA2I60.png"
-                  alt="Map showing the 8th Street road closure and Chicago Drive to U.S. 31 detour"
-                  className="h-full max-h-[520px] w-full object-contain"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army-AJSKYC9qhcdRopB696c4n3fCrMHdVB.jpg"
+                  alt="Map showing the 8th Street road closure, Salvation Army, and Chicago Drive to U.S. 31 detour"
+                  className="h-full max-h-[520px] w-full object-contain transition-transform group-hover:scale-[1.02]"
                 />
-              </div>
+                <span className="mt-3 rounded-full bg-red-950 px-4 py-2 text-sm font-semibold text-white">
+                  Click map to zoom
+                </span>
+              </button>
             </div>
           </div>
+          <Dialog open={mapOpen} onOpenChange={setMapOpen}>
+            <DialogContent className="max-w-[calc(100%-1rem)] border-red-200 bg-red-50 p-3 sm:max-w-6xl">
+              <DialogHeader className="px-2 pt-1">
+                <DialogTitle className="text-red-950">8th Street Road Closure Map</DialogTitle>
+                <DialogDescription>Use the controls to zoom in on the closure and detour.</DialogDescription>
+              </DialogHeader>
+              <div className="max-h-[70vh] overflow-auto rounded-md bg-red-100 p-2">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Salvation%20Army-AJSKYC9qhcdRopB696c4n3fCrMHdVB.jpg"
+                  alt="Detailed map showing the 8th Street road closure and detour route"
+                  className="mx-auto block origin-top transition-transform duration-200"
+                  style={{ width: `${mapZoom * 100}%`, maxWidth: 'none' }}
+                />
+              </div>
+              <div className="flex items-center justify-center gap-3" aria-label="Map zoom controls">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMapZoom((zoom) => Math.max(1, zoom - 0.25))}
+                  disabled={mapZoom <= 1}
+                >
+                  <ZoomOut data-icon="inline-start" />
+                  Zoom out
+                </Button>
+                <span className="min-w-16 text-center text-sm font-semibold text-red-950">{Math.round(mapZoom * 100)}%</span>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMapZoom((zoom) => Math.min(3, zoom + 0.25))}
+                  disabled={mapZoom >= 3}
+                >
+                  <ZoomIn data-icon="inline-start" />
+                  Zoom in
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
