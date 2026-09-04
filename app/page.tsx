@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/dialog'
 import { WaveDivider } from '@/components/wave-divider'
 import { VenueMap } from '@/components/venue-map'
+import { YouTubeEmbed } from '@/components/youtube-embed'
 import { subscribeToNewsletter, sendContactMessage } from '@/app/actions/email'
 
 const statCards = [
@@ -373,34 +374,20 @@ export default function HomePage() {
 
           <div className="mb-8 grid gap-8 md:grid-cols-2">
             <div className="space-y-4 transition-transform duration-300 hover:scale-[1.02]">
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl ring-4 ring-background/20 transition-all duration-300 hover:ring-secondary/60">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/9hybir7nolQ?autoplay=0"
-                  title="Recovery Fest Highlights"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0"
-                />
-              </div>
+              <YouTubeEmbed
+                videoId="9hybir7nolQ"
+                title="Recovery Fest Highlights"
+                className="rounded-2xl shadow-2xl ring-4 ring-background/20 transition-all duration-300 hover:ring-secondary/60"
+              />
               <h3 className="text-center text-xl font-bold">Recovery Fest Highlights</h3>
             </div>
 
             <div className="space-y-4 transition-transform duration-300 hover:scale-[1.02]">
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl ring-4 ring-background/20 transition-all duration-300 hover:ring-secondary/60">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/ZSF2bYwcl_o?autoplay=0"
-                  title="Recovery Fest Experience"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0"
-                />
-              </div>
+              <YouTubeEmbed
+                videoId="ZSF2bYwcl_o"
+                title="Recovery Fest Experience"
+                className="rounded-2xl shadow-2xl ring-4 ring-background/20 transition-all duration-300 hover:ring-secondary/60"
+              />
               <h3 className="text-center text-xl font-bold">Recovery Fest Experience</h3>
             </div>
           </div>
