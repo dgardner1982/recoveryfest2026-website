@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Clock, MapPin, FileText, Mail, Star, Heart } from 'lucide-react';
+import { Clock, MapPin, FileText, Mail, Star, Heart, Check } from 'lucide-react';
 
 const locations = [
   {
@@ -254,12 +254,14 @@ export default function Page() {
 
         {/* Important Notes */}
         <div className="mb-8 rounded-2xl border-l-4 border-destructive bg-destructive/5 p-4 shadow-lg">
-          <h3 className="mb-3 text-center font-heading text-4xl font-bold text-destructive underline">★ IMPORTANT ★</h3>
+          <h3 className="mb-3 flex items-center justify-center gap-3 text-center font-heading text-4xl font-bold text-destructive underline">
+            <Star className="h-8 w-8 fill-destructive" aria-hidden="true" /> IMPORTANT <Star className="h-8 w-8 fill-destructive" aria-hidden="true" />
+          </h3>
           <ul className="space-y-2 text-lg font-bold uppercase text-foreground">
-            <li>✓ Write your <span className="font-semibold">name and contact info on the back</span> of your design</li>
-            <li className="underline">✓ Must use black/blue ink or black pencil only, no color please</li>
-            <li>✓ One submission per person</li>
-            <li>✓ Design must be Recovery-related in some way</li>
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Write your <span className="font-semibold">name and contact info on the back</span> of your design</span></li>
+            <li className="flex items-start gap-2 underline"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Must use black/blue ink or black pencil only, no color please</span></li>
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>One submission per person</span></li>
+            <li className="flex items-start gap-2"><Check className="mt-1 h-5 w-5 flex-shrink-0 text-destructive" aria-hidden="true" /><span>Design must be Recovery-related in some way</span></li>
           </ul>
         </div>
 
@@ -357,9 +359,9 @@ export default function Page() {
               </div>
               <button
                 onClick={handleSubmitClick}
-                className="flex-shrink-0 cursor-pointer rounded-full bg-gradient-to-r from-primary to-accent px-4 py-3 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105"
+                className="flex flex-shrink-0 items-center gap-2 cursor-pointer rounded-full bg-gradient-to-r from-primary to-accent px-4 py-3 text-lg font-bold text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105"
               >
-                ✎ SUBMIT YOUR DESIGN
+                <FileText className="h-5 w-5" aria-hidden="true" /> SUBMIT YOUR DESIGN
               </button>
             </div>
 

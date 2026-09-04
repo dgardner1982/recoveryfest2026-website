@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, HeartHandshake, Navigation, PartyPopper, Sparkles, MapPin } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, HeartHandshake, Navigation, PartyPopper, Sparkles, MapPin, AlertTriangle } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -242,8 +242,10 @@ export default function HomePage() {
       {/* Road Closure Announcement */}
       <section className="bg-background px-4 py-16">
         <div className="container mx-auto max-w-6xl">
-          <p className="mb-4 text-center text-xl font-extrabold uppercase tracking-wide text-destructive md:text-2xl">
-            <span className="text-destructive">★</span> USE CHICAGO DRIVE TO TURN DOWN CLOVER AVE <span className="text-destructive">★</span>
+          <p className="mb-4 flex items-center justify-center gap-2 text-center text-xl font-extrabold uppercase tracking-wide text-destructive md:text-2xl">
+            <AlertTriangle className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
+            USE CHICAGO DRIVE TO TURN DOWN CLOVER AVE
+            <AlertTriangle className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
           </p>
           <div className="overflow-hidden rounded-2xl border-2 border-destructive/25 bg-destructive/5 shadow-lg">
             <div className="grid gap-8 md:grid-cols-[1fr_1.1fr]">
